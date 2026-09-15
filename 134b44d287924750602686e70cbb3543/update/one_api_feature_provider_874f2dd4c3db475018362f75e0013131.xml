@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="one_api_feature_provider">
+    <one_api_feature_provider action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <feature display_value="542203de7fe81210a01c7d8b7d86658c">074f2dd4c3db475018362f75e001312d</feature>
+        <feature_service display_value="OneExtendGenericProvider">5233278353111110c271ddeeff7b129b</feature_service>
+        <feature_service_factory><![CDATA[(function() { return new global.OneExtendGenericProvider(); })()]]></feature_service_factory>
+        <name>RAG provider</name>
+        <short_description>Auto Generated </short_description>
+        <sys_class_name>one_api_feature_provider</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-09-09 05:21:06</sys_created_on>
+        <sys_id>874f2dd4c3db475018362f75e0013131</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>RAG provider</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>one_api_feature_provider_874f2dd4c3db475018362f75e0013131</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-09-09 05:21:06</sys_updated_on>
+        <type>Service Plan</type>
+        <type_document display_value="ServicePlanFeatureExecutor">c51e26ab7f881210caf7439f9c866544</type_document>
+    </one_api_feature_provider>
+</record_update>

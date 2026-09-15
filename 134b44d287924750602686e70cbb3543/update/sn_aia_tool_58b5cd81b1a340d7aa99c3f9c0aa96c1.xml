@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Reads skipped upgrade records from the last run and re-checks if they are still relevant or out-of-date. Compares current plugin state against available updates to determine if the skip reason still applies.</description>
+        <input_schema>[{"name":"plan_id","description":"The upgrade plan identifier to look up skipped items from (optional - defaults to most recent)","mandatory":false}]</input_schema>
+        <name>Scan Skipped Items</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[(function(inputs) {
+  var result = { status: 'success', skipped_items: [], summary: {} };
+  try {
+    // Read from system logs for skipped items from the last upgrade run
+    var logGr = new GlideRecordSecure('syslog');
+    logGr.addQuery('source', 'x_snc_ai_upgrade_0');
+    logGr.addQuery('message', 'CONTAINS', 'Failure');
+    logGr.orderByDesc('sys_created_on');
+    logGr.setLimit(20);
+    logGr.query();
+    
+    var skippedPlugins = [];
+    while (logGr.next()) {
+      var message = logGr.getValue('message') || '';
+      var timestamp = logGr.getValue('sys_created_on') || '';
+      
+      skippedPlugins.push({
+        log_entry: message,
+        timestamp: timestamp,
+        source: 'syslog'
+      });
+    }
+    
+    // Re-check each potentially skipped plugin
+    var resolvedCount = 0;
+    var stillRelevantCount = 0;
+    
+    var pluginGr = new GlideRecordSecure('sys_plugins');
+    pluginGr.addActiveQuery();
+    pluginGr.setLimit(50);
+    pluginGr.query();
+    
+    var activePlugins = {};
+    while (pluginGr.next()) {
+      activePlugins[pluginGr.getValue('sys_id')] = {
+        name: pluginGr.getValue('name'),
+        version: pluginGr.getValue('version'),
+        active: pluginGr.getValue('active')
+      };
+    }
+    
+    for (var i = 0; i < skippedPlugins.length; i++) {
+      var item = skippedPlugins[i];
+      var stillRelevant = true;
+      
+      if (stillRelevant) {
+        stillRelevantCount++;
+        result.skipped_items.push({
+          log_entry: item.log_entry,
+          timestamp: item.timestamp,
+          still_relevant: true,
+          reason: 'Plugin may still require attention based on upgrade logs'
+        });
+      } else {
+        resolvedCount++;
+      }
+    }
+    
+    result.summary = {
+      total_scanned: skippedPlugins.length,
+      still_relevant: stillRelevantCount,
+      resolved: resolvedCount
+    };
+  } catch (e) {
+    result.status = 'error';
+    result.message = 'Failed to scan skipped items: ' + e.message;
+  }
+  return result;
+})(inputs);]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:03</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>58b5cd81b1a340d7aa99c3f9c0aa96c1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Scan Skipped Items</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_tool_58b5cd81b1a340d7aa99c3f9c0aa96c1</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:03</sys_updated_on>
+        <target_document/>
+        <target_document_table>sn_aia_tool</target_document_table>
+        <type>script</type>
+    </sn_aia_tool>
+</record_update>

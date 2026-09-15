@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_one_extend_capability">
+    <sys_one_extend_capability action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>The purpose of this skill is to take certain inputs and retrieve an upgrade history record that is relevant to that input. </description>
+        <external>true</external>
+        <metadata>{"currentStage":1.0,"isGuidedStep":true}</metadata>
+        <name>Get Specific Upgrade History Record</name>
+        <offglide_enabled>false</offglide_enabled>
+        <short_description/>
+        <sys_class_name>sys_one_extend_capability</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-08-16 17:30:33</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9e10303087b68710a4bded360cbb3517</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get Specific Upgrade History Record</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sys_one_extend_capability_9e10303087b68710a4bded360cbb3517</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-08-16 17:30:33</sys_updated_on>
+        <type>skill</type>
+    </sys_one_extend_capability>
+    <sys_translated_text action="delete_multiple" query="documentkey=9e10303087b68710a4bded360cbb3517"/>
+</record_update>

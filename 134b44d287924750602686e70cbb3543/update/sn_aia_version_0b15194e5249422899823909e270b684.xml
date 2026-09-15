@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
+    <sn_aia_version action="INSERT_OR_UPDATE">
+        <condition/>
+        <instructions>Step 1: Synchronize Plugin Metadata.
+- Use the Sync Plugins tool to trigger a refresh of the local plugin metadata from the ServiceNow Store/Update Source.
+- If synchronization fails, inform the user: "Plugin synchronization failed. Please check connectivity to the update source." and stop.
+- DO NOT PROCEED to subsequent steps until synchronization confirms success.
+
+Step 2: Query Installed Plugins.
+- Use the Query Installed Plugins tool to retrieve the current list of installed plugins with their names, versions, and activation status.
+- If no plugins are returned, inform the user: "No installed plugins found." and stop.
+
+Step 3: Load Monitored Plugin Catalog.
+- Use the Load Monitored Plugin Catalog tool to retrieve the configured list of monitored plugins (e.g., Now Assist AI Agents, AI Control Tower, Now Assist for ITSM).
+- This defines which plugins are in scope for upgrade monitoring.
+
+Step 4: Check Available Updates.
+- Use the Check Available Updates tool to retrieve target versions and compatibility information from the update source.
+- If the update source is unreachable, inform the user: "Unable to reach the update source. Results may be incomplete." and continue with available data.
+
+Step 5: Identify Outdated Plugins.
+- Use the Identify Outdated Plugins tool, passing the installed plugin data from Step 2 and available updates from Step 4.
+- Apply policy-based rules to flag out-of-date or soon-out-of-date plugins by comparing installed vs. available versions.
+- If no outdated plugins are found, inform the user: "All monitored plugins are up to date." and stop.
+
+Step 6: Compute Priority Scores.
+- Use the Compute Priority Score tool for each outdated plugin identified in Step 5.
+- Factors include: security risk level, dependency chain depth, version age, and service mapping impact.
+- Sort results by priority score (highest first).
+
+Step 7: Present Upgrade Recommendations.
+- Display the prioritized upgrade list to the user in a clear format:
+  - Plugin Name | Current Version | Available Version | Priority Score | Key Risk Factor
+- Use readable labels. Do NOT display sys_ids or raw field names.
+- Group results by priority tier: Critical (score &gt;= 80), High (60-79), Medium (40-59), Low (&lt; 40).
+- Conclude with a summary: total plugins needing upgrades, breakdown by priority tier.</instructions>
+        <state>published</state>
+        <sys_class_name>sn_aia_version</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>0b15194e5249422899823909e270b684</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>V1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_version_0b15194e5249422899823909e270b684</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:05</sys_updated_on>
+        <target_id>2aa4a468b45f4080a2dee90a2b616969</target_id>
+        <target_table>sn_aia_agent</target_table>
+        <version_name>V1</version_name>
+        <version_number>1</version_number>
+    </sn_aia_version>
+</record_update>

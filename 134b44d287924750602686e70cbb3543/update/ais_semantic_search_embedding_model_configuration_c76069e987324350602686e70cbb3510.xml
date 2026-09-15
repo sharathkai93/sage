@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ais_semantic_search_embedding_model_configuration">
+    <ais_semantic_search_embedding_model_configuration action="INSERT_OR_UPDATE">
+        <default>false</default>
+        <document_match_threshold>0</document_match_threshold>
+        <embedding_model display_value="ServiceNow Embedding (E5)">c153d0f2432302104611495d9bb8f2ec</embedding_model>
+        <semantic_search_configuration display_value="retrieveUpgrade">ba6069e987324350602686e70cbb350a</semantic_search_configuration>
+        <sys_class_name>ais_semantic_search_embedding_model_configuration</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-08-19 04:57:07</sys_created_on>
+        <sys_id>c76069e987324350602686e70cbb3510</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>ais_semantic_search_embedding_model_configuration_c76069e987324350602686e70cbb3510</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-08-19 04:57:07</sys_updated_on>
+    </ais_semantic_search_embedding_model_configuration>
+</record_update>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>This tool can be used to scan the skipped records for a selected upgrade and get their count by priority.</description>
+        <input_schema>[{"name":"upgradeID","description":"This is the sys ID of the upgrade record","mandatory":false}]</input_schema>
+        <name>Analyze Skipped Records</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[(function(inputs) {
+    // only string inputs are allowed 
+    // return outputs object where the keys in it are understandable by LLM
+    var skippedSummary = [];
+    var priority = '';
+    var count = 0;
+    var upgradeLogAgg = new GlideAggregate('sys_upgrade_history_log');
+    upgradeLogAgg.addEncodedQuery("upgrade_history=" + inputs.upgradeID.toString() + "^resolution_status=not_reviewed");
+    upgradeLogAgg.addAggregate('COUNT');
+    upgradeLogAgg.groupBy('type_priority');
+    upgradeLogAgg.orderBy('type_priority');
+    upgradeLogAgg.query();
+
+    while (upgradeLogAgg.next()) {
+        priority = upgradeLogAgg.getDisplayValue('type_priority') || '(empty)';
+        count = upgradeLogAgg.getAggregate('COUNT');
+        skippedSummary.push({
+            "priority": priority,
+            "record_count": count
+        });
+    }
+    return JSON.stringify(skippedSummary);
+})(inputs);]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-09-09 07:29:51</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>81cc0a10c393875018362f75e00131ee</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Analyze Skipped Records</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_tool_81cc0a10c393875018362f75e00131ee</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-09-09 07:55:03</sys_updated_on>
+        <target_document/>
+        <target_document_table>sn_aia_tool</target_document_table>
+        <type>script</type>
+    </sn_aia_tool>
+</record_update>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Creates the upgrade execution plan record with selected plugins in priority order. Logs the plan start time, target plugins, and execution strategy for audit purposes.</description>
+        <input_schema>[{"name":"plugins_to_upgrade","description":"JSON string of plugins approved for upgrade in priority order","mandatory":true},{"name":"plan_name","description":"Name for this upgrade plan execution","mandatory":true}]</input_schema>
+        <name>Initiate Upgrade Plan</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[(function(inputs) {
+  var result = { status: 'success', plan_id: '', plan_details: {} };
+  try {
+    var plugins = JSON.parse(inputs.plugins_to_upgrade);
+    var planName = inputs.plan_name || 'Plugin Upgrade Plan';
+    
+    var startTime = new GlideDateTime();
+    
+    result.plan_details = {
+      name: planName,
+      start_time: startTime.getDisplayValue(),
+      total_plugins: plugins.length,
+      execution_order: [],
+      status: 'initiated'
+    };
+    
+    for (var i = 0; i < plugins.length; i++) {
+      result.plan_details.execution_order.push({
+        order: i + 1,
+        plugin_name: plugins[i].name,
+        sys_id: plugins[i].sys_id,
+        target_version: plugins[i].available_version || plugins[i].target_version,
+        status: 'pending'
+      });
+    }
+    
+    // Log plan to system log for audit
+    var logGr = new GlideRecordSecure('syslog');
+    logGr.initialize();
+    logGr.setValue('message', 'Plugin Upgrade Plan initiated: ' + planName + ' with ' + plugins.length + ' plugins');
+    logGr.setValue('source', 'x_snc_ai_upgrade_0');
+    logGr.insert();
+    
+    result.plan_id = 'PLAN-' + startTime.getNumericValue();
+    result.message = 'Upgrade plan created with ' + plugins.length + ' plugins in queue';
+  } catch (e) {
+    result.status = 'error';
+    result.message = 'Failed to create upgrade plan: ' + e.message;
+  }
+  return result;
+})(inputs);]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:03</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>042cde8969e04461a5c1c68ed119a3ad</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Initiate Upgrade Plan</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_tool_042cde8969e04461a5c1c68ed119a3ad</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:03</sys_updated_on>
+        <target_document/>
+        <target_document_table>sn_aia_tool</target_document_table>
+        <type>script</type>
+    </sn_aia_tool>
+</record_update>

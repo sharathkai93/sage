@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Validates dependencies, prerequisites, and detects customization conflicts for selected plugins before upgrade. Returns a pass/fail status per plugin with details on any blockers found.</description>
+        <input_schema>[{"name":"plugin_list","description":"JSON string of plugins to validate with sys_id, name, and target version","mandatory":true}]</input_schema>
+        <name>Run Pre-Upgrade Checks</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[(function(inputs) {
+  var result = { status: 'success', checks: [], summary: { passed: 0, failed: 0, warnings: 0 } };
+  try {
+    var plugins = JSON.parse(inputs.plugin_list);
+    
+    for (var i = 0; i < plugins.length; i++) {
+      var plugin = plugins[i];
+      var check = {
+        sys_id: plugin.sys_id,
+        name: plugin.name,
+        target_version: plugin.available_version || plugin.target_version,
+        status: 'passed',
+        blockers: [],
+        warnings: []
+      };
+      
+      // Check if plugin exists and is accessible
+      var gr = new GlideRecordSecure('sys_plugins');
+      if (!gr.get(plugin.sys_id)) {
+        check.status = 'failed';
+        check.blockers.push('Plugin record not found or inaccessible');
+        result.summary.failed++;
+        result.checks.push(check);
+        continue;
+      }
+      
+      // Check plugin active status
+      var isActive = gr.getValue('active');
+      if (isActive !== 'active') {
+        check.warnings.push('Plugin is currently inactive - will be activated during upgrade');
+      }
+      
+      // Check for customization conflicts
+      var custGr = new GlideRecordSecure('sys_update_xml');
+      custGr.addQuery('name', 'STARTSWITH', 'sys_plugins_' + plugin.sys_id);
+      custGr.setLimit(5);
+      custGr.query();
+      if (custGr.getRowCount() > 0) {
+        check.warnings.push('Customizations detected that may be affected by upgrade');
+        result.summary.warnings++;
+      }
+      
+      // Validate no active update sets are modifying this plugin
+      var usGr = new GlideRecordSecure('sys_update_set');
+      usGr.addQuery('state', 'in progress');
+      usGr.setLimit(1);
+      usGr.query();
+      if (usGr.next()) {
+        check.warnings.push('Active update set in progress - consider completing before upgrade');
+      }
+      
+      if (check.blockers.length > 0) {
+        check.status = 'failed';
+        result.summary.failed++;
+      } else {
+        result.summary.passed++;
+      }
+      
+      if (check.warnings.length > 0 && check.status === 'passed') {
+        check.status = 'passed_with_warnings';
+      }
+      
+      result.checks.push(check);
+    }
+  } catch (e) {
+    result.status = 'error';
+    result.message = 'Pre-upgrade check failed: ' + e.message;
+  }
+  return result;
+})(inputs);]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:03</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>1deb21f231784f1e94699c8ba0fc2faa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Run Pre-Upgrade Checks</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_tool_1deb21f231784f1e94699c8ba0fc2faa</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:03</sys_updated_on>
+        <target_document/>
+        <target_document_table>sn_aia_tool</target_document_table>
+        <type>script</type>
+    </sn_aia_tool>
+</record_update>

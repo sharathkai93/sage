@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
+    <sn_aia_version action="INSERT_OR_UPDATE">
+        <condition/>
+        <instructions>Step 1: Scan Skipped Items.
+- Use the Scan Skipped Items tool to read the skipped upgrade records from the last run.
+- Re-check if these plugins are still out-of-date or if they have been upgraded through other means.
+- If no skipped items are found, inform the user: "No skipped items from the previous upgrade run." and stop.
+- If all skipped items have since been resolved, inform the user: "All previously skipped items have been resolved." and stop.
+
+Step 2: Suggest Actions.
+- Use the Suggest Actions tool to generate actionable recommendations for each still-relevant skipped item.
+- Categories of recommendations include: resolve prerequisites, clear conflicts, schedule maintenance window, and testing requirements.
+- Present recommendations to the user in a clear format:
+  - Plugin Name | Skip Reason | Recommended Action | Estimated Effort
+- Use readable labels. Do NOT display sys_ids or raw field names.
+- Group by recommended action type for clarity.
+- Ask the user: "Would you like to proceed with any of these recommendations, or schedule them for the next upgrade window?"</instructions>
+        <state>published</state>
+        <sys_class_name>sn_aia_version</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:06</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>c83db8be8f2444d1abec39d01cd2341d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>V1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_version_c83db8be8f2444d1abec39d01cd2341d</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:06</sys_updated_on>
+        <target_id>65eb7bdc262e41b69185bd225c906b85</target_id>
+        <target_table>sn_aia_agent</target_table>
+        <version_name>V1</version_name>
+        <version_number>1</version_number>
+    </sn_aia_version>
+</record_update>

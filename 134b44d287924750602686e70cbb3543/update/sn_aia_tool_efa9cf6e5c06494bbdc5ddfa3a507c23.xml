@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Calculates a priority score (0-100) for each outdated plugin based on security risk, dependency chain depth, version age, and service mapping impact. Higher scores indicate more urgent upgrades.</description>
+        <input_schema>[{"name":"outdated_plugins","description":"JSON string of outdated plugin data from the identification step","mandatory":true}]</input_schema>
+        <name>Compute Priority Score</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[(function(inputs) {
+  var result = { status: 'success', scored_plugins: [] };
+  try {
+    var plugins = JSON.parse(inputs.outdated_plugins);
+    
+    for (var i = 0; i < plugins.length; i++) {
+      var plugin = plugins[i];
+      var score = 0;
+      var factors = [];
+      
+      // Security risk factor (0-30 points)
+      if (plugin.severity === 'critical') {
+        score += 30;
+        factors.push('Critical security risk');
+      } else {
+        score += 15;
+        factors.push('Moderate security risk');
+      }
+      
+      // Dependency chain factor (0-25 points)
+      var gr = new GlideRecordSecure('sys_plugins');
+      gr.addQuery('active', 'true');
+      gr.query();
+      var depScore = Math.min(25, gr.getRowCount() > 50 ? 20 : 10);
+      score += depScore;
+      factors.push('Dependency depth: ' + depScore + '/25');
+      
+      // Version age factor (0-25 points)
+      var versionParts = (plugin.current_version || '0.0.0').split('.');
+      var availParts = (plugin.available_version || '0.0.0').split('.');
+      var majorGap = (parseInt(availParts[0], 10) || 0) - (parseInt(versionParts[0], 10) || 0);
+      var minorGap = (parseInt(availParts[1], 10) || 0) - (parseInt(versionParts[1], 10) || 0);
+      var ageScore = Math.min(25, (majorGap * 15) + (minorGap * 5));
+      score += ageScore;
+      factors.push('Version age gap: ' + ageScore + '/25');
+      
+      // Service mapping impact (0-20 points)
+      var impactScore = plugin.severity === 'critical' ? 20 : 10;
+      score += impactScore;
+      factors.push('Service impact: ' + impactScore + '/20');
+      
+      score = Math.min(100, score);
+      
+      result.scored_plugins.push({
+        sys_id: plugin.sys_id,
+        name: plugin.name,
+        current_version: plugin.current_version,
+        available_version: plugin.available_version,
+        priority_score: score,
+        priority_tier: score >= 80 ? 'Critical' : score >= 60 ? 'High' : score >= 40 ? 'Medium' : 'Low',
+        key_risk_factor: factors[0],
+        all_factors: factors
+      });
+    }
+    
+    result.scored_plugins.sort(function(a, b) { return b.priority_score - a.priority_score; });
+  } catch (e) {
+    result.status = 'error';
+    result.message = 'Failed to compute priority scores: ' + e.message;
+  }
+  return result;
+})(inputs);]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>efa9cf6e5c06494bbdc5ddfa3a507c23</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Compute Priority Score</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_tool_efa9cf6e5c06494bbdc5ddfa3a507c23</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:05</sys_updated_on>
+        <target_document/>
+        <target_document_table>sn_aia_tool</target_document_table>
+        <type>script</type>
+    </sn_aia_tool>
+</record_update>

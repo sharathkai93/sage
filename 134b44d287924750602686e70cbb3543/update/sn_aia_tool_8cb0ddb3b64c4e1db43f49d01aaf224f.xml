@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Logs failures, skipped upgrades, and detailed error information for audit and troubleshooting purposes. Creates records with failure context for future reference.</description>
+        <input_schema>[{"name":"failure_data","description":"JSON string of failure details including plugin name, error message, and stage","mandatory":true},{"name":"plan_id","description":"The upgrade plan identifier for correlation","mandatory":true}]</input_schema>
+        <name>Capture Failures</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[(function(inputs) {
+  var result = { status: 'success', captured_failures: [] };
+  try {
+    var failures = JSON.parse(inputs.failure_data);
+    var planId = inputs.plan_id;
+    
+    for (var i = 0; i < failures.length; i++) {
+      var failure = failures[i];
+      
+      var logGr = new GlideRecordSecure('syslog');
+      logGr.initialize();
+      logGr.setValue('message', 'Plugin Upgrade Failure [' + planId + ']: ' + 
+        (failure.plugin_name || 'Unknown') + ' - ' + (failure.error || failure.message || 'No details'));
+      logGr.setValue('source', 'x_snc_ai_upgrade_0');
+      logGr.setValue('level', '2');
+      logGr.insert();
+      
+      result.captured_failures.push({
+        plugin_name: failure.plugin_name || 'Unknown',
+        failure_stage: failure.stage || 'unknown',
+        error_message: failure.error || failure.message || 'No error details provided',
+        plan_id: planId,
+        timestamp: new GlideDateTime().getDisplayValue(),
+        logged: true
+      });
+    }
+    
+    result.message = result.captured_failures.length + ' failure(s) captured and logged';
+  } catch (e) {
+    result.status = 'error';
+    result.message = 'Failed to capture failures: ' + e.message;
+  }
+  return result;
+})(inputs);]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:04</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>8cb0ddb3b64c4e1db43f49d01aaf224f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Capture Failures</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_tool_8cb0ddb3b64c4e1db43f49d01aaf224f</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:04</sys_updated_on>
+        <target_document/>
+        <target_document_table>sn_aia_tool</target_document_table>
+        <type>script</type>
+    </sn_aia_tool>
+</record_update>

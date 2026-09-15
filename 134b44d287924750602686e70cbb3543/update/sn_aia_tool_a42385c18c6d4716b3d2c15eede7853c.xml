@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Generates a comprehensive completion summary with updated versions, pass/fail status per plugin, overall statistics, and recommended follow-up actions.</description>
+        <input_schema>[{"name":"upgrade_results","description":"JSON string of all upgrade results including successes, failures, and health check outcomes","mandatory":true},{"name":"plan_id","description":"The upgrade plan identifier","mandatory":true}]</input_schema>
+        <name>Summarize Results</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[(function(inputs) {
+  var result = { status: 'success', summary: {} };
+  try {
+    var results = JSON.parse(inputs.upgrade_results);
+    var planId = inputs.plan_id;
+    
+    var summary = {
+      plan_id: planId,
+      completion_time: new GlideDateTime().getDisplayValue(),
+      total_attempted: 0,
+      successful: 0,
+      failed: 0,
+      skipped: 0,
+      plugins: [],
+      recommendations: []
+    };
+    
+    for (var i = 0; i < results.length; i++) {
+      var r = results[i];
+      summary.total_attempted++;
+      
+      var pluginSummary = {
+        name: r.plugin_name || r.name,
+        previous_version: r.previous_version || 'N/A',
+        new_version: r.new_version || r.target_version || 'N/A',
+        status: r.status || 'unknown'
+      };
+      
+      if (r.status === 'completed' || r.status === 'success') {
+        summary.successful++;
+        pluginSummary.status = 'Success';
+      } else if (r.status === 'failed' || r.status === 'error') {
+        summary.failed++;
+        pluginSummary.status = 'Failed';
+        pluginSummary.failure_reason = r.error || r.message || 'See failure logs';
+      } else if (r.status === 'skipped') {
+        summary.skipped++;
+        pluginSummary.status = 'Skipped';
+        pluginSummary.skip_reason = r.reason || 'Pre-check failure';
+      }
+      
+      summary.plugins.push(pluginSummary);
+    }
+    
+    // Generate recommendations
+    if (summary.failed > 0) {
+      summary.recommendations.push('Review failed plugins and resolve blockers before retrying');
+      summary.recommendations.push('Check system logs for detailed error information');
+    }
+    if (summary.skipped > 0) {
+      summary.recommendations.push('Use the Skipped Items Review Agent to analyze skipped plugins');
+    }
+    if (summary.successful > 0) {
+      summary.recommendations.push('Monitor upgraded plugins for 24-48 hours for stability');
+      summary.recommendations.push('Run integration tests to verify dependent functionality');
+    }
+    
+    summary.success_rate = summary.total_attempted > 0 ? 
+      Math.round((summary.successful / summary.total_attempted) * 100) + '%' : '0%';
+    
+    result.summary = summary;
+  } catch (e) {
+    result.status = 'error';
+    result.message = 'Failed to generate summary: ' + e.message;
+  }
+  return result;
+})(inputs);]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:04</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>a42385c18c6d4716b3d2c15eede7853c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Summarize Results</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_tool_a42385c18c6d4716b3d2c15eede7853c</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:04</sys_updated_on>
+        <target_document/>
+        <target_document_table>sn_aia_tool</target_document_table>
+        <type>script</type>
+    </sn_aia_tool>
+</record_update>

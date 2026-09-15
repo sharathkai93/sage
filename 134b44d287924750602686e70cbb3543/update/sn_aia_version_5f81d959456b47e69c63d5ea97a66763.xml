@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
+    <sn_aia_version action="INSERT_OR_UPDATE">
+        <condition/>
+        <instructions>Step 1: Run Pre-Upgrade Checks.
+- Use the Run Pre-Upgrade Checks tool to validate dependencies, prerequisites, and detect customization conflicts for the selected plugins.
+- Pass the prioritized plugin list from the Plugin Discovery Agent.
+- If any critical blockers are found, DO NOT PROCEED to upgrade execution. Go to Step 2 for remediation.
+- If all checks pass, skip Step 2 and proceed to Step 3.
+
+Step 2: Recommend Remediation.
+- Use the Recommend Remediation tool to generate remediation steps for any failed pre-upgrade checks.
+- Present remediation steps to the user in a clear numbered list.
+- Ask the user: "Would you like to proceed with upgrades for plugins that passed checks, or resolve blockers first?"
+- If the user chooses to resolve blockers, inform them of the required actions and stop.
+- If the user chooses to proceed with passing plugins, continue to Step 3 with only the passing plugins.
+
+Step 3: Initiate Upgrade Plan.
+- Use the Initiate Upgrade Plan tool to create the upgrade execution plan record with the selected plugins in priority order.
+- Confirm the plan details with the user before proceeding.
+- DO NOT PROCEED without user confirmation.
+
+Step 4: Perform Plugin Upgrade.
+- Use the Perform Plugin Upgrade tool to orchestrate the download, install, and upgrade packages in the selected priority order.
+- Process one plugin at a time. Report progress after each plugin completes.
+- If any plugin upgrade fails, capture the failure (Step 6) and continue with remaining plugins.
+
+Step 5: Run Post-Upgrade Health Checks.
+- Use the Run Post-Upgrade Health Checks tool to validate successful installation for each upgraded plugin.
+- Check activation status, version confirmation, and basic functionality tests.
+- Report results per plugin: PASS or FAIL with details.
+
+Step 6: Capture Failures (if any).
+- Use the Capture Failures tool to log any failures, skipped upgrades, and detailed error information.
+- Only invoke this step if any plugin failed during Steps 4 or 5.
+
+Step 7: Summarize Results.
+- Use the Summarize Results tool to generate a comprehensive completion summary.
+- Present the summary to the user in a clear format:
+  - Total plugins attempted | Successful | Failed | Skipped
+  - Per-plugin breakdown: Plugin Name | Previous Version | New Version | Status
+- Use readable labels. Do NOT display sys_ids or raw field names.
+- If any failures occurred, include the failure reason and recommended next steps.
+- NEVER mark an upgrade as successful unless the post-upgrade health check passed.</instructions>
+        <state>published</state>
+        <sys_class_name>sn_aia_version</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>5f81d959456b47e69c63d5ea97a66763</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>V1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_version_5f81d959456b47e69c63d5ea97a66763</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:05</sys_updated_on>
+        <target_id>808b4dc386fe4125b9994da650b9fad8</target_id>
+        <target_table>sn_aia_agent</target_table>
+        <version_name>V1</version_name>
+        <version_number>1</version_number>
+    </sn_aia_version>
+</record_update>

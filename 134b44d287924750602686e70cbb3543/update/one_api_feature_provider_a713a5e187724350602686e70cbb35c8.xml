@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="one_api_feature_provider">
+    <one_api_feature_provider action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <feature display_value="6da0b0f087b68710a4bded360cbb3522">e313a5e187724350602686e70cbb3592</feature>
+        <feature_service display_value="OneExtendGenericProvider">5233278353111110c271ddeeff7b129b</feature_service>
+        <feature_service_factory><![CDATA[(function() { return new global.OneExtendGenericProvider(); })()]]></feature_service_factory>
+        <name>Retrieve Upgrade Details provider</name>
+        <short_description>Auto Generated </short_description>
+        <sys_class_name>one_api_feature_provider</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-08-19 05:08:54</sys_created_on>
+        <sys_id>a713a5e187724350602686e70cbb35c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Retrieve Upgrade Details provider</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>one_api_feature_provider_a713a5e187724350602686e70cbb35c8</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-08-19 05:08:54</sys_updated_on>
+        <type>FDIH Subflow</type>
+        <type_document display_value="Amazon Bedrock Chat Completions">52f46aeb9f2c5210da502fca9a0a1cda</type_document>
+    </one_api_feature_provider>
+</record_update>

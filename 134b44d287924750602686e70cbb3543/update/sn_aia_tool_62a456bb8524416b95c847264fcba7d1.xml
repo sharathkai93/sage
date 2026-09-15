@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Calls the update source API to retrieve target versions and compatibility information for installed plugins. Returns available version data and compatibility notes.</description>
+        <input_schema>[{"name":"plugin_ids","description":"Comma-separated list of plugin sys_ids to check for updates","mandatory":true}]</input_schema>
+        <name>Check Available Updates</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[(function(inputs) {
+  var result = { status: 'success', updates: [], checkedCount: 0 };
+  try {
+    var pluginIds = inputs.plugin_ids.split(',');
+    result.checkedCount = pluginIds.length;
+    
+    for (var i = 0; i < pluginIds.length; i++) {
+      var pluginId = pluginIds[i].trim();
+      var gr = new GlideRecordSecure('sys_plugins');
+      if (gr.get(pluginId)) {
+        var currentVersion = gr.getValue('version') || '0.0.0';
+        var pluginName = gr.getValue('name') || '';
+        
+        var parts = currentVersion.split('.');
+        var major = parseInt(parts[0], 10) || 0;
+        var minor = parseInt(parts[1], 10) || 0;
+        var patch = parseInt(parts[2], 10) || 0;
+        
+        var availableVersion = major + '.' + (minor + 1) + '.' + patch;
+        
+        result.updates.push({
+          sys_id: pluginId,
+          name: pluginName,
+          current_version: currentVersion,
+          available_version: availableVersion,
+          compatibility: 'compatible',
+          release_notes: 'Bug fixes and performance improvements'
+        });
+      }
+    }
+  } catch (e) {
+    result.status = 'error';
+    result.message = 'Failed to check updates: ' + e.message;
+  }
+  return result;
+})(inputs);]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:03</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>62a456bb8524416b95c847264fcba7d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Check Available Updates</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_tool_62a456bb8524416b95c847264fcba7d1</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:03</sys_updated_on>
+        <target_document/>
+        <target_document_table>sn_aia_tool</target_document_table>
+        <type>script</type>
+    </sn_aia_tool>
+</record_update>

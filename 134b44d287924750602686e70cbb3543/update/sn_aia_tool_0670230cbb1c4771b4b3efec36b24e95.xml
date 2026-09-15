@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Generates action recommendations for skipped items including resolving prerequisites, clearing conflicts, scheduling maintenance windows, and testing requirements. Provides estimated effort and priority for each recommendation.</description>
+        <input_schema>[{"name":"skipped_items","description":"JSON string of still-relevant skipped items with skip reasons and current state","mandatory":true}]</input_schema>
+        <name>Suggest Actions</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[(function(inputs) {
+  var result = { status: 'success', recommendations: [] };
+  try {
+    var items = JSON.parse(inputs.skipped_items);
+    
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      var recommendation = {
+        plugin_name: item.plugin_name || item.name || 'Unknown Plugin',
+        skip_reason: item.reason || item.skip_reason || 'Unknown',
+        actions: [],
+        estimated_effort: 'medium',
+        priority: 'normal',
+        action_type: 'general'
+      };
+      
+      var reason = (item.reason || item.skip_reason || '').toLowerCase();
+      
+      if (reason.indexOf('prerequisite') >= 0 || reason.indexOf('dependency') >= 0) {
+        recommendation.action_type = 'resolve_prerequisites';
+        recommendation.actions.push('Identify and install missing prerequisite plugins');
+        recommendation.actions.push('Verify dependency chain is complete and versions are compatible');
+        recommendation.actions.push('Re-run pre-upgrade checks after resolving dependencies');
+        recommendation.estimated_effort = 'high';
+        recommendation.priority = 'high';
+      } else if (reason.indexOf('conflict') >= 0 || reason.indexOf('customization') >= 0) {
+        recommendation.action_type = 'clear_conflicts';
+        recommendation.actions.push('Review customizations that conflict with the upgrade');
+        recommendation.actions.push('Back up affected customizations');
+        recommendation.actions.push('Consider refactoring customizations to use extension points');
+        recommendation.actions.push('Test in a sub-production instance first');
+        recommendation.estimated_effort = 'high';
+        recommendation.priority = 'medium';
+      } else if (reason.indexOf('window') >= 0 || reason.indexOf('schedule') >= 0) {
+        recommendation.action_type = 'schedule_window';
+        recommendation.actions.push('Coordinate with stakeholders for a maintenance window');
+        recommendation.actions.push('Plan for 30-60 minutes of potential downtime');
+        recommendation.actions.push('Prepare rollback plan in case of issues');
+        recommendation.estimated_effort = 'low';
+        recommendation.priority = 'normal';
+      } else {
+        recommendation.action_type = 'testing';
+        recommendation.actions.push('Review the skip reason and determine if conditions have changed');
+        recommendation.actions.push('Test the upgrade in a non-production instance');
+        recommendation.actions.push('Validate no new blockers have been introduced');
+        recommendation.actions.push('Schedule for the next available upgrade window');
+        recommendation.estimated_effort = 'medium';
+        recommendation.priority = 'normal';
+      }
+      
+      result.recommendations.push(recommendation);
+    }
+    
+    // Sort by priority
+    var priorityOrder = { high: 0, medium: 1, normal: 2, low: 3 };
+    result.recommendations.sort(function(a, b) {
+      return (priorityOrder[a.priority] || 3) - (priorityOrder[b.priority] || 3);
+    });
+    
+  } catch (e) {
+    result.status = 'error';
+    result.message = 'Failed to generate action suggestions: ' + e.message;
+  }
+  return result;
+})(inputs);]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:03</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>0670230cbb1c4771b4b3efec36b24e95</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Suggest Actions</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_tool_0670230cbb1c4771b4b3efec36b24e95</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:03</sys_updated_on>
+        <target_document/>
+        <target_document_table>sn_aia_tool</target_document_table>
+        <type>script</type>
+    </sn_aia_tool>
+</record_update>

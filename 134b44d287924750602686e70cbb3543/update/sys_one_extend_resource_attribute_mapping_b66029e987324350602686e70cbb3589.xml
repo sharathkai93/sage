@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_one_extend_resource_attribute_mapping">
+    <sys_one_extend_resource_attribute_mapping action="INSERT_OR_UPDATE">
+        <attribute_value_script><![CDATA[(function execute(currentInputs, context) {
+    /* @param {Object} currentInputs - Inputs provided for the current step.*/
+    /* @param {Object} context - Execution context, which may include:*/
+    /*						   - Previous tool outputs/inputs (e.g., context['ToolName.attributeName'] or context.getValue('ToolName.attributeName')).*/
+    /*						   - Additional context information (e.g., context.getAllValues()).*/
+    /* @returns {Object} - The computed value for the attribute.*/
+    return '';
+})(currentInputs, context);]]></attribute_value_script>
+        <attribute_value_template>Hybrid</attribute_value_template>
+        <attribute_value_type>template</attribute_value_type>
+        <from_resource_mapping/>
+        <resource_attribute_name display_value="search_type">7634ed4a77e81210e9c41345ba5a99e5</resource_attribute_name>
+        <resource_mapping display_value="retrieveUpgrade">1660a5e987324350602686e70cbb35e9</resource_mapping>
+        <sys_class_name>sys_one_extend_resource_attribute_mapping</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-08-19 04:57:06</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>b66029e987324350602686e70cbb3589</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sys_one_extend_resource_attribute_mapping_b66029e987324350602686e70cbb3589</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-08-19 04:57:06</sys_updated_on>
+        <truncate>false</truncate>
+        <type>input</type>
+    </sys_one_extend_resource_attribute_mapping>
+</record_update>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_generative_ai_config">
+    <sys_generative_ai_config action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <additional_configurations>{"reasoning_effort":"none","skill_config_id":"aba074f087b68710a4bded360cbb358a"}</additional_configurations>
+        <ai_suggested>false</ai_suggested>
+        <definition>6da0b0f087b68710a4bded360cbb3522</definition>
+        <definition_table>sys_one_extend_capability_definition</definition_table>
+        <documentation/>
+        <max_tokens>500</max_tokens>
+        <min_word_count>-1</min_word_count>
+        <model>claude-haiku-4-5</model>
+        <name>Incident Summarization</name>
+        <parent/>
+        <prompt>#ROLE:
+You are an upgrade history retrieval expert. Your primary area of expertise is to read an input query that contains the name of a plugin or an instance version upgrade, extract the name of the upgrade, leverage a RAG tool to search for any upgrade history records where the from_version or to_version is related closest to the specified upgrade, and present details fo that record to the user.
+
+#INPUTS:
+Input Query:  {{upgradequery}} 
+Upgrade History Search Results: {{retrieveUpgrade.rag_results}} 
+
+#INSTRUCTIONS:
+1. Read the input query and understand the specified upgrade and intent of the user. You must attempt to extract the naame of the specified upgrade in this query.
+
+2. IF you were unable to extract a plugin or instance upgrade name in the query OR if it has NOT been specified by the user, simply return "No upgrades specified" and terminate the execution
+
+3. HOWEVER, IF you were able to successfully extract a plugin or instance upgrade name, search for that in the results specified in the Upgrade History Search Results. You MUST specifically look at the from_version and to_version values to find a match that is the closest match to the upgrade name. 
+
+4. IF you were able to find a match, present the details retrieved for that upgrade record to the user in a clean format.
+
+5. IF you were unable to find a match, simply return "No relevant upgrades found" and terminate the execution
+</prompt>
+        <prompt_template_role>user</prompt_template_role>
+        <provider_company/>
+        <request_tokens>199250</request_tokens>
+        <show_in_prompt_library>false</show_in_prompt_library>
+        <state>draft</state>
+        <structured_output_enabled>false</structured_output_enabled>
+        <structured_output_schema/>
+        <sys_class_name>sys_generative_ai_config</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-08-16 17:32:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b9a0b0f087b68710a4bded360cbb3583</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>6da0b0f087b68710a4bded360cbb3522</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sys_generative_ai_config_b9a0b0f087b68710a4bded360cbb3583</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-08-19 05:24:12</sys_updated_on>
+        <temperature>0.2</temperature>
+        <thinking_tokens>0</thinking_tokens>
+        <version>1</version>
+    </sys_generative_ai_config>
+</record_update>

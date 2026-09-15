@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent_tool_m2m">
+    <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <agent display_value="Plugin Upgrade Agent">808b4dc386fe4125b9994da650b9fad8</agent>
+        <description>Creates the upgrade execution plan record with selected plugins in priority order. Logs the plan start time, target plugins, and execution strategy for audit purposes.</description>
+        <display_mode/>
+        <display_output>false</display_output>
+        <document_status/>
+        <entity/>
+        <entity_id/>
+        <execution_mode>copilot</execution_mode>
+        <inputs>[{"name":"plugins_to_upgrade","value":"","description":"JSON string of plugins approved for upgrade in priority order","mandatory":true},{"name":"plan_name","value":"","description":"Name for this upgrade plan execution","mandatory":true}]</inputs>
+        <max_auto_executions>10</max_auto_executions>
+        <name>Initiate Upgrade Plan</name>
+        <output_transformation_strategy/>
+        <post_message>Upgrade plan created.</post_message>
+        <post_processing_script/>
+        <pre_message>Creating upgrade execution plan...</pre_message>
+        <pre_run>false</pre_run>
+        <requires_text_refined_message>false</requires_text_refined_message>
+        <requires_widget_transformation>false</requires_widget_transformation>
+        <should_display_refined_message>false</should_display_refined_message>
+        <sys_class_name>sn_aia_agent_tool_m2m</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:01</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>826fe8714f2547b094e6fddac7bacd02</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Initiate Upgrade Plan</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_agent_tool_m2m_826fe8714f2547b094e6fddac7bacd02</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:01</sys_updated_on>
+        <timeout/>
+        <tool display_value="Initiate Upgrade Plan">042cde8969e04461a5c1c68ed119a3ad</tool>
+        <tool_attributes>{}</tool_attributes>
+        <transformation_instructions/>
+        <widgets/>
+    </sn_aia_agent_tool_m2m>
+</record_update>

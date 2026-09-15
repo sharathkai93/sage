@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent">
+    <sn_aia_agent action="INSERT_OR_UPDATE">
+        <advanced_mode>false</advanced_mode>
+        <agent_type>internal</agent_type>
+        <applicability_script/>
+        <channel>nap_and_va</channel>
+        <compiled_handbook/>
+        <condition/>
+        <context_processing_script><![CDATA[/*
+ * Available Variables:
+ * - task: The task provided to agent to solve either by orchestrator or user(incase of only agent execution i.e agent is invoked as seperate entity instead from a workflow).
+ * - user_utterance: The user utterance provided. and task = user_utterance in case of individual agent execution.
+ * - agent_id: The agent id.
+ * - context: An object that carries additional contextual information for the agent.
+ * It always includes a "pageContext" and may include a "triggerContext",
+ * depending on how and from where the agent is invoked.
+ *
+ * Behavior by invocation type:
+ * ---------------------------------
+ * - When invoked via the startAiAgentConversation API:
+ * If a "contextMemory" parameter is provided in the API request,
+ * it will be available here as the "triggerContext".
+ * The "pageContext" is always present in this call, regardless
+ * of whether the agent is executed individually or as part of a use case.
+ * Example:
+ * {
+ * pageContext: { ... },
+ * triggerContext: { ... } // Derived from contextMemory (if passed)
+ * }
+ *
+ * - When invoked as part of a use case or workflow:
+ * The "pageContext" and "triggerContext" objects available here
+ * may have been *modified* by the use case's context processing script.
+ * This means the use case may alter, extend, or overwrite values
+ * from the original "pageContext" or "triggerContext"
+ * before the context reaches the agent.
+ * If the use case was originally triggered via the API,
+ * the initial "triggerContext" is still derived from the
+ * "contextMemory" parameter, but its contents may have been updated
+ * by the use case logic.
+ *
+ * - When executed directly (standalone agent execution):
+ * The "pageContext" will always be present (default or empty),
+ * and the "triggerContext" will only be populated if explicitly
+ * passed through the API call.
+ * Return an modified context like: { pageContext : {},triggerContext:{} }
+ */
+(function(task, user_utterance, agent_id, context) {
+	return {
+		pageContext : context?.pageContext,
+		triggerContext : context?.triggerContext
+	};
+})(task,user_utterance, agent_id, context);]]></context_processing_script>
+        <description>Syncs, inventories, and analyzes the plugin landscape to produce a prioritized upgrade list. Identifies outdated plugins by comparing installed versions against available updates and computes priority scores based on security risk, dependency chains, age, and service mapping impact.</description>
+        <extends/>
+        <extension_configuration/>
+        <external_agent_configuration/>
+        <inputs/>
+        <instructions>Step 1: Synchronize Plugin Metadata.
+- Use the Sync Plugins tool to trigger a refresh of the local plugin metadata from the ServiceNow Store/Update Source.
+- If synchronization fails, inform the user: "Plugin synchronization failed. Please check connectivity to the update source." and stop.
+- DO NOT PROCEED to subsequent steps until synchronization confirms success.
+
+Step 2: Query Installed Plugins.
+- Use the Query Installed Plugins tool to retrieve the current list of installed plugins with their names, versions, and activation status.
+- If no plugins are returned, inform the user: "No installed plugins found." and stop.
+
+Step 3: Load Monitored Plugin Catalog.
+- Use the Load Monitored Plugin Catalog tool to retrieve the configured list of monitored plugins (e.g., Now Assist AI Agents, AI Control Tower, Now Assist for ITSM).
+- This defines which plugins are in scope for upgrade monitoring.
+
+Step 4: Check Available Updates.
+- Use the Check Available Updates tool to retrieve target versions and compatibility information from the update source.
+- If the update source is unreachable, inform the user: "Unable to reach the update source. Results may be incomplete." and continue with available data.
+
+Step 5: Identify Outdated Plugins.
+- Use the Identify Outdated Plugins tool, passing the installed plugin data from Step 2 and available updates from Step 4.
+- Apply policy-based rules to flag out-of-date or soon-out-of-date plugins by comparing installed vs. available versions.
+- If no outdated plugins are found, inform the user: "All monitored plugins are up to date." and stop.
+
+Step 6: Compute Priority Scores.
+- Use the Compute Priority Score tool for each outdated plugin identified in Step 5.
+- Factors include: security risk level, dependency chain depth, version age, and service mapping impact.
+- Sort results by priority score (highest first).
+
+Step 7: Present Upgrade Recommendations.
+- Display the prioritized upgrade list to the user in a clear format:
+  - Plugin Name | Current Version | Available Version | Priority Score | Key Risk Factor
+- Use readable labels. Do NOT display sys_ids or raw field names.
+- Group results by priority tier: Critical (score &gt;= 80), High (60-79), Medium (40-59), Low (&lt; 40).
+- Conclude with a summary: total plugins needing upgrades, breakdown by priority tier.</instructions>
+        <internal_name>global.x_snc_ai_upgrade_0.Plugin Discovery Agent</internal_name>
+        <name>Plugin Discovery Agent</name>
+        <outputs/>
+        <parent/>
+        <post_processing_message>Plugin discovery and analysis complete.</post_processing_message>
+        <processing_message>Analyzing the plugin landscape...</processing_message>
+        <proficiency/>
+        <record_type>custom</record_type>
+        <required_translations/>
+        <research>false</research>
+        <role>You are a ServiceNow plugin lifecycle specialist responsible for synchronizing plugin metadata, querying installed plugins, identifying outdated components, and computing upgrade priority scores to guide the Plugin Upgrade Agent.</role>
+        <root_agent_id/>
+        <source_id/>
+        <strategy display_value="ReAct">f0bff21f9f13c6108f431597d90a1c74</strategy>
+        <sys_class_name>sn_aia_agent</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:00</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>2aa4a468b45f4080a2dee90a2b616969</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Plugin Discovery Agent</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_agent_2aa4a468b45f4080a2dee90a2b616969</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:00</sys_updated_on>
+    </sn_aia_agent>
+</record_update>

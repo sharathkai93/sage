@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_agent_access_role_configuration">
+    <sys_agent_access_role_configuration action="INSERT_OR_UPDATE">
+        <action>limit_to_roles</action>
+        <agent>808b4dc386fe4125b9994da650b9fad8</agent>
+        <agent_table>sn_aia_agent</agent_table>
+        <allow_all_session_roles>false</allow_all_session_roles>
+        <description/>
+        <name>808b4dc386fe4125b9994da650b9fad8</name>
+        <role_list/>
+        <sys_class_name>sys_agent_access_role_configuration</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:06</sys_created_on>
+        <sys_id>61fea54b7ea445daa3571960d624db5a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>808b4dc386fe4125b9994da650b9fad8</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sys_agent_access_role_configuration_61fea54b7ea445daa3571960d624db5a</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:06</sys_updated_on>
+    </sys_agent_access_role_configuration>
+</record_update>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent_tool_m2m">
+    <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <agent display_value="Post Upgrade Analysis Agent">a2a916c5876ecb10a4bded360cbb350e</agent>
+        <description>This tool can be used to retrieve a specific upgrade history record based on the name specified by the user in the query which is taken as the input "upgradeName"</description>
+        <display_mode>inline</display_mode>
+        <display_output>false</display_output>
+        <document_status/>
+        <entity>sn_aia_agent</entity>
+        <entity_id>a2a916c5876ecb10a4bded360cbb350e</entity_id>
+        <execution_mode>autopilot</execution_mode>
+        <inputs>[{"name":"upgradeName","value":"","description":"This is the name of the upgraded plugin to be retrieved from the Upgrade History record.","mandatory":true}]</inputs>
+        <max_auto_executions>10</max_auto_executions>
+        <name>Retrieve Upgrade History Record</name>
+        <output_transformation_strategy>none</output_transformation_strategy>
+        <post_message>Upgrade history record retrieved.</post_message>
+        <post_processing_script/>
+        <pre_message>Retrieving the matching upgrade history record..</pre_message>
+        <pre_run>false</pre_run>
+        <requires_text_refined_message>false</requires_text_refined_message>
+        <requires_widget_transformation>true</requires_widget_transformation>
+        <should_display_refined_message>false</should_display_refined_message>
+        <sys_class_name>sn_aia_agent_tool_m2m</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-09-09 07:43:45</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>e0ff0e1cc393875018362f75e00131e0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Retrieve Upgrade History Record</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_agent_tool_m2m_e0ff0e1cc393875018362f75e00131e0</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-09-11 09:44:47</sys_updated_on>
+        <timeout/>
+        <tool display_value="Retrieve Upgrade History Record">a8ff0e1cc393875018362f75e00131da</tool>
+        <tool_attributes>{}</tool_attributes>
+        <transformation_instructions/>
+        <widgets>db0e858eff62b210f465ffffffffff2c</widgets>
+    </sn_aia_agent_tool_m2m>
+</record_update>

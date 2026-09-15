@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_agent_access_role_mapping">
+    <sys_agent_access_role_mapping action="INSERT_OR_UPDATE">
+        <agent_access_config display_value="702fe251275a4298b50e6f98ff702628">ab055eceb33646458bd0dc175df7bc35</agent_access_config>
+        <role display_value="admin" name="admin">2831a114c611228501d4ea6c309d626d</role>
+        <sys_class_name>sys_agent_access_role_mapping</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:06</sys_created_on>
+        <sys_id>80ce947f11dd45d69c947cc86d21716f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>702fe251275a4298b50e6f98ff702628.admin</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sys_agent_access_role_mapping_80ce947f11dd45d69c947cc86d21716f</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:06</sys_updated_on>
+    </sys_agent_access_role_mapping>
+</record_update>

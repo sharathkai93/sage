@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent">
+    <sn_aia_agent action="INSERT_OR_UPDATE">
+        <advanced_mode>false</advanced_mode>
+        <agent_type>internal</agent_type>
+        <applicability_script/>
+        <channel>nap_and_va</channel>
+        <compiled_handbook/>
+        <condition/>
+        <context_processing_script><![CDATA[/*
+ * Available Variables:
+ * - task: The task provided to agent to solve either by orchestrator or user(incase of only agent execution i.e agent is invoked as seperate entity instead from a workflow).
+ * - user_utterance: The user utterance provided. and task = user_utterance in case of individual agent execution.
+ * - agent_id: The agent id.
+ * - context: An object that carries additional contextual information for the agent.
+ * It always includes a "pageContext" and may include a "triggerContext",
+ * depending on how and from where the agent is invoked.
+ *
+ * Behavior by invocation type:
+ * ---------------------------------
+ * - When invoked via the startAiAgentConversation API:
+ * If a "contextMemory" parameter is provided in the API request,
+ * it will be available here as the "triggerContext".
+ * The "pageContext" is always present in this call, regardless
+ * of whether the agent is executed individually or as part of a use case.
+ * Example:
+ * {
+ * pageContext: { ... },
+ * triggerContext: { ... } // Derived from contextMemory (if passed)
+ * }
+ *
+ * - When invoked as part of a use case or workflow:
+ * The "pageContext" and "triggerContext" objects available here
+ * may have been *modified* by the use case's context processing script.
+ * This means the use case may alter, extend, or overwrite values
+ * from the original "pageContext" or "triggerContext"
+ * before the context reaches the agent.
+ * If the use case was originally triggered via the API,
+ * the initial "triggerContext" is still derived from the
+ * "contextMemory" parameter, but its contents may have been updated
+ * by the use case logic.
+ *
+ * - When executed directly (standalone agent execution):
+ * The "pageContext" will always be present (default or empty),
+ * and the "triggerContext" will only be populated if explicitly
+ * passed through the API call.
+ * Return an modified context like: { pageContext : {},triggerContext:{} }
+ */
+(function(task, user_utterance, agent_id, context) {
+	return {
+		pageContext : context?.pageContext,
+		triggerContext : context?.triggerContext
+	};
+})(task,user_utterance, agent_id, context);]]></context_processing_script>
+        <description>Validates upgrade readiness, executes upgrades, monitors health, and reports outcomes — the full upgrade pipeline in one agent. Handles pre-upgrade validation, remediation recommendations, upgrade execution, post-upgrade health checks, and failure capture.</description>
+        <extends/>
+        <extension_configuration/>
+        <external_agent_configuration/>
+        <inputs/>
+        <instructions>Step 1: Run Pre-Upgrade Checks.
+- Use the Run Pre-Upgrade Checks tool to validate dependencies, prerequisites, and detect customization conflicts for the selected plugins.
+- Pass the prioritized plugin list from the Plugin Discovery Agent.
+- If any critical blockers are found, DO NOT PROCEED to upgrade execution. Go to Step 2 for remediation.
+- If all checks pass, skip Step 2 and proceed to Step 3.
+
+Step 2: Recommend Remediation.
+- Use the Recommend Remediation tool to generate remediation steps for any failed pre-upgrade checks.
+- Present remediation steps to the user in a clear numbered list.
+- Ask the user: "Would you like to proceed with upgrades for plugins that passed checks, or resolve blockers first?"
+- If the user chooses to resolve blockers, inform them of the required actions and stop.
+- If the user chooses to proceed with passing plugins, continue to Step 3 with only the passing plugins.
+
+Step 3: Initiate Upgrade Plan.
+- Use the Initiate Upgrade Plan tool to create the upgrade execution plan record with the selected plugins in priority order.
+- Confirm the plan details with the user before proceeding.
+- DO NOT PROCEED without user confirmation.
+
+Step 4: Perform Plugin Upgrade.
+- Use the Perform Plugin Upgrade tool to orchestrate the download, install, and upgrade packages in the selected priority order.
+- Process one plugin at a time. Report progress after each plugin completes.
+- If any plugin upgrade fails, capture the failure (Step 6) and continue with remaining plugins.
+
+Step 5: Run Post-Upgrade Health Checks.
+- Use the Run Post-Upgrade Health Checks tool to validate successful installation for each upgraded plugin.
+- Check activation status, version confirmation, and basic functionality tests.
+- Report results per plugin: PASS or FAIL with details.
+
+Step 6: Capture Failures (if any).
+- Use the Capture Failures tool to log any failures, skipped upgrades, and detailed error information.
+- Only invoke this step if any plugin failed during Steps 4 or 5.
+
+Step 7: Summarize Results.
+- Use the Summarize Results tool to generate a comprehensive completion summary.
+- Present the summary to the user in a clear format:
+  - Total plugins attempted | Successful | Failed | Skipped
+  - Per-plugin breakdown: Plugin Name | Previous Version | New Version | Status
+- Use readable labels. Do NOT display sys_ids or raw field names.
+- If any failures occurred, include the failure reason and recommended next steps.
+- NEVER mark an upgrade as successful unless the post-upgrade health check passed.</instructions>
+        <internal_name>global.x_snc_ai_upgrade_0.Plugin Upgrade Agent</internal_name>
+        <name>Plugin Upgrade Agent</name>
+        <outputs/>
+        <parent/>
+        <post_processing_message>Plugin upgrade pipeline complete.</post_processing_message>
+        <processing_message>Executing plugin upgrade pipeline...</processing_message>
+        <proficiency/>
+        <record_type>custom</record_type>
+        <required_translations/>
+        <research>false</research>
+        <role>You are a ServiceNow plugin upgrade execution specialist responsible for validating prerequisites, executing plugin upgrades in priority order, running health checks, capturing failures, and generating comprehensive upgrade reports.</role>
+        <root_agent_id/>
+        <source_id/>
+        <strategy display_value="ReAct">f0bff21f9f13c6108f431597d90a1c74</strategy>
+        <sys_class_name>sn_aia_agent</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:00</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>808b4dc386fe4125b9994da650b9fad8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Plugin Upgrade Agent</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_agent_808b4dc386fe4125b9994da650b9fad8</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:00</sys_updated_on>
+    </sn_aia_agent>
+</record_update>

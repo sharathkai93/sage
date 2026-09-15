@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ais_search_profile_ais_dictionary_m2m">
+    <ais_search_profile_ais_dictionary_m2m action="INSERT_OR_UPDATE">
+        <dictionary display_value="x_snc_ai_upgrade_0_upgrade_history_for_agentic_ai_default_spell_check_dictionary">cad4a24587eecb10a4bded360cbb3538</dictionary>
+        <dictionary_reference_qualifier/>
+        <marked_for_deletion>false</marked_for_deletion>
+        <profile display_value="Upgrade History for Agentic AI">27a4ea0587eecb10a4bded360cbb352b</profile>
+        <sys_class_name>ais_search_profile_ais_dictionary_m2m</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-08-05 10:23:25</sys_created_on>
+        <sys_id>5ad4a24587eecb10a4bded360cbb3558</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_ai_upgrade_0_upgrade_history_for_agentic_ai_default_spell_check_dictionary.Upgrade History for Agentic AI</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>ais_search_profile_ais_dictionary_m2m_5ad4a24587eecb10a4bded360cbb3558</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-08-05 10:23:25</sys_updated_on>
+    </ais_search_profile_ais_dictionary_m2m>
+</record_update>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
+    <sn_aia_version action="INSERT_OR_UPDATE">
+        <condition/>
+        <instructions>Step 1: Plugin Discovery and Prioritization.
+- Use the Plugin Discovery Agent to synchronize plugin metadata, query installed plugins, identify outdated components, and compute priority scores.
+- The Plugin Discovery Agent will produce a prioritized upgrade list sorted by risk score.
+- If the Plugin Discovery Agent reports all plugins are up to date, inform the user: "All monitored plugins are current. No upgrades needed at this time." and stop.
+- DO NOT PROCEED to Step 2 until the prioritized list is confirmed.
+
+Step 2: Present Discovery Results.
+- Display the prioritized upgrade list to the user in a clear format:
+  - Plugin Name | Current Version | Available Version | Priority Score | Priority Tier
+- Ask the user: "Would you like to proceed with upgrading these plugins? You can select all, choose specific plugins, or defer."
+- If the user defers all upgrades, inform them the results are saved and stop.
+- If the user selects specific plugins, pass only those to Step 3.
+- DO NOT PROCEED without explicit user confirmation.
+
+Step 3: Plugin Upgrade Execution.
+- Use the Plugin Upgrade Agent to validate prerequisites, execute upgrades, and run health checks for the approved plugins.
+- The Plugin Upgrade Agent will handle: pre-upgrade checks, remediation (if needed), plan creation, upgrade execution, health checks, failure capture, and summarization.
+- Monitor progress and relay status updates to the user after each plugin completes.
+- If the Plugin Upgrade Agent encounters blockers requiring user decision, present the options clearly and wait for user input.
+
+Step 4: Review Upgrade Results.
+- Present the final upgrade summary from the Plugin Upgrade Agent to the user:
+  - Total attempted | Successful | Failed | Skipped
+  - Per-plugin status with version changes
+  - Success rate percentage
+- If any plugins were skipped or failed, ask: "Would you like the Skipped Items Review Agent to analyze the deferred items and suggest next steps?"
+- If the user declines review, stop.
+
+Step 5: Skipped Items Review (Optional).
+- ONLY invoke this step if the user explicitly requests a review of skipped/failed items.
+- Use the Skipped Items Review Agent to scan skipped items and generate action recommendations.
+- Present recommendations in a clear format:
+  - Plugin Name | Skip Reason | Recommended Action | Estimated Effort | Priority
+- Group recommendations by action type.
+- Ask the user: "Would you like to proceed with any of these recommendations, or schedule them for the next upgrade window?"
+
+Output Format Rules:
+- ALWAYS use readable labels (e.g., "Plugin Name" not "name", "Priority Score" not "priority_score").
+- NEVER display sys_ids, internal field names, or raw JSON to the user.
+- Replace numeric codes with labels where applicable.
+- Use bullet points and tables for structured data.
+- Summarize with totals and percentages where helpful.</instructions>
+        <state>published</state>
+        <sys_class_name>sn_aia_version</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>201615360cd8421eababf195feae0f3f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>V1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_version_201615360cd8421eababf195feae0f3f</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:05</sys_updated_on>
+        <target_id>702fe251275a4298b50e6f98ff702628</target_id>
+        <target_table>sn_aia_usecase</target_table>
+        <version_name>V1</version_name>
+        <version_number>1</version_number>
+    </sn_aia_version>
+</record_update>

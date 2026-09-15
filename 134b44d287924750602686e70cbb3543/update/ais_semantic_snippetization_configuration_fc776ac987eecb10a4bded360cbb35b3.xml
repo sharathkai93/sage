@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ais_semantic_snippetization_configuration">
+    <ais_semantic_snippetization_configuration action="INSERT_OR_UPDATE">
+        <enable_pre_processing>false</enable_pre_processing>
+        <limit>250</limit>
+        <limited_by>WORDS</limited_by>
+        <max_total_words>500</max_total_words>
+        <overlap_sentences>5</overlap_sentences>
+        <semantic_script><![CDATA[/** 
+ * 
+ * @param {Dictionary} semanticIndexPayload 
+ *   Dictionary of key-value pairs, with each pair representing a semantic index field. 
+ *     Key is the field's column name (element as per sys_dictionary). 
+ *     Value is the display value for the semantic index field. 
+ * 
+ * @return {string} 
+*   This string value is embedded exactly as it's specified here. 
+*/
+(function preProcessing(semanticIndexPayload) {
+	return '';
+})(semanticIndexPayload);]]></semantic_script>
+        <snippet_mode>PASSAGE</snippet_mode>
+        <sys_class_name>ais_semantic_snippetization_configuration</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-08-05 10:34:48</sys_created_on>
+        <sys_id>fc776ac987eecb10a4bded360cbb35b3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>PASSAGE</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>ais_semantic_snippetization_configuration_fc776ac987eecb10a4bded360cbb35b3</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-08-05 10:34:48</sys_updated_on>
+        <validate_script_output/>
+        <validate_script_reference_record/>
+        <validate_script_table/>
+    </ais_semantic_snippetization_configuration>
+</record_update>

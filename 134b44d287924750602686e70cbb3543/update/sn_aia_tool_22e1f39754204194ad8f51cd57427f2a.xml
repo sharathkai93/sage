@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Generates remediation steps when pre-upgrade checks fail. Provides specific actions to resolve dependency issues, schedule maintenance windows, and create backup plans.</description>
+        <input_schema>[{"name":"failed_checks","description":"JSON string of failed pre-upgrade check results with blockers and warnings","mandatory":true}]</input_schema>
+        <name>Recommend Remediation</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[(function(inputs) {
+  var result = { status: 'success', remediation_plans: [] };
+  try {
+    var failedChecks = JSON.parse(inputs.failed_checks);
+    
+    for (var i = 0; i < failedChecks.length; i++) {
+      var check = failedChecks[i];
+      var plan = {
+        plugin_name: check.name,
+        sys_id: check.sys_id,
+        steps: [],
+        priority: 'high',
+        estimated_effort: 'low'
+      };
+      
+      for (var b = 0; b < (check.blockers || []).length; b++) {
+        var blocker = check.blockers[b];
+        if (blocker.indexOf('not found') >= 0) {
+          plan.steps.push('Verify plugin sys_id is correct and accessible with current credentials');
+          plan.steps.push('Check if plugin was removed or renamed in recent updates');
+          plan.estimated_effort = 'medium';
+        } else if (blocker.indexOf('dependency') >= 0) {
+          plan.steps.push('Install or update required dependency plugins first');
+          plan.steps.push('Review dependency chain and upgrade in correct order');
+          plan.estimated_effort = 'high';
+        } else {
+          plan.steps.push('Review and resolve: ' + blocker);
+        }
+      }
+      
+      for (var w = 0; w < (check.warnings || []).length; w++) {
+        var warning = check.warnings[w];
+        if (warning.indexOf('Customization') >= 0) {
+          plan.steps.push('Back up customizations before proceeding');
+          plan.steps.push('Review customization impact post-upgrade');
+        } else if (warning.indexOf('update set') >= 0) {
+          plan.steps.push('Complete or close active update sets before upgrading');
+        } else if (warning.indexOf('inactive') >= 0) {
+          plan.steps.push('Plugin will be activated during upgrade - verify this is acceptable');
+        }
+      }
+      
+      if (plan.steps.length === 0) {
+        plan.steps.push('No specific remediation needed - proceed with caution');
+      }
+      
+      plan.steps.push('Schedule a maintenance window for the upgrade');
+      plan.steps.push('Notify stakeholders before proceeding');
+      
+      result.remediation_plans.push(plan);
+    }
+  } catch (e) {
+    result.status = 'error';
+    result.message = 'Failed to generate remediation: ' + e.message;
+  }
+  return result;
+})(inputs);]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:03</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>22e1f39754204194ad8f51cd57427f2a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Recommend Remediation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_tool_22e1f39754204194ad8f51cd57427f2a</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:03</sys_updated_on>
+        <target_document/>
+        <target_document_table>sn_aia_tool</target_document_table>
+        <type>script</type>
+    </sn_aia_tool>
+</record_update>

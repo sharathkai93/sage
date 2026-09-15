@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Loads the configured list of monitored plugins that are in scope for upgrade monitoring. Returns the catalog of plugins being tracked including Now Assist AI Agents, AI Control Tower, and Now Assist for ITSM.</description>
+        <input_schema>[{"name":"category_filter","description":"Optional category to filter monitored plugins (e.g., 'ai', 'itsm', 'all')","mandatory":false}]</input_schema>
+        <name>Load Monitored Plugin Catalog</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[(function(inputs) {
+  var result = { status: 'success', catalog: [], totalMonitored: 0 };
+  try {
+    var monitoredPlugins = [
+      { id: 'com.snc.now_assist_ai_agents', name: 'Now Assist AI Agents', category: 'ai', critical: true },
+      { id: 'com.snc.ai_control_tower', name: 'AI Control Tower', category: 'ai', critical: true },
+      { id: 'com.snc.now_assist_itsm', name: 'Now Assist for ITSM', category: 'itsm', critical: true },
+      { id: 'com.snc.now_assist_hrsd', name: 'Now Assist for HRSD', category: 'hrsd', critical: false },
+      { id: 'com.snc.now_assist_csm', name: 'Now Assist for CSM', category: 'csm', critical: false },
+      { id: 'com.snc.predictive_intelligence', name: 'Predictive Intelligence', category: 'ai', critical: true },
+      { id: 'com.snc.virtual_agent', name: 'Virtual Agent', category: 'ai', critical: false },
+      { id: 'com.snc.integration_hub', name: 'Integration Hub', category: 'integration', critical: false }
+    ];
+    
+    var filter = (inputs.category_filter || 'all').toLowerCase();
+    if (filter !== 'all' && filter !== '') {
+      result.catalog = monitoredPlugins.filter(function(p) { return p.category === filter; });
+    } else {
+      result.catalog = monitoredPlugins;
+    }
+    result.totalMonitored = result.catalog.length;
+  } catch (e) {
+    result.status = 'error';
+    result.message = 'Failed to load catalog: ' + e.message;
+  }
+  return result;
+})(inputs);]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:04</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>bc08ba359b9247b9bd3b1ccb0954ebc9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Load Monitored Plugin Catalog</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_tool_bc08ba359b9247b9bd3b1ccb0954ebc9</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:04</sys_updated_on>
+        <target_document/>
+        <target_document_table>sn_aia_tool</target_document_table>
+        <type>script</type>
+    </sn_aia_tool>
+</record_update>

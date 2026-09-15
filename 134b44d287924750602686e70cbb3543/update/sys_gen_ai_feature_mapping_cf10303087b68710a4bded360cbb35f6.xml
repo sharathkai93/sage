@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_gen_ai_feature_mapping">
+    <sys_gen_ai_feature_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <customer_updatable>true</customer_updatable>
+        <default_tier>false</default_tier>
+        <document>9e10303087b68710a4bded360cbb3517</document>
+        <document_table>sys_one_extend_capability</document_table>
+        <feature_name>Get Specific Upgrade History Record</feature_name>
+        <licensable>true</licensable>
+        <metadata/>
+        <skip_on_group_call>false</skip_on_group_call>
+        <sys_class_name>sys_gen_ai_feature_mapping</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-08-16 17:30:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>cf10303087b68710a4bded360cbb35f6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Get Specific Upgrade History Record</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sys_gen_ai_feature_mapping_cf10303087b68710a4bded360cbb35f6</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-08-16 17:30:36</sys_updated_on>
+        <tier/>
+    </sys_gen_ai_feature_mapping>
+    <sys_translated_text action="delete_multiple" query="documentkey=cf10303087b68710a4bded360cbb35f6"/>
+</record_update>

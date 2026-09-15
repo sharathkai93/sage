@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_usecase_config_override">
+    <sn_aia_usecase_config_override action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <run_as_user/>
+        <sys_class_name>sn_aia_usecase_config_override</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>975705442d034d3b9c4d820e63ec135f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_usecase_config_override_975705442d034d3b9c4d820e63ec135f</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:05</sys_updated_on>
+        <usecase_configuration display_value="Plugin Upgrade and Monitor">702fe251275a4298b50e6f98ff702628</usecase_configuration>
+    </sn_aia_usecase_config_override>
+</record_update>

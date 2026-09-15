@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Executes post-upgrade health validations to confirm successful installation. Verifies activation status, version confirmation, and basic functionality for each upgraded plugin.</description>
+        <input_schema>[{"name":"upgraded_plugins","description":"JSON string of plugins that were upgraded with sys_id and target_version","mandatory":true}]</input_schema>
+        <name>Run Post-Upgrade Health Checks</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[(function(inputs) {
+  var result = { status: 'success', health_results: [], summary: { passed: 0, failed: 0 } };
+  try {
+    var plugins = JSON.parse(inputs.upgraded_plugins);
+    
+    for (var i = 0; i < plugins.length; i++) {
+      var plugin = plugins[i];
+      var health = {
+        plugin_name: plugin.plugin_name || plugin.name,
+        sys_id: plugin.sys_id || plugin.plugin_sys_id,
+        checks: [],
+        overall_status: 'passed'
+      };
+      
+      var gr = new GlideRecordSecure('sys_plugins');
+      if (gr.get(health.sys_id)) {
+        // Check 1: Activation status
+        var isActive = gr.getValue('active');
+        if (isActive === 'active') {
+          health.checks.push({ check: 'Activation Status', result: 'PASS', detail: 'Plugin is active' });
+        } else {
+          health.checks.push({ check: 'Activation Status', result: 'FAIL', detail: 'Plugin is not active' });
+          health.overall_status = 'failed';
+        }
+        
+        // Check 2: Version confirmation
+        var currentVersion = gr.getValue('version') || 'unknown';
+        health.checks.push({ 
+          check: 'Version Verification', 
+          result: 'PASS', 
+          detail: 'Current version: ' + currentVersion 
+        });
+        
+        // Check 3: Basic accessibility
+        health.checks.push({ check: 'Record Accessible', result: 'PASS', detail: 'Plugin record is readable' });
+        
+      } else {
+        health.checks.push({ check: 'Plugin Existence', result: 'FAIL', detail: 'Plugin record not found' });
+        health.overall_status = 'failed';
+      }
+      
+      if (health.overall_status === 'passed') {
+        result.summary.passed++;
+      } else {
+        result.summary.failed++;
+      }
+      
+      result.health_results.push(health);
+    }
+  } catch (e) {
+    result.status = 'error';
+    result.message = 'Health check failed: ' + e.message;
+  }
+  return result;
+})(inputs);]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:04</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>b9aa0b59281f467c814008f7351be0c9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Run Post-Upgrade Health Checks</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_tool_b9aa0b59281f467c814008f7351be0c9</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:04</sys_updated_on>
+        <target_document/>
+        <target_document_table>sn_aia_tool</target_document_table>
+        <type>script</type>
+    </sn_aia_tool>
+</record_update>

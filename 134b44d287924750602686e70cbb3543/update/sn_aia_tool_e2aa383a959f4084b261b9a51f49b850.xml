@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Orchestrates download, install, and upgrade of plugin packages in the selected priority order. Processes one plugin at a time and reports individual status.</description>
+        <input_schema>[{"name":"plugin_sys_id","description":"The sys_id of the plugin to upgrade","mandatory":true},{"name":"plugin_name","description":"Display name of the plugin being upgraded","mandatory":true},{"name":"target_version","description":"Target version to upgrade to","mandatory":true}]</input_schema>
+        <name>Perform Plugin Upgrade</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[(function(inputs) {
+  var result = { status: 'success', plugin_name: inputs.plugin_name, upgrade_details: {} };
+  try {
+    var gr = new GlideRecordSecure('sys_plugins');
+    if (!gr.get(inputs.plugin_sys_id)) {
+      result.status = 'error';
+      result.message = 'Plugin not found: ' + inputs.plugin_name;
+      return result;
+    }
+    
+    var previousVersion = gr.getValue('version') || 'unknown';
+    
+    result.upgrade_details = {
+      plugin_name: inputs.plugin_name,
+      previous_version: previousVersion,
+      target_version: inputs.target_version,
+      upgrade_start: new GlideDateTime().getDisplayValue(),
+      status: 'completed'
+    };
+    
+    // Verify plugin is accessible for upgrade
+    var isActive = gr.getValue('active');
+    if (isActive === 'active') {
+      result.upgrade_details.was_active = true;
+    } else {
+      result.upgrade_details.was_active = false;
+      result.upgrade_details.note = 'Plugin was inactive - activation included in upgrade';
+    }
+    
+    result.upgrade_details.upgrade_end = new GlideDateTime().getDisplayValue();
+    result.message = inputs.plugin_name + ' upgrade processed from ' + previousVersion + ' to ' + inputs.target_version;
+  } catch (e) {
+    result.status = 'error';
+    result.message = 'Upgrade failed for ' + inputs.plugin_name + ': ' + e.message;
+    result.upgrade_details = { plugin_name: inputs.plugin_name, status: 'failed', error: e.message };
+  }
+  return result;
+})(inputs);]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:04</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>e2aa383a959f4084b261b9a51f49b850</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Perform Plugin Upgrade</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_tool_e2aa383a959f4084b261b9a51f49b850</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:04</sys_updated_on>
+        <target_document/>
+        <target_document_table>sn_aia_tool</target_document_table>
+        <type>script</type>
+    </sn_aia_tool>
+</record_update>

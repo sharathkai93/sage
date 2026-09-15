@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_one_extend_resource_edge">
+    <sys_one_extend_resource_edge action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applicability_condition_expression/>
+        <applicability_failed_policy/>
+        <applicability_script><![CDATA[(function(currentInputs, context) {  
+	/* @param {Object} currentInputs - Inputs provided for the current step.*/  
+	/* @param {Object} context - Execution context, which may include:*/     
+	/*         - Previous tool outputs/inputs (e.g., context['ToolName.attributeName'] or context.getValue('ToolName.attributeName')).*/     
+	/*         - Additional context information (e.g., context.getAllValues()).*/  
+	/* @returns {Boolean} - Return 'true' if the condition is met; otherwise 'false'.*/  
+	return true;
+  })(currentInputs, context);]]></applicability_script>
+        <applicability_type/>
+        <error_handler_script><![CDATA[(function handleError() {  
+	// customize condition logic here,  
+	return ;
+})();]]></error_handler_script>
+        <error_policy/>
+        <from_resource display_value="retrieveUpgrade">1660a5e987324350602686e70cbb35e9</from_resource>
+        <internal_name>retrieveUpgrade__Retrieve Upgrade Details</internal_name>
+        <name>edge</name>
+        <order>0</order>
+        <sys_class_name>sys_one_extend_resource_edge</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-08-19 04:57:09</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>6f6069e987324350602686e70cbb35b1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>edge</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sys_one_extend_resource_edge_6f6069e987324350602686e70cbb35b1</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-08-19 04:57:09</sys_updated_on>
+        <to_resource display_value="Retrieve Upgrade Details">2cb0b4f087b68710a4bded360cbb35f5</to_resource>
+    </sys_one_extend_resource_edge>
+</record_update>

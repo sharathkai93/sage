@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="one_api_service_plan_feature_edge">
+    <one_api_service_plan_feature_edge action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applicability_condition_expression/>
+        <applicability_failed_policy/>
+        <applicability_script><![CDATA[(function(currentInputs, context) {  
+	/* @param {Object} currentInputs - Inputs provided for the current step.*/  
+	/* @param {Object} context - Execution context, which may include:*/     
+	/*         - Previous tool outputs/inputs (e.g., context['ToolName.attributeName'] or context.getValue('ToolName.attributeName')).*/     
+	/*         - Additional context information (e.g., context.getAllValues()).*/  
+	/* @returns {Boolean} - Return 'true' if the condition is met; otherwise 'false'.*/  
+	return true;
+  })(currentInputs, context);]]></applicability_script>
+        <applicability_type/>
+        <error_handler_script><![CDATA[(function handleError() {  
+	// customize condition logic here,  
+	return ;
+})();]]></error_handler_script>
+        <error_policy/>
+        <from_service_plan_feature display_value="___$y$t3m_bu1163r___-542203de7fe81210a01c7d8b7d86658c, 6da0b0f087b68710a4bded360cbb3522-default: 542203de7fe81210a01c7d8b7d86658c">6313a5e187724350602686e70cbb35cb</from_service_plan_feature>
+        <internal_name>retrieveUpgrade__Retrieve Upgrade Details</internal_name>
+        <name>edge</name>
+        <order>0</order>
+        <sys_class_name>one_api_service_plan_feature_edge</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-08-19 05:08:54</sys_created_on>
+        <sys_id>e313a5e187724350602686e70cbb35d0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>edge</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>one_api_service_plan_feature_edge_e313a5e187724350602686e70cbb35d0</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-08-19 05:08:54</sys_updated_on>
+        <to_service_plan_feature display_value="___$y$t3m_bu1163r___-542203de7fe81210a01c7d8b7d86658c, 6da0b0f087b68710a4bded360cbb3522-default: 6da0b0f087b68710a4bded360cbb3522">6f13a5e187724350602686e70cbb35ce</to_service_plan_feature>
+    </one_api_service_plan_feature_edge>
+</record_update>

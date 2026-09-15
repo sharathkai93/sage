@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_team_member">
+    <sn_aia_team_member action="INSERT_OR_UPDATE">
+        <agent display_value="">00000000000000000000000000000003</agent>
+        <memory_scope>global</memory_scope>
+        <sys_class_name>sn_aia_team_member</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:02</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>eb3244101f014e80ae636323cde9fd98</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_team_member_eb3244101f014e80ae636323cde9fd98</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:02</sys_updated_on>
+        <team display_value="Plugin Upgrade Team">a9288ec0d9764d8b9cdb39eb7c3cee95</team>
+    </sn_aia_team_member>
+</record_update>

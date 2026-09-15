@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Applies policy-based rules to flag out-of-date or soon-out-of-date plugins by comparing installed versions against available versions. Returns a list of plugins requiring upgrade attention.</description>
+        <input_schema>[{"name":"installed_data","description":"JSON string of installed plugin data with name, version, and sys_id","mandatory":true},{"name":"available_data","description":"JSON string of available update data with target versions","mandatory":true}]</input_schema>
+        <name>Identify Outdated Plugins</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[(function(inputs) {
+  var result = { status: 'success', outdated: [], summary: {} };
+  try {
+    var installed = JSON.parse(inputs.installed_data);
+    var available = JSON.parse(inputs.available_data);
+    
+    var availableMap = {};
+    for (var i = 0; i < available.length; i++) {
+      availableMap[available[i].sys_id] = available[i];
+    }
+    
+    var criticalCount = 0;
+    var warningCount = 0;
+    
+    for (var j = 0; j < installed.length; j++) {
+      var plugin = installed[j];
+      var update = availableMap[plugin.sys_id];
+      
+      if (update && update.available_version !== plugin.version) {
+        var currentParts = (plugin.version || '0.0.0').split('.');
+        var availParts = (update.available_version || '0.0.0').split('.');
+        
+        var majorDiff = (parseInt(availParts[0], 10) || 0) - (parseInt(currentParts[0], 10) || 0);
+        var isOutdated = majorDiff > 0 || (parseInt(availParts[1], 10) || 0) > (parseInt(currentParts[1], 10) || 0);
+        
+        if (isOutdated) {
+          var severity = majorDiff > 0 ? 'critical' : 'warning';
+          if (severity === 'critical') criticalCount++;
+          else warningCount++;
+          
+          result.outdated.push({
+            sys_id: plugin.sys_id,
+            name: plugin.name,
+            current_version: plugin.version,
+            available_version: update.available_version,
+            severity: severity,
+            version_gap: majorDiff + ' major versions behind'
+          });
+        }
+      }
+    }
+    
+    result.summary = {
+      total_outdated: result.outdated.length,
+      critical: criticalCount,
+      warning: warningCount
+    };
+  } catch (e) {
+    result.status = 'error';
+    result.message = 'Failed to identify outdated plugins: ' + e.message;
+  }
+  return result;
+})(inputs);]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:03</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>593aedc2e6884c10a733a0eff76c5e29</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Identify Outdated Plugins</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_tool_593aedc2e6884c10a733a0eff76c5e29</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:03</sys_updated_on>
+        <target_document/>
+        <target_document_table>sn_aia_tool</target_document_table>
+        <type>script</type>
+    </sn_aia_tool>
+</record_update>

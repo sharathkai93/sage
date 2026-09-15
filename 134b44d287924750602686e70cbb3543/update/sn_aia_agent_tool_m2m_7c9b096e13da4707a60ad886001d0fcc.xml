@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent_tool_m2m">
+    <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <agent display_value="Plugin Discovery Agent">2aa4a468b45f4080a2dee90a2b616969</agent>
+        <description>Calls the update source API to retrieve target versions and compatibility information for installed plugins. Returns available version data and compatibility notes.</description>
+        <display_mode/>
+        <display_output>false</display_output>
+        <document_status/>
+        <entity/>
+        <entity_id/>
+        <execution_mode>autopilot</execution_mode>
+        <inputs>[{"name":"plugin_ids","value":"","description":"Comma-separated list of plugin sys_ids to check for updates","mandatory":true}]</inputs>
+        <max_auto_executions>10</max_auto_executions>
+        <name>Check Available Updates</name>
+        <output_transformation_strategy/>
+        <post_message>Available update information retrieved.</post_message>
+        <post_processing_script/>
+        <pre_message>Checking for available plugin updates...</pre_message>
+        <pre_run>false</pre_run>
+        <requires_text_refined_message>false</requires_text_refined_message>
+        <requires_widget_transformation>false</requires_widget_transformation>
+        <should_display_refined_message>false</should_display_refined_message>
+        <sys_class_name>sn_aia_agent_tool_m2m</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-07-27 11:39:01</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>7c9b096e13da4707a60ad886001d0fcc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Check Available Updates</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_agent_tool_m2m_7c9b096e13da4707a60ad886001d0fcc</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-07-27 11:39:01</sys_updated_on>
+        <timeout/>
+        <tool display_value="Check Available Updates">62a456bb8524416b95c847264fcba7d1</tool>
+        <tool_attributes>{}</tool_attributes>
+        <transformation_instructions/>
+        <widgets/>
+    </sn_aia_agent_tool_m2m>
+</record_update>
