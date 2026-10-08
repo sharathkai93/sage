@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_nowassist_skill_config">
+    <sn_nowassist_skill_config action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <description><![CDATA[This tool can be used to search ServiceNow release notes for relevant information]]></description>
+        <edited_in_nask>false</edited_in_nask>
+        <in_product_active>false</in_product_active>
+        <in_product_roles/>
+        <internal_name>perform_web_search.caa691f4c37f8f1040829a4bb0013133</internal_name>
+        <is_template>false</is_template>
+        <name>Perform Web Search</name>
+        <nap_skill_applicability/>
+        <order>100</order>
+        <parent/>
+        <skill_family display_value="Other">a5efaf1c93764210aa5730f16489186d</skill_family>
+        <skill_id>61a651f4c37f8f1040829a4bb0013106</skill_id>
+        <skill_table>sys_one_extend_capability</skill_table>
+        <state>0</state>
+        <success_message/>
+        <sys_class_name>sn_nowassist_skill_config</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-05 13:21:48</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>caa691f4c37f8f1040829a4bb0013133</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Perform Web Search</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_nowassist_skill_config_caa691f4c37f8f1040829a4bb0013133</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-05 13:21:48</sys_updated_on>
+    </sn_nowassist_skill_config>
+    <sys_translated_text action="delete_multiple" query="documentkey=caa691f4c37f8f1040829a4bb0013133"/>
+</record_update>

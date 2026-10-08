@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_ai_upgrade_0.VersionPayloadXmlComparator</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>This is used by the Post Upgrade Analyses AI Agent</description>
+        <mobile_callable>false</mobile_callable>
+        <name>VersionPayloadXmlComparator</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var VersionPayloadXmlComparator = Class.create();
+VersionPayloadXmlComparator.prototype = {
+    initialize: function() {},
+
+    /**
+     * Compare the payload XML from two sys_update_version records.
+     *
+     * @param {String} oldVersionSysId - sys_id of the older version record
+     * @param {String} newVersionSysId - sys_id of the newer/current version record
+     * @returns {Object} Comparison result
+     */
+    compare: function(oldVersionSysId, newVersionSysId) {
+        this._validateSysId(oldVersionSysId, 'oldVersionSysId');
+        this._validateSysId(newVersionSysId, 'newVersionSysId');
+
+        var oldVersion = this._getVersion(oldVersionSysId);
+        var newVersion = this._getVersion(newVersionSysId);
+
+        var oldXml = oldVersion.getValue('payload') || '';
+        var newXml = newVersion.getValue('payload') || '';
+
+        this._validateXml(oldXml, oldVersionSysId);
+        this._validateXml(newXml, newVersionSysId);
+
+        var oldValues = this._flattenXml(oldXml);
+        var newValues = this._flattenXml(newXml);
+
+        var result = {
+            old_version: {
+                sys_id: oldVersionSysId,
+                record_name: oldVersion.getDisplayValue('record_name'),
+                state: oldVersion.getValue('state'),
+                updated_on: oldVersion.getValue('sys_updated_on')
+            },
+            new_version: {
+                sys_id: newVersionSysId,
+                record_name: newVersion.getDisplayValue('record_name'),
+                state: newVersion.getValue('state'),
+                updated_on: newVersion.getValue('sys_updated_on')
+            },
+            summary: {
+                added: 0,
+                removed: 0,
+                modified: 0,
+                unchanged: 0,
+                total_differences: 0
+            },
+            differences: []
+        };
+
+        var path;
+        var seen = {};
+
+        // Nodes/attributes removed or modified
+        for (path in oldValues) {
+            if (!oldValues.hasOwnProperty(path)) {
+                continue;
+            }
+
+            seen[path] = true;
+
+            if (!newValues.hasOwnProperty(path)) {
+                result.differences.push({
+                    type: 'removed',
+                    path: path,
+                    old_value: oldValues[path],
+                    new_value: null
+                });
+                result.summary.removed++;
+            } else if (oldValues[path] !== newValues[path]) {
+                result.differences.push({
+                    type: 'modified',
+                    path: path,
+                    old_value: oldValues[path],
+                    new_value: newValues[path]
+                });
+                result.summary.modified++;
+            } else {
+                result.summary.unchanged++;
+            }
+        }
+
+        // Nodes/attributes added
+        for (path in newValues) {
+            if (!newValues.hasOwnProperty(path) || seen[path]) {
+                continue;
+            }
+
+            result.differences.push({
+                type: 'added',
+                path: path,
+                old_value: null,
+                new_value: newValues[path]
+            });
+            result.summary.added++;
+        }
+
+        result.summary.total_differences =
+            result.summary.added +
+            result.summary.removed +
+            result.summary.modified;
+
+        return result;
+    },
+
+    /**
+     * Gets a sys_update_version record.
+     */
+    _getVersion: function(sysId) {
+        var gr = new GlideRecord('sys_update_version');
+        if (!gr.get(sysId)) {
+            throw new Error('Version record not found: ' + sysId);
+        }
+
+        if (!gr.canRead()) {
+            throw new Error('Not authorized to read version record: ' + sysId);
+        }
+
+        return gr;
+    },
+
+    /**
+     * Validates XML prior to parsing.
+     */
+    _validateXml: function(xml, versionSysId) {
+        if (!xml) {
+            throw new Error('Payload is empty for version record: ' + versionSysId);
+        }
+
+        xml = GlideXMLUtil.removeInvalidChars(xml);
+
+        var validationError = GlideXMLUtil.validateXML(xml, false, false);
+        if (validationError) {
+            throw new Error(
+                'Invalid XML payload for version record ' +
+                versionSysId +
+                ': ' +
+                validationError
+            );
+        }
+    },
+
+    /**
+     * Converts XML into a path/value map for comparison.
+     *
+     * Examples:
+     * /sys_script/name = "My Business Rule"
+     * /sys_script/active = "true"
+     * /sys_script/script = "..."
+     * /sys_script@action_insert = "true"
+     */
+    _flattenXml: function(xml) {
+        var document = new XMLDocument2();
+        document.parseXML(GlideXMLUtil.removeInvalidChars(xml));
+
+        var root = document.getDocumentElement();
+        var values = {};
+
+        this._walkNode(root, '/' + root.getNodeName(), values);
+
+        return values;
+    },
+
+    /**
+     * Recursively walks XML elements and collects values and attributes.
+     * Element indexes make repeated nodes distinguishable.
+     */
+    _walkNode: function(node, path, values) {
+        var attributes = node.getAttributes();
+        var attributeName;
+
+        // Add attributes
+        for (attributeName in attributes) {
+            if (attributes.hasOwnProperty(attributeName)) {
+                values[path + '/@' + attributeName] = String(attributes[attributeName]);
+            }
+        }
+
+        var iterator = node.getChildNodeIterator();
+        var children = [];
+        var nameCounts = {};
+        var child;
+
+        // Ignore whitespace-only #text nodes introduced by formatted XML.
+        while (iterator.hasNext()) {
+            child = iterator.next();
+
+            if (child.getNodeName() === '#text') {
+                var text = String(child.getNodeValue() || '').replace(/^\s+|\s+$/g, '');
+                if (text) {
+                    values[path] = text;
+                }
+                continue;
+            }
+
+            children.push(child);
+            nameCounts[child.getNodeName()] = (nameCounts[child.getNodeName()] || 0) + 1;
+        }
+
+        // Add children. Index only repeated sibling element names.
+        var nameIndexes = {};
+        for (var i = 0; i < children.length; i++) {
+            child = children[i];
+
+            var childName = child.getNodeName();
+            nameIndexes[childName] = (nameIndexes[childName] || 0) + 1;
+
+            var childPath = path + '/' + childName;
+            if (nameCounts[childName] > 1) {
+                childPath += '[' + nameIndexes[childName] + ']';
+            }
+
+            this._walkNode(child, childPath, values);
+        }
+    },
+
+    _validateSysId: function(sysId, parameterName) {
+        if (!sysId || !/^[0-9a-f]{32}$/i.test(String(sysId))) {
+            throw new Error(parameterName + ' must be a valid 32-character sys_id.');
+        }
+    },
+
+    type: 'VersionPayloadXmlComparator'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-09-14 05:57:50</sys_created_on>
+        <sys_id>49576379c31b0f1040829a4bb00131ab</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>VersionPayloadXmlComparator</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sys_script_include_49576379c31b0f1040829a4bb00131ab</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-09-14 05:58:24</sys_updated_on>
+    </sys_script_include>
+</record_update>

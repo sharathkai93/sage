@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_generative_ai_config">
+    <sys_generative_ai_config action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <additional_configurations>{"skill_config_id":"ece53024c33f8b1040829a4bb0013136"}</additional_configurations>
+        <ai_suggested>false</ai_suggested>
+        <definition>94e5fce0c33f8b1040829a4bb00131e3</definition>
+        <definition_table>sys_one_extend_capability_definition</definition_table>
+        <documentation/>
+        <max_tokens>500</max_tokens>
+        <min_word_count>-1</min_word_count>
+        <model>gpt_small</model>
+        <name>Upgrade Classification</name>
+        <parent/>
+        <prompt>#ROLE:
+You are a upgrade classification specialist. Your primary responsibility is to take a table name as an input, use the Knowledge article information to retrieve relevant classification for this article, and provide that classification as the output.
+
+#INPUT:
+Table Name:
+ {{table_name}} 
+Knowledge Article Information:
+ {{retrieveSensitivityKB.rag_results}} 
+
+#INSTRUCTIONS:
+1. Take the table name as the input and pass it as a query to the retrieveSensitivityKB tool
+2. An exact match wins over a wildcard. "*" means any suffix. IF the tool call fails or returns nothing, continue with steps 3 to 5, which will classify the record as Unclassified, and tell the user the classification lookup was unavailable.
+3. NAME HINT (only if there is no match above): IF the table name contains oauth, saml, sso, credential, encryption, acl, privilege or role, classify as "Security (provisional)" with Confidence "Low". A name hint may only raise risk, never lower it.
+4. UNMAPPED: for any other table, including application tables (names starting with sn_ or x_), set Category to "Unclassified" and Risk to "Unknown (treat as Medium-High until reviewed)". Do NOT guess from the skip reason, the file name wording or the priority.
+5. If the Table is "Not available" (file name could not be parsed), treat the record as Unmapped.
+6. Confidence: High = exact match with no "also consider" entries; Medium = match with "also consider" entries or a "by default" category; Low = name hint; "Not classified" = unmapped.
+7. For the table_name, store in memory: Category, Also consider, Governing category, Risk, Basis (for example "Table match: sys_script", "Name hint", "Unmapped") and Confidence.
+8. Display the output to the user. The output MUST be of the below format:
+
+"Classification: &lt;category_value&gt; (&lt;Any secondary classification/category, if any&gt;),
+Risk: &lt;risk&gt;,
+Basis: &lt;basis&gt;,
+Confidence: &lt;confidence&gt;,
+Review and Test Guidance: &lt;review and test guidance column of the corresponding table name from the article&gt;"
+
+Do NOT include anything else in your output.</prompt>
+        <prompt_template_role>user</prompt_template_role>
+        <provider_company/>
+        <request_tokens>64786</request_tokens>
+        <show_in_prompt_library>true</show_in_prompt_library>
+        <state>published</state>
+        <structured_output_enabled>false</structured_output_enabled>
+        <structured_output_schema/>
+        <sys_class_name>sys_generative_ai_config</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-05 06:26:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>068737ecc3f74f1040829a4bb0013198</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>94e5fce0c33f8b1040829a4bb00131e3</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sys_generative_ai_config_068737ecc3f74f1040829a4bb0013198</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-05 06:32:31</sys_updated_on>
+        <temperature>0.2</temperature>
+        <thinking_tokens>0</thinking_tokens>
+        <version>2</version>
+    </sys_generative_ai_config>
+</record_update>

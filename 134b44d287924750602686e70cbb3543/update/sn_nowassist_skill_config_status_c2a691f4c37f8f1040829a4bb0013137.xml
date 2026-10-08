@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_nowassist_skill_config_status">
+    <sn_nowassist_skill_config_status action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <in_mobile_active>false</in_mobile_active>
+        <in_mobile_roles/>
+        <in_product_active>false</in_product_active>
+        <in_product_roles/>
+        <skill_config display_value="Perform Web Search">caa691f4c37f8f1040829a4bb0013133</skill_config>
+        <sys_class_name>sn_nowassist_skill_config_status</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-05 13:21:48</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>c2a691f4c37f8f1040829a4bb0013137</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_nowassist_skill_config_status_c2a691f4c37f8f1040829a4bb0013137</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-05 13:21:48</sys_updated_on>
+    </sn_nowassist_skill_config_status>
+</record_update>

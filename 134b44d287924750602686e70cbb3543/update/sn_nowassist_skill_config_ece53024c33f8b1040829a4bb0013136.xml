@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_nowassist_skill_config">
+    <sn_nowassist_skill_config action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <description/>
+        <edited_in_nask>false</edited_in_nask>
+        <in_product_active>false</in_product_active>
+        <in_product_roles/>
+        <internal_name>retrieve_upgrade_classification_map.ece53024c33f8b1040829a4bb0013136</internal_name>
+        <is_template>false</is_template>
+        <name>Retrieve Upgrade Classification Map</name>
+        <nap_skill_applicability display_value="">66a5bfe4c3f74f1040829a4bb00131d9</nap_skill_applicability>
+        <order>100</order>
+        <parent/>
+        <skill_family display_value="Knowledge">510cfd60f7f3021086c7d3e543bfd620</skill_family>
+        <skill_id>08e5fce0c33f8b1040829a4bb0013176</skill_id>
+        <skill_table>sys_one_extend_capability</skill_table>
+        <state>1</state>
+        <success_message/>
+        <sys_class_name>sn_nowassist_skill_config</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-04 16:20:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>ece53024c33f8b1040829a4bb0013136</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Retrieve Upgrade Classification Map</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_nowassist_skill_config_ece53024c33f8b1040829a4bb0013136</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-05 06:18:02</sys_updated_on>
+    </sn_nowassist_skill_config>
+    <sys_translated_text action="delete_multiple" query="documentkey=ece53024c33f8b1040829a4bb0013136"/>
+</record_update>
