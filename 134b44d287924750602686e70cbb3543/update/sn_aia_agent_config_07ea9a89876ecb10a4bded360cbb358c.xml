@@ -4,9 +4,10 @@
         <agent display_value="Post Upgrade Analysis Agent">a2a916c5876ecb10a4bded360cbb350e</agent>
         <agent_descriptor/>
         <agent_learning>false</agent_learning>
+        <current_version display_value="V3 (Claude Enhanced with Pagination)">7df3eb54c3fb4b1040829a4bb001310c</current_version>
         <doc_url/>
         <icon_url/>
-        <public>false</public>
+        <public>true</public>
         <run_as_user/>
         <specialist_enabled>false</specialist_enabled>
         <sys_class_name>sn_aia_agent_config</sys_class_name>
@@ -14,7 +15,7 @@
         <sys_created_on>2026-08-05 09:40:03</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>07ea9a89876ecb10a4bded360cbb358c</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
@@ -22,6 +23,6 @@
         <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
         <sys_update_name>sn_aia_agent_config_07ea9a89876ecb10a4bded360cbb358c</sys_update_name>
         <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
-        <sys_updated_on>2026-08-05 09:40:03</sys_updated_on>
+        <sys_updated_on>2026-10-08 14:03:26</sys_updated_on>
     </sn_aia_agent_config>
 </record_update>

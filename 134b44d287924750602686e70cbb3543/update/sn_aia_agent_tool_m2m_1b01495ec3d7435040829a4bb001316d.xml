@@ -2,14 +2,15 @@
     <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
         <active>true</active>
         <agent display_value="Post Upgrade Analysis Agent">a2a916c5876ecb10a4bded360cbb350e</agent>
+        <applicability_script/>
         <description>This tool can be used to compare the specified version of the skipped upgrade with any previous version, if available, to provide an analysis of what has been updated. It takes the sys ID of the skipped upgrade as the input and provides a JSON summary output.</description>
         <display_mode>inline</display_mode>
         <display_output>false</display_output>
         <document_status/>
         <entity>sn_aia_agent</entity>
         <entity_id>a2a916c5876ecb10a4bded360cbb350e</entity_id>
-        <execution_mode>copilot</execution_mode>
-        <inputs>[]</inputs>
+        <execution_mode>autopilot</execution_mode>
+        <inputs>[{"name":"new_version","description":"","mandatory":false,"value":""}]</inputs>
         <max_auto_executions>10</max_auto_executions>
         <name>Compare with Previous Version</name>
         <output_transformation_strategy>none</output_transformation_strategy>
@@ -25,7 +26,7 @@
         <sys_created_on>2026-09-15 07:06:54</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>1b01495ec3d7435040829a4bb001316d</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Compare with Previous Version</sys_name>
         <sys_overrides/>
         <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
@@ -33,11 +34,12 @@
         <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
         <sys_update_name>sn_aia_agent_tool_m2m_1b01495ec3d7435040829a4bb001316d</sys_update_name>
         <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
-        <sys_updated_on>2026-10-04 16:49:51</sys_updated_on>
+        <sys_updated_on>2026-10-08 13:59:50</sys_updated_on>
         <timeout/>
         <tool display_value="Skipped Upgrade Comparator">1701495ec3d7435040829a4bb0013145</tool>
-        <tool_attributes>{}</tool_attributes>
+        <tool_attributes>{"navigation_actions":""}</tool_attributes>
         <transformation_instructions/>
+        <wait_for_widget_interaction>false</wait_for_widget_interaction>
         <widgets>db0e858eff62b210f465ffffffffff2c</widgets>
     </sn_aia_agent_tool_m2m>
 </record_update>
