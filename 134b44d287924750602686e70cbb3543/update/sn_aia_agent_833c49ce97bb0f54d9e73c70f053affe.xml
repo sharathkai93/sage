@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent">
+    <sn_aia_agent action="INSERT_OR_UPDATE">
+        <advanced_mode>false</advanced_mode>
+        <agent_type>internal</agent_type>
+        <applicability_script><![CDATA[/** 
+ * Function to process inputs related to ServiceNow change request operations 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.objective - The purpose or goal of the operation 
+ * @param {string} inputs.execution_plan_id - Unique identifier for the execution plan 
+ * @param {Object} inputs.context - Context information about the ServiceNow change request 
+ * @param {string} inputs.context.url - The URL of the change request in Service Operations Workspace 
+ * @param {string} inputs.context.table - The ServiceNow table name (e.g., 'change_request') 
+ * @param {string} inputs.context.record_sys_id - The sys ID of the record 
+ * @param {string} inputs.context.route - The route type (e.g., 'record') 
+ * @param {string} inputs.context.additional_context - Additional contextual information in JSON format 
+ * @param {string} inputs.context.experience - The UI experience name (e.g., 'Service Operations Workspace') 
+ * @param {string} inputs.context.number - The request number 
+ * @param {string} inputs.context.portal - The portal ID 
+ * @param {string} inputs.context.device_type - The device type from which the experience is accessed, e.g.'mweb' 
+ * @param {string} inputs.context.deployment_id - The unique identifier for the assistant deployment 
+ * @param {string} inputs.context.assistant_type - The type of assistant, e.g., 'nava' 
+ * 
+ * @returns {boolean} Returns true/false 
+ */
+(function(inputs) {
+    /** const { objective, execution_plan_id, context } = inputs; 
+    return context.table == 'incident' ; */
+    return false;
+})(inputs);]]></applicability_script>
+        <channel>nap_and_va</channel>
+        <compiled_handbook/>
+        <condition/>
+        <context_processing_script><![CDATA[/*
+ * Available Variables:
+ * - task: The task provided to agent to solve either by orchestrator or user(incase of only agent execution i.e agent is invoked as seperate entity instead from a workflow).
+ * - user_utterance: The user utterance provided. and task = user_utterance in case of individual agent execution.
+ * - agent_id: The agent id.
+ * - context: An object that carries additional contextual information for the agent.
+ *          It always includes a "pageContext" and may include a "triggerContext",
+ *          depending on how and from where the agent is invoked.
+ *
+ *          Behavior by invocation type:
+ *          ---------------------------------
+ *          - When invoked via the startAiAgentConversation API:
+ *                If a "contextMemory" parameter is provided in the API request,
+ *                it will be available here as the "triggerContext".
+ *                The "pageContext" is always present in this call, regardless
+ *                of whether the agent is executed individually or as part of a use case.
+ *                Example:
+ *                    {
+ *                        pageContext: { ... },
+ *                        triggerContext: { ... } // Derived from contextMemory (if passed)
+ *                    }
+ *
+ *          - When invoked as part of a use case or workflow:
+ *                The "pageContext" and "triggerContext" objects available here
+ *                may have been *modified* by the use case’s context processing script.
+ *                This means the use case may alter, extend, or overwrite values
+ *                from the original "pageContext" or "triggerContext"
+ *                before the context reaches the agent.
+ *                If the use case was originally triggered via the API,
+ *                the initial "triggerContext" is still derived from the
+ *                "contextMemory" parameter, but its contents may have been updated
+ *                by the use case logic.
+ *
+ *          - When executed directly (standalone agent execution):
+ *                The "pageContext" will always be present (default or empty),
+ *                and the "triggerContext" will only be populated if explicitly
+ *                passed through the API call.
+ * Return an modified context like: { pageContext : {},triggerContext:{} }
+ */
+(function(task, user_utterance, agent_id, context) {
+    return {
+        pageContext : context?.pageContext,
+		triggerContext : context?.triggerContext
+    };
+})(task,user_utterance, agent_id, context);]]></context_processing_script>
+        <description>Interprets free-text user input and calls the tools that fetch or look up upgrade data for the workflow. It is the only agent that retrieves data. It does not classify, compare, or write user-facing analysis</description>
+        <extends/>
+        <extension_configuration/>
+        <external_agent_configuration/>
+        <inputs>{}</inputs>
+        <instructions>#IMPORTANT GUIDELINES:
+- You are always invoked via an agentic workflow that gives you context to start off with. You MUST use this context in the first step to understand user intent
+- You must ALWAYS follow the steps in the specified order
+- You must NEVER terminate the workflow execution - your only job is to hand off relevant output to the workflow orchestrator
+
+#INSTRUCTIONS:
+
+## INITIALISATION:
+1. Call "Retrieve Latest Upgrades" tool to retrieve last 3 upgrades to user; present in a cleanly formatted manner; ask user if they need help with one of the listed upgrades or something else. And if it is something else, ask them to specify the upgrade name and version as listed in the "Upgrade History [sys_upgrade_history]" table.
+2. If one from the list is chosen: call the tool "Retrieve Upgrade History Record Details" (with input as sys ID of chosen record), store its output in &lt;selected_upgrade_record&gt;, go to UPGRADE ANALYSIS. If not listed/other name: CLARIFICATION LOOP.
+
+## CLARIFICATION LOOP
+1. Ask exact upgrade name if not given or not in the right format (e.g. "Suite Install for Now Assist Admin Console 28.9.20260505").
+2. If unknown/asks a question: ask them to navigate to it in Upgrade History [sys_upgrade_history] and send the "To" value.
+3. Call the tool "Retrieve Upgrade History Record" (with input as the above upgrade name); store in &lt;selected_upgrade_record&gt;.
+4. If found, present and ask confirmation. Yes: jump to UPGRADE ANALYSIS. No/not found: Display a message saying you could not find an exact match, ask them to verify if the name they shared matches in the Upgrade History [sys_upgrade_history] table
+5. IF they send a new name, move back to Step 3. Else, move to CLOSE EXECUTION phase
+
+## UPGRADE ANALYSIS
+1. Send the sys ID of the upgrade record in the &lt;selected_upgrade_record&gt; memory variable as your output to the workflow orchestrator and complete hand-off. Your job is done.
+
+##CLOSE EXECUTION
+1. If NO upgrade is found relevant to the name that the user is specified, output to the workflow orchestrator that you could not find any related upgrade and complete hand-off. Your job is done.</instructions>
+        <internal_name>global.x_snc_ai_upgrade_0.Intent Agent</internal_name>
+        <name>Intent Agent</name>
+        <outputs/>
+        <parent/>
+        <post_processing_message/>
+        <processing_message/>
+        <proficiency>- The agent is proficient in guiding users through a structured workflow for upgrade history analysis, strictly following the provided ACTION PLAN. The agent initiates by leveraging context from the workflow, presents recent upgrades, clarifies user requests, and hands off relevant upgrade record information to the workflow orchestrator. The agent does not make decisions beyond the workflow steps and does not terminate execution independently, ensuring seamless integration within agentic workflows.
+- The agent is capable of retrieving and presenting the last three upgrade records from the upgrade_history table using the 'Retrieve Latest Upgrades' tool. This capability allows the agent to provide users with a concise, formatted list of recent upgrades, facilitating initial user selection and streamlining the upgrade analysis process.
+- The agent can search for and retrieve a specific upgrade history record based on a user-provided upgrade name using the 'Retrieve Upgrade History Record' tool. By accepting the 'upgradeName' input, the agent ensures precise matching and confirmation of upgrade records, supporting user clarification and validation within the workflow.
+- The agent is proficient in retrieving detailed information about a selected upgrade history record using the 'Retrieve Upgrade History Record Details' tool. By accepting the 'upgradeID' input, the agent can provide comprehensive upgrade record details, enabling accurate hand-off to the workflow orchestrator for subsequent analysis or action.
+- The agent is adept at orchestrating tool usage in a sequential and dependent manner, combining 'Retrieve Latest Upgrades', 'Retrieve Upgrade History Record', and 'Retrieve Upgrade History Record Details' as dictated by the ACTION PLAN. This capability ensures that the agent can navigate user intent, clarify requests, and deliver precise upgrade record information, maintaining workflow integrity and supporting agentic orchestration.</proficiency>
+        <record_type>custom</record_type>
+        <required_translations>[]</required_translations>
+        <research>false</research>
+        <role/>
+        <root_agent_id/>
+        <source_id/>
+        <strategy display_value="ReAct">f0bff21f9f13c6108f431597d90a1c74</strategy>
+        <sys_class_name>sn_aia_agent</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-09 09:48:40</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>833c49ce97bb0f54d9e73c70f053affe</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Intent Agent</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_agent_833c49ce97bb0f54d9e73c70f053affe</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-09 09:59:16</sys_updated_on>
+    </sn_aia_agent>
+</record_update>

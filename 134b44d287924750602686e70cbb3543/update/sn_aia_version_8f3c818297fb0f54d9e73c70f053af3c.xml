@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
+    <sn_aia_version action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applicability_script><![CDATA[/** 
+ * Function to determine applicability of this version based on runtime inputs 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.channel - The channel the request originated from (e.g., 'voice', 'chat') 
+ * 
+ * @returns {boolean} Returns true/false 
+(function(inputs) {
+    return inputs.channel == 'voice' ; 
+})(inputs);*/
+(function(inputs) {
+    return inputs.channel == 'ALL';
+})(inputs);]]></applicability_script>
+        <base_version/>
+        <change_description>Initial version</change_description>
+        <condition/>
+        <eval_score/>
+        <instructions>#IMPORTANT GUIDELINES:
+- You are always invoked via an agentic workflow that gives you context to start off with. You MUST use this context in the first step to understand user intent
+- You must ALWAYS follow the steps in the specified order
+- You must NEVER terminate the workflow execution - your only job is to hand off relevant output to the workflow orchestrator
+
+#INSTRUCTIONS:
+
+## INITIALISATION:
+1. Call "Retrieve Latest Upgrades" tool to retrieve last 3 upgrades to user; present in a cleanly formatted manner; ask user if they need help with one of the listed upgrades or something else. And if it is something else, ask them to specify the upgrade name and version as listed in the "Upgrade History [sys_upgrade_history]" table.
+2. If one from the list is chosen: call the tool "Retrieve Upgrade History Record Details" (with input as sys ID of chosen record), store its output in &lt;selected_upgrade_record&gt;, go to UPGRADE ANALYSIS. If not listed/other name: CLARIFICATION LOOP.
+
+## CLARIFICATION LOOP
+1. Ask exact upgrade name if not given or not in the right format (e.g. "Suite Install for Now Assist Admin Console 28.9.20260505").
+2. If unknown/asks a question: ask them to navigate to it in Upgrade History [sys_upgrade_history] and send the "To" value.
+3. Call the tool "Retrieve Upgrade History Record" (with input as the above upgrade name); store in &lt;selected_upgrade_record&gt;.
+4. If found, present and ask confirmation. Yes: jump to UPGRADE ANALYSIS. No/not found: Display a message saying you could not find an exact match, ask them to verify if the name they shared matches in the Upgrade History [sys_upgrade_history] table
+5. IF they send a new name, move back to Step 3. Else, move to CLOSE EXECUTION phase
+
+## UPGRADE ANALYSIS
+1. Send the sys ID of the upgrade record in the &lt;selected_upgrade_record&gt; memory variable as your output to the workflow orchestrator and complete hand-off. Your job is done.
+
+##CLOSE EXECUTION
+1. If NO upgrade is found relevant to the name that the user is specified, output to the workflow orchestrator that you could not find any related upgrade and complete hand-off. Your job is done.</instructions>
+        <label/>
+        <layer>overlay</layer>
+        <order/>
+        <short_description/>
+        <snapshot>{"schemaVersion":2,"definition":{"name":"Intent Agent","description":"Interprets free-text user input and calls the tools that fetch or look up upgrade data for the workflow. It is the only agent that retrieves data. It does not classify, compare, or write user-facing analysis","role":""},"overlay":{"tools":[{"m2mId":"444cc18297fb0f54d9e73c70f053af7c","toolId":"c84cc18297fb0f54d9e73c70f053af73","executionMode":"autopilot","inputs":"[]","active":true},{"m2mId":"9d3d814697fb0f54d9e73c70f053af88","toolId":"993d0d0697fb0f54d9e73c70f053af00","executionMode":"autopilot","inputs":"[{\"name\":\"upgradeName\",\"description\":\"This is the name of the upgraded plugin to be retrieved from the Upgrade History record.\",\"mandatory\":false,\"value\":\"\"}]","active":true},{"m2mId":"a53d814697fb0f54d9e73c70f053afc2","toolId":"213d814697fb0f54d9e73c70f053afbd","executionMode":"autopilot","inputs":"[{\"name\":\"upgradeID\",\"description\":\"This is the selected upgrade history record that needs to be analysed.\",\"mandatory\":false,\"value\":\"\"}]","active":true}],"children":[],"security":{"externalDiscoverable":"0","specialistEnabled":"0","runAsUser":"","userAccessRoles":[{"name":"admin","id":"2831a114c611228501d4ea6c309d626d"}],"dataAccessRoles":["2831a114c611228501d4ea6c309d626d"]}}}</snapshot>
+        <state>committed</state>
+        <sys_class_name>sn_aia_version</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-09 09:48:40</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>8f3c818297fb0f54d9e73c70f053af3c</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Version 1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_version_8f3c818297fb0f54d9e73c70f053af3c</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-09 09:59:16</sys_updated_on>
+        <tags/>
+        <target_id>833c49ce97bb0f54d9e73c70f053affe</target_id>
+        <target_table>sn_aia_agent</target_table>
+        <version_name>Version 1</version_name>
+        <version_number>1</version_number>
+    </sn_aia_version>
+</record_update>

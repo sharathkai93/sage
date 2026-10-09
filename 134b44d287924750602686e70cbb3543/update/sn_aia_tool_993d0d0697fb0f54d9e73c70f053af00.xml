@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>This tool can be used to retrieve a specific upgrade history record based on the name specified by the user in the query which is taken as the input "upgradeName"</description>
+        <input_schema>[{"name":"upgradeName","description":"This is the name of the upgraded plugin to be retrieved from the Upgrade History record.","mandatory":false}]</input_schema>
+        <name>Retrieve Upgrade History Record</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[(function(inputs) {
+// only string inputs are allowed 
+// return outputs object where the keys in it are understandable by LLM
+var outputPayload = {};
+var getUR = new GlideRecord('sys_upgrade_history');
+getUR.addQuery("to_version","CONTAINS",inputs.upgradeName.toString());
+getUR.addQuery("upgrade_finished","!=","");
+getUR.orderByDesc("sys_created_on");
+getUR.query();
+if(getUR.next())
+{
+    outputPayload = {
+                "from_version": getUR.from_version.toString(),
+                "to_version": getUR.to_version.toString(),
+                "total_changes": parseInt(getUR.changes_processed),
+                "changes_skipped": parseInt(getUR.changes_skipped),
+                "started_on": getUR.upgrade_started.toString(),
+                "finished_on": getUR.upgrade_finished.toString(),
+                "upgrade_sysID": getUR.sys_id.toString()
+            };
+        return JSON.stringify(outputPayload);
+}
+else
+    return "No record found";
+})(inputs);]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-09 09:52:55</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>993d0d0697fb0f54d9e73c70f053af00</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Retrieve Upgrade History Record</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_tool_993d0d0697fb0f54d9e73c70f053af00</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-09 09:52:55</sys_updated_on>
+        <target_document/>
+        <target_document_table>sn_aia_tool</target_document_table>
+        <type>script</type>
+    </sn_aia_tool>
+</record_update>
