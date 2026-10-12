@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="ai_guidance" label="AI Guidance" language="en" table="x_snc_ai_upgrade_0_action_log">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>ai_guidance</element>
+            <help/>
+            <hint/>
+            <label>AI Guidance</label>
+            <language>en</language>
+            <name>x_snc_ai_upgrade_0_action_log</name>
+            <plural/>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>sharath.vasishta@snc</sys_created_by>
+            <sys_created_on>2026-10-11 11:42:31</sys_created_on>
+            <sys_id>1a79f7e697734794d9e73c70f053af05</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_name>AI Guidance</sys_name>
+            <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+            <sys_update_name>sys_documentation_x_snc_ai_upgrade_0_action_log_ai_guidance_en</sys_update_name>
+            <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+            <sys_updated_on>2026-10-11 11:42:32</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
