@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent">
+    <sn_aia_agent action="INSERT_OR_UPDATE">
+        <advanced_mode>false</advanced_mode>
+        <agent_type>internal</agent_type>
+        <applicability_script><![CDATA[/** 
+ * Function to process inputs related to ServiceNow change request operations 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.objective - The purpose or goal of the operation 
+ * @param {string} inputs.execution_plan_id - Unique identifier for the execution plan 
+ * @param {Object} inputs.context - Context information about the ServiceNow change request 
+ * @param {string} inputs.context.url - The URL of the change request in Service Operations Workspace 
+ * @param {string} inputs.context.table - The ServiceNow table name (e.g., 'change_request') 
+ * @param {string} inputs.context.record_sys_id - The sys ID of the record 
+ * @param {string} inputs.context.route - The route type (e.g., 'record') 
+ * @param {string} inputs.context.additional_context - Additional contextual information in JSON format 
+ * @param {string} inputs.context.experience - The UI experience name (e.g., 'Service Operations Workspace') 
+ * @param {string} inputs.context.number - The request number 
+ * @param {string} inputs.context.portal - The portal ID 
+ * @param {string} inputs.context.device_type - The device type from which the experience is accessed, e.g.'mweb' 
+ * @param {string} inputs.context.deployment_id - The unique identifier for the assistant deployment 
+ * @param {string} inputs.context.assistant_type - The type of assistant, e.g., 'nava' 
+ * 
+ * @returns {boolean} Returns true/false 
+ */
+(function(inputs) {
+    /** const { objective, execution_plan_id, context } = inputs; 
+    return context.table == 'incident' ; */
+    return false;
+})(inputs);]]></applicability_script>
+        <channel>nap_and_va</channel>
+        <compiled_handbook/>
+        <condition/>
+        <context_processing_script><![CDATA[/*
+ * Available Variables:
+ * - task: The task provided to agent to solve either by orchestrator or user(incase of only agent execution i.e agent is invoked as seperate entity instead from a workflow).
+ * - user_utterance: The user utterance provided. and task = user_utterance in case of individual agent execution.
+ * - agent_id: The agent id.
+ * - context: An object that carries additional contextual information for the agent.
+ *          It always includes a "pageContext" and may include a "triggerContext",
+ *          depending on how and from where the agent is invoked.
+ *
+ *          Behavior by invocation type:
+ *          ---------------------------------
+ *          - When invoked via the startAiAgentConversation API:
+ *                If a "contextMemory" parameter is provided in the API request,
+ *                it will be available here as the "triggerContext".
+ *                The "pageContext" is always present in this call, regardless
+ *                of whether the agent is executed individually or as part of a use case.
+ *                Example:
+ *                    {
+ *                        pageContext: { ... },
+ *                        triggerContext: { ... } // Derived from contextMemory (if passed)
+ *                    }
+ *
+ *          - When invoked as part of a use case or workflow:
+ *                The "pageContext" and "triggerContext" objects available here
+ *                may have been *modified* by the use case’s context processing script.
+ *                This means the use case may alter, extend, or overwrite values
+ *                from the original "pageContext" or "triggerContext"
+ *                before the context reaches the agent.
+ *                If the use case was originally triggered via the API,
+ *                the initial "triggerContext" is still derived from the
+ *                "contextMemory" parameter, but its contents may have been updated
+ *                by the use case logic.
+ *
+ *          - When executed directly (standalone agent execution):
+ *                The "pageContext" will always be present (default or empty),
+ *                and the "triggerContext" will only be populated if explicitly
+ *                passed through the API call.
+ * Return an modified context like: { pageContext : {},triggerContext:{} }
+ */
+(function(task, user_utterance, agent_id, context) {
+    return {
+        pageContext : context?.pageContext,
+		triggerContext : context?.triggerContext
+    };
+})(task,user_utterance, agent_id, context);]]></context_processing_script>
+        <description>The purpose of this tool is to search release notes in ServiceNow for anything relevant.</description>
+        <extends/>
+        <extension_configuration/>
+        <external_agent_configuration/>
+        <inputs>{}</inputs>
+        <instructions>#IMPORTANT:
+- Do NOT infer, deduce or assume any information on your own - you MUST search the URL speecified in teh web search tool, and ONLY use the information that is available on that page to make your decision or provide your response. 
+- Do NOT navigate to ANY related pages or links, it MUST be on the page specified
+- DO NOT BE AN IDIOT.
+
+1. Invoke the Test Web Search tool and search for the query "Information about latest Password Reset" in the URL "https://www.google.com".
+2. Display the results.</instructions>
+        <internal_name>global.x_snc_ai_upgrade_0.Testing Web Search</internal_name>
+        <name>Testing Web Search</name>
+        <outputs>""</outputs>
+        <parent/>
+        <post_processing_message/>
+        <processing_message/>
+        <proficiency>- The agent possesses advanced proficiency in web search operations, specializing in extracting, synthesizing, and presenting information from specified web pages. Their expertise is strictly limited to the content available on the designated URL, ensuring that all responses are grounded in verifiable data and not inferred or assumed. This makes the agent ideal for tasks requiring accurate, source-based information retrieval.
+- The agent can invoke the 'Test web search' tool to search, scrape, and synthesize answers from a specified URL using a provided query. This capability allows the agent to retrieve targeted information, such as details about the latest Password Reset, from the exact page specified, ensuring that the results are both relevant and accurate. The agent can customize their search using the 'query' input, making their information retrieval highly adaptable to different task requirements.
+- The agent is capable of strictly adhering to task instructions by only utilizing information found on the specified web page, without navigating to related pages or making any assumptions. This ensures that all responses are based solely on the content available at the given URL, making the agent highly reliable for tasks that require source fidelity and compliance with strict information boundaries.
+- The agent can leverage optional input parameters like 'aisearch_providers' and 'conversation_history' within the 'Test web search' tool to further refine their search process. This capability allows the agent to select specific search providers or incorporate previous conversation context, enabling more nuanced and context-aware information retrieval when required.</proficiency>
+        <record_type>template</record_type>
+        <required_translations>[]</required_translations>
+        <research>false</research>
+        <role>You are a web search expert.</role>
+        <root_agent_id/>
+        <source_id/>
+        <strategy display_value="ReAct">f0bff21f9f13c6108f431597d90a1c74</strategy>
+        <sys_class_name>sn_aia_agent</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-13 13:26:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>f324aa9387ff4b54e5450d090cbb35c1</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>Testing Web Search</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_agent_f324aa9387ff4b54e5450d090cbb35c1</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-13 13:45:02</sys_updated_on>
+    </sn_aia_agent>
+</record_update>

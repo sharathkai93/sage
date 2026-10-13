@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
+    <sn_aia_version action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applicability_script><![CDATA[/** 
+ * Function to determine applicability of this version based on runtime inputs 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.channel - The channel the request originated from (e.g., 'voice', 'chat') 
+ * 
+ * @returns {boolean} Returns true/false 
+(function(inputs) {
+    return inputs.channel == 'voice' ; 
+})(inputs);*/
+(function(inputs) {
+    return inputs.channel == 'ALL';
+})(inputs);]]></applicability_script>
+        <base_version/>
+        <change_description>Initial version</change_description>
+        <condition/>
+        <eval_score/>
+        <instructions>#IMPORTANT:
+- Do NOT infer, deduce or assume any information on your own - you MUST search the URL speecified in teh web search tool, and ONLY use the information that is available on that page to make your decision or provide your response. 
+- Do NOT navigate to ANY related pages or links, it MUST be on the page specified
+- DO NOT BE AN IDIOT.
+
+1. Invoke the Test Web Search tool and search for the query "Information about latest Password Reset" in the URL "https://www.google.com".
+2. Display the results.</instructions>
+        <label/>
+        <layer>overlay</layer>
+        <order/>
+        <short_description/>
+        <snapshot>{"schemaVersion":2,"definition":{"name":"Testing Web Search","description":"The purpose of this tool is to search release notes in ServiceNow for anything relevant.","role":"You are a web search expert."},"overlay":{"tools":[{"m2mId":"10b4aed387ff4b54e5450d090cbb3509","toolId":"576cf8eaffd922101dbaffffffffff66","executionMode":"autopilot","inputs":"[{\"name\":\"search_type\",\"value\":\"ai_answers\",\"metadata\":{\"_MODE_\":\"user\"}}]","active":true}],"children":[],"security":{"externalDiscoverable":"0","specialistEnabled":"0","runAsUser":"","userAccessRoles":[],"dataAccessRoles":["2831a114c611228501d4ea6c309d626d"]}}}</snapshot>
+        <state>committed</state>
+        <sys_class_name>sn_aia_version</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-13 13:26:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>bf84ead387ff4b54e5450d090cbb3551</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Version 1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_version_bf84ead387ff4b54e5450d090cbb3551</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-13 13:45:02</sys_updated_on>
+        <tags/>
+        <target_id>f324aa9387ff4b54e5450d090cbb35c1</target_id>
+        <target_table>sn_aia_agent</target_table>
+        <version_name>Version 1</version_name>
+        <version_number>1</version_number>
+    </sn_aia_version>
+</record_update>
