@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_usecase">
+    <sn_aia_usecase action="INSERT_OR_UPDATE">
+        <advanced_mode>false</advanced_mode>
+        <applicability_script><![CDATA[/** 
+ * Function to process inputs related to ServiceNow change request operations 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.objective - The purpose or goal of the operation 
+ * @param {string} inputs.execution_plan_id - Unique identifier for the execution plan 
+ * @param {Object} inputs.context - Context information about the ServiceNow change request 
+ * @param {string} inputs.context.url - The URL of the change request in Service Operations Workspace 
+ * @param {string} inputs.context.table - The ServiceNow table name (e.g., 'change_request') 
+ * @param {string} inputs.context.record_sys_id - The sys ID of the record 
+ * @param {string} inputs.context.route - The route type (e.g., 'record') 
+ * @param {string} inputs.context.additional_context - Additional contextual information in JSON format 
+ * @param {string} inputs.context.experience - The UI experience name (e.g., 'Service Operations Workspace') 
+ * @param {string} inputs.context.number - The request number 
+ * @param {string} inputs.context.portal - The portal ID 
+ * @param {string} inputs.context.device_type - The device type from which the experience is accessed, e.g.'mweb' 
+ * @param {string} inputs.context.deployment_id - The unique identifier for the assistant deployment 
+ * @param {string} inputs.context.assistant_type - The type of assistant, e.g., 'nava' 
+ * 
+ * @returns {boolean} Returns true/false 
+ */
+(function(inputs) {
+    /** const { objective, execution_plan_id, context } = inputs; 
+    return context.table == 'incident' ; */
+    return false;
+})(inputs);]]></applicability_script>
+        <base_plan>#ROLE:
+You are the workflow orchestrator for the Post Upgrade Analysis agent. You own the conversation state, all tool calls, pagination, parsing, classification rules, and output templates. You call specialist agents only at the points marked [AGENT], and you validate every agent output before using it.
+
+#IMPORTANT GUIDELINES:
+- Follow every step in order. Never assume or infer anything that is not in the tool output, the lookup tables, or the user’s message.
+- Show all required items in every display. Never show raw tool output.
+- Never display a log record sys ID. Store it in state only.
+- Never compute offsets yourself. Use has_more, next_offset, and offset from the tool response.
+- Never lower a Security or Data model category. Never use “auto-accept” or “auto-retain” wording for Security or Data model records.
+- Classification is a triage aid, not an approval. Never accept, retain, or revert an upgrade based on category alone.
+
+
+#INSTRUCTIONS:
+
+## Phase 1: INITIALIZE
+1. Greet the user politely introducing yourself as SAGE, explaining that you would be assisting with analysis of skipped upgrades and providing guidance on actions to be taken.
+2.  You MUST execute the Intent Agent now, passing the user query (IF ANY, otherwise no query is fine), as input context to the agent
+3. Wait for agent to produce output.
+4. Once agent sends output -
+4.1. IF output says No upgrade found, move to CLOSURE phase
+4.2. ELSE, if an upgrade record sys ID is present, store it in &lt;selected_upgrade_record&gt; memory variable and move to the ANALYSIS phase
+
+## Phase 2: ANALYSIS
+1. Using the &lt;selected_upgrade_record&gt; from the INITIALIZE phase as input, invoke the Analysis agent
+2. Wait for the agent to provide output context and then pass that context to the EXECUTE phase
+
+## Phase 3: EXECUTE
+1. Use the context from step 2 of Phase 2 as input to invoke the Execute Agent
+2. Wait for Execute Agent to generate an output and then terminate your execution</base_plan>
+        <condition/>
+        <context_processing_script><![CDATA[/*
+ * Available Variables:
+ *
+ * - user_utterance: The user input or message that initiated the use case.
+ *          This represents the user's natural language query or command
+ *          received during the conversation.
+ *
+ * - usecase_id: The unique identifier of the use case being executed.
+ *          Can be used to reference use case configurations, metadata,
+ *          or to apply specific context-handling logic.
+ *
+ * - context: An object containing contextual information for the use case.
+ *          It always includes a "pageContext" and may include a "triggerContext",
+ *          depending on how and from where the use case was invoked.
+ *
+ *          Behavior by invocation type:
+ *          ---------------------------------
+ *          - When invoked via the startAiAgentConversation API:
+ *                If a "contextMemory" parameter is passed in the API request,
+ *                it will be available as the "triggerContext".
+ *                The "pageContext" is always present in this call,
+ *                regardless of the invocation type (standalone or workflow-based).
+ *                Example:
+ *                    {
+ *                        pageContext: { ... },
+ *                        triggerContext: { ... } // Derived from contextMemory (if passed)
+ *                    }
+ *
+ *          - When invoked as part of a workflow or chained use case:
+ *                The "pageContext" and "triggerContext" available here may represent
+ *                the state carried forward from a previous execution step.
+ *                This script can modify, enrich, or restructure these contexts
+ *                before passing them to the downstream agent(s).
+ *
+ *          - When executed directly (standalone use case execution):
+ *                The "pageContext" will always be available (even if empty),
+ *                and "triggerContext" will only be populated if explicitly
+ *                provided through the API call.
+ *
+ * Return Format:
+ * ----------------
+ * This script must return an updated context object to be passed to
+ * the next stage (typically the agent or workflow step):
+ *    { pageContext: {}, triggerContext: {} }
+ *
+ * Example:
+ * ----------------
+ * return {
+ *     pageContext: {
+ *         ...context.pageContext,
+ *         usecaseProcessed: true
+ *     },
+ *     triggerContext: {
+ *         ...context.triggerContext,
+ *         lastModifiedBy: "usecase_context_script"
+ *     }
+ * };
+ */
+(function(user_utterance, usecase_id, context) {
+    return {
+        pageContext: context?.pageContext,
+        triggerContext: context?.triggerContext
+    };
+})(user_utterance, usecase_id, context);
+]]></context_processing_script>
+        <description>The purpose of this agentic workflow is to analyze or review any plugin, application, suite or instance upgrades for any skipped updates and recommend actions for the low priority items as relevant.</description>
+        <execution_mode>copilot</execution_mode>
+        <internal_name>global.x_snc_ai_upgrade_0.Skipped update Analysis and Guidance Engine (SAGE)</internal_name>
+        <name>Skipped update Analysis and Guidance Engine (SAGE)</name>
+        <parent/>
+        <record_type>custom</record_type>
+        <root_usecase_id/>
+        <source_id/>
+        <strategy display_value="ReActive Planner">b264c470ff1022106c36ffffffffff67</strategy>
+        <sys_class_name>sn_aia_usecase</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-09 09:38:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>edd941ca97bb0f54d9e73c70f053afb0</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>Skipped update Analysis and Guidance Engine (SAGE)</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_usecase_edd941ca97bb0f54d9e73c70f053afb0</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-14 16:00:49</sys_updated_on>
+        <team display_value="Skipped update Analysis and Guidance Engine (SAGE)">a98fc10e97fb0f54d9e73c70f053afdc</team>
+    </sn_aia_usecase>
+</record_update>

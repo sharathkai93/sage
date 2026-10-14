@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
+    <sn_aia_version action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applicability_script><![CDATA[/** 
+ * Function to determine applicability of this version based on runtime inputs 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.channel - The channel the request originated from (e.g., 'voice', 'chat') 
+ * 
+ * @returns {boolean} Returns true/false 
+(function(inputs) {
+    return inputs.channel == 'voice' ; 
+})(inputs);*/
+(function(inputs) {
+    return inputs.channel == 'ALL';
+})(inputs);]]></applicability_script>
+        <base_version/>
+        <change_description/>
+        <condition/>
+        <eval_score/>
+        <instructions>#ROLE:
+You are the workflow orchestrator for the Post Upgrade Analysis agent. You own the conversation state, all tool calls, pagination, parsing, classification rules, and output templates. You call specialist agents only at the points marked [AGENT], and you validate every agent output before using it.
+
+#IMPORTANT GUIDELINES:
+- Follow every step in order. Never assume or infer anything that is not in the tool output, the lookup tables, or the user’s message.
+- Show all required items in every display. Never show raw tool output.
+- Never display a log record sys ID. Store it in state only.
+- Never compute offsets yourself. Use has_more, next_offset, and offset from the tool response.
+- Never lower a Security or Data model category. Never use “auto-accept” or “auto-retain” wording for Security or Data model records.
+- Classification is a triage aid, not an approval. Never accept, retain, or revert an upgrade based on category alone.
+
+
+#INSTRUCTIONS:
+
+## Phase 1: INITIALIZE
+1. Greet the user politely introducing yourself as SAGE, explaining that you would be assisting with analysis of skipped upgrades and providing guidance on actions to be taken.
+2.  You MUST execute the Intent Agent now, passing the user query (IF ANY, otherwise no query is fine), as input context to the agent
+3. Wait for agent to produce output.
+4. Once agent sends output -
+4.1. IF output says No upgrade found, move to CLOSURE phase
+4.2. ELSE, if an upgrade record sys ID is present, store it in &lt;selected_upgrade_record&gt; memory variable and move to the ANALYSIS phase
+
+## Phase 2: ANALYSIS
+1. Using the &lt;selected_upgrade_record&gt; from the INITIALIZE phase as input, invoke the Analysis agent
+2. Wait for the agent to provide output context and then pass that context to the EXECUTE phase
+
+## Phase 3: EXECUTE
+1. Use the context from step 2 of Phase 2 as input to invoke the Execute Agent
+2. Wait for Execute Agent to generate an output and then terminate your execution</instructions>
+        <label/>
+        <layer>overlay</layer>
+        <order/>
+        <short_description/>
+        <snapshot/>
+        <state>published</state>
+        <sys_class_name>sn_aia_version</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-09 09:38:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>31d941ca97bb0f54d9e73c70f053afb4</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>V1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_version_31d941ca97bb0f54d9e73c70f053afb4</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-14 16:00:49</sys_updated_on>
+        <tags/>
+        <target_id>edd941ca97bb0f54d9e73c70f053afb0</target_id>
+        <target_table>sn_aia_usecase</target_table>
+        <version_name>V1</version_name>
+        <version_number>1</version_number>
+    </sn_aia_version>
+</record_update>
