@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_tool">
+    <sn_aia_tool action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Create AI Upgrade Action Logs</description>
+        <input_schema>[{"name":"skipped_upgrades","description":"","mandatory":false}]</input_schema>
+        <name>Create AI Upgrade Action Logs</name>
+        <record_type>custom</record_type>
+        <script><![CDATA[undefined]]></script>
+        <sys_class_name>sn_aia_tool</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-14 13:50:21</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>48833f2b977343d4d9e73c70f053af46</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Create AI Upgrade Action Logs</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_tool_48833f2b977343d4d9e73c70f053af46</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-14 13:50:21</sys_updated_on>
+        <target_document>e65c7f2297b34794d9e73c70f053afed</target_document>
+        <target_document_table>sys_hub_action_type_definition</target_document_table>
+        <type>action</type>
+    </sn_aia_tool>
+</record_update>

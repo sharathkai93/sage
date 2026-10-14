@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_generative_ai_config">
     <sys_generative_ai_config action="INSERT_OR_UPDATE">
-        <active>true</active>
+        <active>false</active>
         <additional_configurations>{"skill_config_id":"ece53024c33f8b1040829a4bb0013136"}</additional_configurations>
         <ai_suggested>false</ai_suggested>
         <definition>94e5fce0c33f8b1040829a4bb00131e3</definition>
@@ -41,7 +41,7 @@ Do NOT include anything else in your output.</prompt>
         <provider_company/>
         <request_tokens>64786</request_tokens>
         <show_in_prompt_library>true</show_in_prompt_library>
-        <state>published</state>
+        <state>archived</state>
         <structured_output_enabled>false</structured_output_enabled>
         <structured_output_schema/>
         <sys_class_name>sys_generative_ai_config</sys_class_name>
@@ -50,7 +50,7 @@ Do NOT include anything else in your output.</prompt>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>068737ecc3f74f1040829a4bb0013198</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>94e5fce0c33f8b1040829a4bb00131e3</sys_name>
         <sys_overrides/>
         <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
@@ -58,7 +58,7 @@ Do NOT include anything else in your output.</prompt>
         <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
         <sys_update_name>sys_generative_ai_config_068737ecc3f74f1040829a4bb0013198</sys_update_name>
         <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
-        <sys_updated_on>2026-10-05 06:32:31</sys_updated_on>
+        <sys_updated_on>2026-10-14 13:24:24</sys_updated_on>
         <temperature>0.2</temperature>
         <thinking_tokens>0</thinking_tokens>
         <version>2</version>

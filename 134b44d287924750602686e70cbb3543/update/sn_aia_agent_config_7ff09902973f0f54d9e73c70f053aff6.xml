@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent_config">
+    <sn_aia_agent_config action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <agent display_value="Analysis Agent">f3f05502973f0f54d9e73c70f053afaf</agent>
+        <agent_descriptor/>
+        <agent_learning>false</agent_learning>
+        <current_version display_value="Version 2">6992fbeb973343d4d9e73c70f053af6e</current_version>
+        <doc_url/>
+        <icon_url/>
+        <public>false</public>
+        <run_as_user/>
+        <specialist_enabled>false</specialist_enabled>
+        <sys_class_name>sn_aia_agent_config</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-09 10:09:29</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>7ff09902973f0f54d9e73c70f053aff6</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_agent_config_7ff09902973f0f54d9e73c70f053aff6</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-14 13:46:22</sys_updated_on>
+    </sn_aia_agent_config>
+</record_update>
