@@ -1,0 +1,2031 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <active>true</active>
+        <annotation/>
+        <attributes>{labelCacheCleanUpExecuted=true}</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>This tool can be used to update the actions taken and action reason for the AI Upgrade Action Logs</description>
+        <flow_priority/>
+        <ih_action>false</ih_action>
+        <internal_name>add_actions_to_ai_upgrade_logs</internal_name>
+        <label_cache>[{"name":"{{action.input_json}}","label":"action➛Input JSON","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[0a1ac17e-9015-4be1-82c5-c008c6fa3104].results_json}}","label":"step➛Script step➛Results JSON","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":""}}]</label_cache>
+        <master_snapshot>345b6c5987cc5b10e5450d090cbb358f</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Add Actions to AI Upgrade Logs</name>
+        <natlang/>
+        <outputs/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <state>published</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:41:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5d9ae8d587cc5b10e5450d090cbb35c6</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Add Actions to AI Upgrade Logs</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_5d9ae8d587cc5b10e5450d090cbb35c6</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:12</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=5d9ae8d587cc5b10e5450d090cbb35c6"/>
+    <sys_variable_value action="delete_multiple" query="document_key=5d9ae8d587cc5b10e5450d090cbb35c6"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_definition</document>
+        <document_key>5d9ae8d587cc5b10e5450d090cbb35c6</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:50</sys_created_on>
+        <sys_id>184b285987cc5b10e5450d090cbb3503</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:50</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Don't Treat as Error">884be45987cc5b10e5450d090cbb35a5</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_definition</document>
+        <document_key>5d9ae8d587cc5b10e5450d090cbb35c6</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:50</sys_created_on>
+        <sys_id>904b285987cc5b10e5450d090cbb3504</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:50</sys_updated_on>
+        <value>{"version":"1.0","serializationFormat":"JSON","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"794bc342-9c9d-444b-a3f2-dd4b6a5a0173\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}}</value>
+        <variable display_value="Action Status">bb3be45987cc5b10e5450d090cbb358e</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=5d9ae8d587cc5b10e5450d090cbb35c6"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>results_json</field>
+        <id>5d9ae8d587cc5b10e5450d090cbb35c6</id>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:50</sys_created_on>
+        <sys_id>d04b285987cc5b10e5450d090cbb3503</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:50</sys_updated_on>
+        <table>var__m_sys_hub_action_output_5d9ae8d587cc5b10e5450d090cbb35c6</table>
+        <value>{{step[0a1ac17e-9015-4be1-82c5-c008c6fa3104].results_json}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>__action_status__</field>
+        <id>5d9ae8d587cc5b10e5450d090cbb35c6</id>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:50</sys_created_on>
+        <sys_id>984b285987cc5b10e5450d090cbb3502</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:50</sys_updated_on>
+        <table>var__m_sys_hub_action_output_5d9ae8d587cc5b10e5450d090cbb35c6</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>__dont_treat_as_error__</field>
+        <id>5d9ae8d587cc5b10e5450d090cbb35c6</id>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:50</sys_created_on>
+        <sys_id>504b285987cc5b10e5450d090cbb3502</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:50</sys_updated_on>
+        <table>var__m_sys_hub_action_output_5d9ae8d587cc5b10e5450d090cbb35c6</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_step_instance action="delete_multiple" query="action=5d9ae8d587cc5b10e5450d090cbb35c6^sys_idNOT INef3be45987cc5b10e5450d090cbb352b"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Add Actions to AI Upgrade Logs">5d9ae8d587cc5b10e5450d090cbb35c6</action>
+        <cid>0a1ac17e-9015-4be1-82c5-c008c6fa3104</cid>
+        <error_handling_type>1</error_handling_type>
+        <extended_inputs/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Script step</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:47</sys_created_on>
+        <sys_id>ef3be45987cc5b10e5450d090cbb352b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:48</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=ef3be45987cc5b10e5450d090cbb352b"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>ef3be45987cc5b10e5450d090cbb352b</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:48</sys_created_on>
+        <sys_id>773be45987cc5b10e5450d090cbb3587</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:48</sys_updated_on>
+        <value>(function execute(inputs, outputs) {&#13;
+    gs.info('@@@Script loaded');&#13;
+&#13;
+    var TABLE = 'x_snc_ai_upgrade_0_action_log';&#13;
+    var UPGRADE_FIELD = 'update_name';&#13;
+&#13;
+    // Script step input: records_json.&#13;
+    // Map this variable to the action input containing the JSON text.&#13;
+    var records = inputs.records_json;&#13;
+&#13;
+    gs.info('@@@Initial input type: ' + typeof records);&#13;
+&#13;
+    if (typeof records === 'undefined' || records === null) {&#13;
+        throw new Error(&#13;
+            'records_json is missing. Check the Script step input mapping.'&#13;
+        );&#13;
+    }&#13;
+&#13;
+    try {&#13;
+        // Handle normal JSON and one additional encoding layer.&#13;
+        for (var pass = 0; pass &lt; 2; pass++) {&#13;
+            if (typeof records !== 'string') {&#13;
+                break;&#13;
+            }&#13;
+&#13;
+            records = JSON.parse(records.trim());&#13;
+&#13;
+            gs.info(&#13;
+                '@@@After parse ' + (pass + 1) +&#13;
+                ': type=' + typeof records +&#13;
+                ', isArray=' + Array.isArray(records)&#13;
+            );&#13;
+        }&#13;
+    } catch (e) {&#13;
+        throw new Error(&#13;
+            'records_json contains invalid JSON: ' +&#13;
+            String(e.message || e)&#13;
+        );&#13;
+    }&#13;
+&#13;
+    if (!Array.isArray(records)) {&#13;
+        throw new Error(&#13;
+            'records_json must resolve to an array of objects. ' +&#13;
+            'Received type: ' + typeof records +&#13;
+            '; object type: ' + Object.prototype.toString.call(records)&#13;
+        );&#13;
+    }&#13;
+&#13;
+    // Validate all fields used for querying and updating.&#13;
+    var tableCheck = new GlideRecord(TABLE);&#13;
+    var fields = [&#13;
+        'file_name',&#13;
+        UPGRADE_FIELD,&#13;
+        'action_taken',&#13;
+        'action_reason'&#13;
+    ];&#13;
+&#13;
+    for (var f = 0; f &lt; fields.length; f++) {&#13;
+        if (!tableCheck.isValidField(fields[f])) {&#13;
+            throw new Error('Missing or invalid table field: ' + fields[f]);&#13;
+        }&#13;
+    }&#13;
+&#13;
+    var results = [];&#13;
+&#13;
+    for (var i = 0; i &lt; records.length; i++) {&#13;
+        var item = records[i];&#13;
+&#13;
+        var result = {&#13;
+            index: item &amp;&amp; typeof item.index !== 'undefined'&#13;
+                ? item.index&#13;
+                : i,&#13;
+            file_name: item ? item.file_name : null,&#13;
+            upgrade_id: item ? item.upgrade_id : null&#13;
+        };&#13;
+&#13;
+        // Require identifying fields and string action values.&#13;
+        if (!item ||&#13;
+            typeof item !== 'object' ||&#13;
+            Array.isArray(item) ||&#13;
+            typeof item.file_name !== 'string' ||&#13;
+            !item.file_name.trim() ||&#13;
+            typeof item.upgrade_id !== 'string' ||&#13;
+            !item.upgrade_id.trim() ||&#13;
+            typeof item.action_taken !== 'string' ||&#13;
+            typeof item.action_reason !== 'string') {&#13;
+&#13;
+            result.status = 'invalid_input';&#13;
+            result.message =&#13;
+                'Provide an object with non-empty file_name and upgrade_id, ' +&#13;
+                'and string action_taken and action_reason values.';&#13;
+&#13;
+            results.push(result);&#13;
+            continue;&#13;
+        }&#13;
+&#13;
+        try {&#13;
+            var gr = new GlideRecord(TABLE);&#13;
+            gr.addQuery('file_name', item.file_name);&#13;
+            gr.addQuery(UPGRADE_FIELD, item.upgrade_id);&#13;
+            gr.addQuery('action_taken', '');&#13;
+&#13;
+            // Two matches are sufficient to detect an ambiguous lookup.&#13;
+            gr.setLimit(2);&#13;
+            gr.query();&#13;
+&#13;
+            var matchCount = gr.getRowCount();&#13;
+&#13;
+            if (matchCount === 0) {&#13;
+                result.status = 'not_found';&#13;
+                result.message =&#13;
+                    'No record matched file_name, upgrade ID, ' +&#13;
+                    'and an empty action_taken.';&#13;
+            } else if (matchCount &gt; 1) {&#13;
+                result.status = 'ambiguous_match';&#13;
+                result.message =&#13;
+                    'Multiple records match; none were updated.';&#13;
+            } else if (gr.next()) {&#13;
+                gr.setValue('action_taken', item.action_taken);&#13;
+                gr.setValue('action_reason', item.action_reason);&#13;
+&#13;
+                var updatedId = gr.update();&#13;
+&#13;
+                result.status = updatedId ? 'updated' : 'update_failed';&#13;
+&#13;
+                if (updatedId) {&#13;
+                    result.sys_id = String(updatedId);&#13;
+                }&#13;
+            }&#13;
+        } catch (e) {&#13;
+            result.status = 'error';&#13;
+            result.message = String(e.message || e);&#13;
+        }&#13;
+&#13;
+        results.push(result);&#13;
+    }&#13;
+&#13;
+    outputs.results_json = JSON.stringify(results);&#13;
+&#13;
+})(inputs, outputs);</value>
+        <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>ef3be45987cc5b10e5450d090cbb352b</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:48</sys_created_on>
+        <sys_id>7f3be45987cc5b10e5450d090cbb3585</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:48</sys_updated_on>
+        <value>35aa573fd7802200bdbaee5b5e610375</value>
+        <variable display_value="MID Application">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=ef3be45987cc5b10e5450d090cbb352b"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>application</field>
+        <id>ef3be45987cc5b10e5450d090cbb352b</id>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:48</sys_created_on>
+        <sys_id>f33be45987cc5b10e5450d090cbb3584</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:48</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>records_json</field>
+        <id>ef3be45987cc5b10e5450d090cbb352b</id>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:48</sys_created_on>
+        <sys_id>f33be45987cc5b10e5450d090cbb3589</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:48</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_ef3be45987cc5b10e5450d090cbb352b</table>
+        <value>{{action.input_json}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>script</field>
+        <id>ef3be45987cc5b10e5450d090cbb352b</id>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:48</sys_created_on>
+        <sys_id>3b3be45987cc5b10e5450d090cbb3585</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:48</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_ef3be45987cc5b10e5450d090cbb352b^id=ef3be45987cc5b10e5450d090cbb352b"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=ef3be45987cc5b10e5450d090cbb352b"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=ef3be45987cc5b10e5450d090cbb352b"/>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=ef3be45987cc5b10e5450d090cbb352b^sys_idNOT IN6b3be45987cc5b10e5450d090cbb3542"/>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>records_json</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label/>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">ef3be45987cc5b10e5450d090cbb352b</model>
+        <model_id>ef3be45987cc5b10e5450d090cbb352b</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_ef3be45987cc5b10e5450d090cbb352b</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:47</sys_created_on>
+        <sys_id>6b3be45987cc5b10e5450d090cbb3542</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:47</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=ef3be45987cc5b10e5450d090cbb352b^sys_idNOT INf73be45987cc5b10e5450d090cbb354a"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=b89abe25-5948-431c-972d-39b69b23fbb7</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>results_json</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Results JSON</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">ef3be45987cc5b10e5450d090cbb352b</model>
+        <model_id>ef3be45987cc5b10e5450d090cbb352b</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_ef3be45987cc5b10e5450d090cbb352b</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:47</sys_created_on>
+        <sys_id>f73be45987cc5b10e5450d090cbb354a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:47</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=ef3be45987cc5b10e5450d090cbb352b"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>results_json</element>
+        <help/>
+        <hint/>
+        <label>Results JSON</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_ef3be45987cc5b10e5450d090cbb352b</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:48</sys_created_on>
+        <sys_id>333be45987cc5b10e5450d090cbb355e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:48</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_hub_action_input action="delete_multiple" query="model=5d9ae8d587cc5b10e5450d090cbb35c6^sys_idNOT IN3a3b6c1987cc5b10e5450d090cbb35e9"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=6166bc60-0dd6-47b3-8d48-686d06d4cbb5</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>input_json</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Input JSON</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Add Actions to AI Upgrade Logs">5d9ae8d587cc5b10e5450d090cbb35c6</model>
+        <model_id>5d9ae8d587cc5b10e5450d090cbb35c6</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_input_5d9ae8d587cc5b10e5450d090cbb35c6</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:44</sys_created_on>
+        <sys_id>3a3b6c1987cc5b10e5450d090cbb35e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:44</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=3a3b6c1987cc5b10e5450d090cbb35e9"/>
+    <sys_hub_action_output action="delete_multiple" query="model=5d9ae8d587cc5b10e5450d090cbb35c6^sys_idNOT IN884be45987cc5b10e5450d090cbb35a5,bb3be45987cc5b10e5450d090cbb358e,c84be45987cc5b10e5450d090cbb35cc"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=2599b6d6-9fec-4ad0-934e-7bb9ddf01e12,visible_in_ui=false</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>true</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__dont_treat_as_error__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Don't Treat as Error</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Add Actions to AI Upgrade Logs">5d9ae8d587cc5b10e5450d090cbb35c6</model>
+        <model_id>5d9ae8d587cc5b10e5450d090cbb35c6</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_5d9ae8d587cc5b10e5450d090cbb35c6</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:49</sys_created_on>
+        <sys_id>884be45987cc5b10e5450d090cbb35a5</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:06</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=884be45987cc5b10e5450d090cbb35a5"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=884be45987cc5b10e5450d090cbb35a5"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,co_type_name=FDACTIONSTATUS,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=96e25d89-c993-40a2-8810-f7000609135b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__action_status__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Action Status</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Add Actions to AI Upgrade Logs">5d9ae8d587cc5b10e5450d090cbb35c6</model>
+        <model_id>5d9ae8d587cc5b10e5450d090cbb35c6</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_5d9ae8d587cc5b10e5450d090cbb35c6</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:48</sys_created_on>
+        <sys_id>bb3be45987cc5b10e5450d090cbb358e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:48</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=bb3be45987cc5b10e5450d090cbb358e"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=bb3be45987cc5b10e5450d090cbb358e"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=3428aeaf-ceb5-47bb-9ca2-d24a8f2380f2</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>results_json</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Results JSON</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Add Actions to AI Upgrade Logs">5d9ae8d587cc5b10e5450d090cbb35c6</model>
+        <model_id>5d9ae8d587cc5b10e5450d090cbb35c6</model_id>
+        <model_table>sys_hub_action_type_definition</model_table>
+        <name>var__m_sys_hub_action_output_5d9ae8d587cc5b10e5450d090cbb35c6</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:49</sys_created_on>
+        <sys_id>c84be45987cc5b10e5450d090cbb35cc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:49</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=c84be45987cc5b10e5450d090cbb35cc"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=c84be45987cc5b10e5450d090cbb35cc^sys_idNOT IN104b285987cc5b10e5450d090cbb3500"/>
+    <sys_hub_input_scripts action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <input_name>results_json</input_name>
+        <instance>c84be45987cc5b10e5450d090cbb35cc</instance>
+        <referenced_table>sys_hub_action_output</referenced_table>
+        <script>{"results_json":{"scriptActive":false}}</script>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:50</sys_created_on>
+        <sys_id>104b285987cc5b10e5450d090cbb3500</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:50</sys_updated_on>
+    </sys_hub_input_scripts>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=5d9ae8d587cc5b10e5450d090cbb35c6"/>
+    <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=5d9ae8d587cc5b10e5450d090cbb35c6^sys_idNOT IN504b285987cc5b10e5450d090cbb3507"/>
+    <sys_hub_action_status_metadata action="INSERT_OR_UPDATE">
+        <action_type_id display_value="Add Actions to AI Upgrade Logs">5d9ae8d587cc5b10e5450d090cbb35c6</action_type_id>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:50</sys_created_on>
+        <sys_id>504b285987cc5b10e5450d090cbb3507</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:50</sys_updated_on>
+    </sys_hub_action_status_metadata>
+    <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=504b285987cc5b10e5450d090cbb3507"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>input_json</element>
+        <help/>
+        <hint/>
+        <label>Input JSON</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_5d9ae8d587cc5b10e5450d090cbb35c6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:46</sys_created_on>
+        <sys_id>9b3ba45987cc5b10e5450d090cbb3595</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:46</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_5d9ae8d587cc5b10e5450d090cbb35c6"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__action_status__</element>
+        <help/>
+        <hint/>
+        <label>Action Status</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_5d9ae8d587cc5b10e5450d090cbb35c6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:49</sys_created_on>
+        <sys_id>844be45987cc5b10e5450d090cbb35a3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:49</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__dont_treat_as_error__</element>
+        <help/>
+        <hint/>
+        <label>Don't Treat as Error</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_5d9ae8d587cc5b10e5450d090cbb35c6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:49</sys_created_on>
+        <sys_id>c44be45987cc5b10e5450d090cbb35ca</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:49</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>results_json</element>
+        <help/>
+        <hint/>
+        <label>Results JSON</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_5d9ae8d587cc5b10e5450d090cbb35c6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:44:50</sys_created_on>
+        <sys_id>d84be45987cc5b10e5450d090cbb35d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:44:50</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_5d9ae8d587cc5b10e5450d090cbb35c6"/>
+    <sys_hub_action_plan action="delete_multiple" query="action_id=5d9ae8d587cc5b10e5450d090cbb35c6^sys_idNOT IN395bac5987cc5b10e5450d090cbb35de"/>
+    <sys_hub_action_plan action="INSERT_OR_UPDATE">
+        <action_id display_value="Add Actions to AI Upgrade Logs">5d9ae8d587cc5b10e5450d090cbb35c6</action_id>
+        <plan>{"@class":"com.snc.process_flow.engine.serialization.plan_data.ChunkingPlanData","chunk_data":{"table":"sys_hub_action_plan","id":"395bac5987cc5b10e5450d090cbb35de","name":"plan","plan_signature":null},"plan_data":"CHUNKING_PLAN"}</plan>
+        <snapshot>b15bac5987cc5b10e5450d090cbb35d7</snapshot>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>395bac5987cc5b10e5450d090cbb35de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:12</sys_updated_on>
+    </sys_hub_action_plan>
+    <sys_hub_action_type_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <annotation/>
+        <attributes>{labelCacheCleanUpExecuted=true}</attributes>
+        <authored_on_release_version>29000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>This tool can be used to update the actions taken and action reason for the AI Upgrade Action Logs</description>
+        <flow_priority/>
+        <internal_name>add_actions_to_ai_upgrade_logs</internal_name>
+        <label_cache>[{"name":"{{action.input_json}}","label":"action➛Input JSON","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[0a1ac17e-9015-4be1-82c5-c008c6fa3104].results_json}}","label":"step➛Script step➛Results JSON","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"sourceId":"","sourceUiUniqueId":"","sourceType":""}}]</label_cache>
+        <master>true</master>
+        <name>Add Actions to AI Upgrade Logs</name>
+        <natlang/>
+        <outputs/>
+        <outputs/>
+        <parent_action display_value="Add Actions to AI Upgrade Logs">5d9ae8d587cc5b10e5450d090cbb35c6</parent_action>
+        <sys_class_name>sys_hub_action_type_snapshot</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>345b6c5987cc5b10e5450d090cbb358f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:08</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=345b6c5987cc5b10e5450d090cbb358f"/>
+    <sys_variable_value action="delete_multiple" query="document_key=345b6c5987cc5b10e5450d090cbb358f"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_snapshot</document>
+        <document_key>345b6c5987cc5b10e5450d090cbb358f</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:12</sys_created_on>
+        <sys_id>2d5bac5987cc5b10e5450d090cbb35d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:12</sys_updated_on>
+        <value>{"version":"1.0","serializationFormat":"JSON","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}},"complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"794bc342-9c9d-444b-a3f2-dd4b6a5a0173\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}}</value>
+        <variable display_value="Action Status">995bac5987cc5b10e5450d090cbb3562</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_type_snapshot</document>
+        <document_key>345b6c5987cc5b10e5450d090cbb358f</document_key>
+        <order>2</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:12</sys_created_on>
+        <sys_id>a15bac5987cc5b10e5450d090cbb35d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:12</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Don't Treat as Error">955bac5987cc5b10e5450d090cbb3578</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=345b6c5987cc5b10e5450d090cbb358f"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>results_json</field>
+        <id>345b6c5987cc5b10e5450d090cbb358f</id>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:12</sys_created_on>
+        <sys_id>6d5bac5987cc5b10e5450d090cbb35d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:12</sys_updated_on>
+        <table>var__m_sys_hub_action_output_345b6c5987cc5b10e5450d090cbb358f</table>
+        <value>{{step[0a1ac17e-9015-4be1-82c5-c008c6fa3104].results_json}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>__action_status__</field>
+        <id>345b6c5987cc5b10e5450d090cbb358f</id>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:12</sys_created_on>
+        <sys_id>6d5bac5987cc5b10e5450d090cbb35c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:12</sys_updated_on>
+        <table>var__m_sys_hub_action_output_345b6c5987cc5b10e5450d090cbb358f</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>__dont_treat_as_error__</field>
+        <id>345b6c5987cc5b10e5450d090cbb358f</id>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:12</sys_created_on>
+        <sys_id>255bac5987cc5b10e5450d090cbb35c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:12</sys_updated_on>
+        <table>var__m_sys_hub_action_output_345b6c5987cc5b10e5450d090cbb358f</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_step_instance action="delete_multiple" query="action=345b6c5987cc5b10e5450d090cbb358f^sys_idNOT IN785b6c5987cc5b10e5450d090cbb35a4"/>
+    <sys_hub_step_instance action="INSERT_OR_UPDATE">
+        <action display_value="Add Actions to AI Upgrade Logs">345b6c5987cc5b10e5450d090cbb358f</action>
+        <cid>0a1ac17e-9015-4be1-82c5-c008c6fa3104</cid>
+        <error_handling_type>1</error_handling_type>
+        <extended_inputs/>
+        <extended_inputs/>
+        <extended_outputs/>
+        <icon/>
+        <inputs/>
+        <label>Script step</label>
+        <order>1</order>
+        <outputs/>
+        <section/>
+        <step_type display_value="Script">106afb6647032200b4fad7527c9a71e7</step_type>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:09</sys_created_on>
+        <sys_id>785b6c5987cc5b10e5450d090cbb35a4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:10</sys_updated_on>
+    </sys_hub_step_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=785b6c5987cc5b10e5450d090cbb35a4"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>785b6c5987cc5b10e5450d090cbb35a4</document_key>
+        <order>600</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:10</sys_created_on>
+        <sys_id>515bac5987cc5b10e5450d090cbb355c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:10</sys_updated_on>
+        <value>(function execute(inputs, outputs) {&#13;
+    gs.info('@@@Script loaded');&#13;
+&#13;
+    var TABLE = 'x_snc_ai_upgrade_0_action_log';&#13;
+    var UPGRADE_FIELD = 'update_name';&#13;
+&#13;
+    // Script step input: records_json.&#13;
+    // Map this variable to the action input containing the JSON text.&#13;
+    var records = inputs.records_json;&#13;
+&#13;
+    gs.info('@@@Initial input type: ' + typeof records);&#13;
+&#13;
+    if (typeof records === 'undefined' || records === null) {&#13;
+        throw new Error(&#13;
+            'records_json is missing. Check the Script step input mapping.'&#13;
+        );&#13;
+    }&#13;
+&#13;
+    try {&#13;
+        // Handle normal JSON and one additional encoding layer.&#13;
+        for (var pass = 0; pass &lt; 2; pass++) {&#13;
+            if (typeof records !== 'string') {&#13;
+                break;&#13;
+            }&#13;
+&#13;
+            records = JSON.parse(records.trim());&#13;
+&#13;
+            gs.info(&#13;
+                '@@@After parse ' + (pass + 1) +&#13;
+                ': type=' + typeof records +&#13;
+                ', isArray=' + Array.isArray(records)&#13;
+            );&#13;
+        }&#13;
+    } catch (e) {&#13;
+        throw new Error(&#13;
+            'records_json contains invalid JSON: ' +&#13;
+            String(e.message || e)&#13;
+        );&#13;
+    }&#13;
+&#13;
+    if (!Array.isArray(records)) {&#13;
+        throw new Error(&#13;
+            'records_json must resolve to an array of objects. ' +&#13;
+            'Received type: ' + typeof records +&#13;
+            '; object type: ' + Object.prototype.toString.call(records)&#13;
+        );&#13;
+    }&#13;
+&#13;
+    // Validate all fields used for querying and updating.&#13;
+    var tableCheck = new GlideRecord(TABLE);&#13;
+    var fields = [&#13;
+        'file_name',&#13;
+        UPGRADE_FIELD,&#13;
+        'action_taken',&#13;
+        'action_reason'&#13;
+    ];&#13;
+&#13;
+    for (var f = 0; f &lt; fields.length; f++) {&#13;
+        if (!tableCheck.isValidField(fields[f])) {&#13;
+            throw new Error('Missing or invalid table field: ' + fields[f]);&#13;
+        }&#13;
+    }&#13;
+&#13;
+    var results = [];&#13;
+&#13;
+    for (var i = 0; i &lt; records.length; i++) {&#13;
+        var item = records[i];&#13;
+&#13;
+        var result = {&#13;
+            index: item &amp;&amp; typeof item.index !== 'undefined'&#13;
+                ? item.index&#13;
+                : i,&#13;
+            file_name: item ? item.file_name : null,&#13;
+            upgrade_id: item ? item.upgrade_id : null&#13;
+        };&#13;
+&#13;
+        // Require identifying fields and string action values.&#13;
+        if (!item ||&#13;
+            typeof item !== 'object' ||&#13;
+            Array.isArray(item) ||&#13;
+            typeof item.file_name !== 'string' ||&#13;
+            !item.file_name.trim() ||&#13;
+            typeof item.upgrade_id !== 'string' ||&#13;
+            !item.upgrade_id.trim() ||&#13;
+            typeof item.action_taken !== 'string' ||&#13;
+            typeof item.action_reason !== 'string') {&#13;
+&#13;
+            result.status = 'invalid_input';&#13;
+            result.message =&#13;
+                'Provide an object with non-empty file_name and upgrade_id, ' +&#13;
+                'and string action_taken and action_reason values.';&#13;
+&#13;
+            results.push(result);&#13;
+            continue;&#13;
+        }&#13;
+&#13;
+        try {&#13;
+            var gr = new GlideRecord(TABLE);&#13;
+            gr.addQuery('file_name', item.file_name);&#13;
+            gr.addQuery(UPGRADE_FIELD, item.upgrade_id);&#13;
+            gr.addQuery('action_taken', '');&#13;
+&#13;
+            // Two matches are sufficient to detect an ambiguous lookup.&#13;
+            gr.setLimit(2);&#13;
+            gr.query();&#13;
+&#13;
+            var matchCount = gr.getRowCount();&#13;
+&#13;
+            if (matchCount === 0) {&#13;
+                result.status = 'not_found';&#13;
+                result.message =&#13;
+                    'No record matched file_name, upgrade ID, ' +&#13;
+                    'and an empty action_taken.';&#13;
+            } else if (matchCount &gt; 1) {&#13;
+                result.status = 'ambiguous_match';&#13;
+                result.message =&#13;
+                    'Multiple records match; none were updated.';&#13;
+            } else if (gr.next()) {&#13;
+                gr.setValue('action_taken', item.action_taken);&#13;
+                gr.setValue('action_reason', item.action_reason);&#13;
+&#13;
+                var updatedId = gr.update();&#13;
+&#13;
+                result.status = updatedId ? 'updated' : 'update_failed';&#13;
+&#13;
+                if (updatedId) {&#13;
+                    result.sys_id = String(updatedId);&#13;
+                }&#13;
+            }&#13;
+        } catch (e) {&#13;
+            result.status = 'error';&#13;
+            result.message = String(e.message || e);&#13;
+        }&#13;
+&#13;
+        results.push(result);&#13;
+    }&#13;
+&#13;
+    outputs.results_json = JSON.stringify(results);&#13;
+&#13;
+})(inputs, outputs);</value>
+        <variable display_value="Script">71aa7f6647032200b4fad7527c9a719b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_step_instance</document>
+        <document_key>785b6c5987cc5b10e5450d090cbb35a4</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:10</sys_created_on>
+        <sys_id>d55bac5987cc5b10e5450d090cbb355b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:10</sys_updated_on>
+        <value>35aa573fd7802200bdbaee5b5e610375</value>
+        <variable display_value="MID Application">f5e56d79b3101300176b051a16a8dce4</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=785b6c5987cc5b10e5450d090cbb35a4"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>application</field>
+        <id>785b6c5987cc5b10e5450d090cbb35a4</id>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:10</sys_created_on>
+        <sys_id>d95bac5987cc5b10e5450d090cbb355a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:10</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>records_json</field>
+        <id>785b6c5987cc5b10e5450d090cbb35a4</id>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:10</sys_created_on>
+        <sys_id>d95bac5987cc5b10e5450d090cbb355d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:10</sys_updated_on>
+        <table>var__m_sys_hub_step_ext_input_785b6c5987cc5b10e5450d090cbb35a4</table>
+        <value>{{action.input_json}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>script</field>
+        <id>785b6c5987cc5b10e5450d090cbb35a4</id>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:10</sys_created_on>
+        <sys_id>915bac5987cc5b10e5450d090cbb355b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:10</sys_updated_on>
+        <table>var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_785b6c5987cc5b10e5450d090cbb35a4^id=785b6c5987cc5b10e5450d090cbb35a4"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=785b6c5987cc5b10e5450d090cbb35a4"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=785b6c5987cc5b10e5450d090cbb35a4"/>
+    <sys_hub_step_ext_input action="delete_multiple" query="model=785b6c5987cc5b10e5450d090cbb35a4^sys_idNOT IN015b6c5987cc5b10e5450d090cbb35f6"/>
+    <sys_hub_step_ext_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>records_json</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>records_json</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">785b6c5987cc5b10e5450d090cbb35a4</model>
+        <model_id>785b6c5987cc5b10e5450d090cbb35a4</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_input_785b6c5987cc5b10e5450d090cbb35a4</name>
+        <next_element/>
+        <order>0</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_input</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:09</sys_created_on>
+        <sys_id>015b6c5987cc5b10e5450d090cbb35f6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:09</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_input>
+    <sys_hub_step_ext_output action="delete_multiple" query="model=785b6c5987cc5b10e5450d090cbb35a4^sys_idNOT INcd5b6c5987cc5b10e5450d090cbb35fe"/>
+    <sys_hub_step_ext_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=b89abe25-5948-431c-972d-39b69b23fbb7</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>results_json</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Results JSON</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Script step">785b6c5987cc5b10e5450d090cbb35a4</model>
+        <model_id>785b6c5987cc5b10e5450d090cbb35a4</model_id>
+        <model_table>sys_hub_step_instance</model_table>
+        <name>var__m_sys_hub_step_ext_output_785b6c5987cc5b10e5450d090cbb35a4</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_step_ext_output</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:09</sys_created_on>
+        <sys_id>cd5b6c5987cc5b10e5450d090cbb35fe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:09</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_step_ext_output>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=785b6c5987cc5b10e5450d090cbb35a4"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>results_json</element>
+        <help/>
+        <hint/>
+        <label>Results JSON</label>
+        <language>en</language>
+        <name>var__m_sys_hub_step_ext_output_785b6c5987cc5b10e5450d090cbb35a4</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:10</sys_created_on>
+        <sys_id>495bac5987cc5b10e5450d090cbb3536</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:10</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_hub_action_input action="delete_multiple" query="model=345b6c5987cc5b10e5450d090cbb358f^sys_idNOT INf45b6c5987cc5b10e5450d090cbb3595"/>
+    <sys_hub_action_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=6166bc60-0dd6-47b3-8d48-686d06d4cbb5</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>input_json</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Input JSON</label>
+        <mandatory>true</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Add Actions to AI Upgrade Logs">345b6c5987cc5b10e5450d090cbb358f</model>
+        <model_id>345b6c5987cc5b10e5450d090cbb358f</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_input_345b6c5987cc5b10e5450d090cbb358f</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_input</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:08</sys_created_on>
+        <sys_id>f45b6c5987cc5b10e5450d090cbb3595</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:08</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=f45b6c5987cc5b10e5450d090cbb3595"/>
+    <sys_hub_action_output action="delete_multiple" query="model=345b6c5987cc5b10e5450d090cbb358f^sys_idNOT IN6d5bac5987cc5b10e5450d090cbb3590,955bac5987cc5b10e5450d090cbb3578,995bac5987cc5b10e5450d090cbb3562"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=3428aeaf-ceb5-47bb-9ca2-d24a8f2380f2</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>results_json</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Results JSON</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Add Actions to AI Upgrade Logs">345b6c5987cc5b10e5450d090cbb358f</model>
+        <model_id>345b6c5987cc5b10e5450d090cbb358f</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_345b6c5987cc5b10e5450d090cbb358f</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:11</sys_created_on>
+        <sys_id>6d5bac5987cc5b10e5450d090cbb3590</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:11</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=6d5bac5987cc5b10e5450d090cbb3590"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=6d5bac5987cc5b10e5450d090cbb3590^sys_idNOT INed5bac5987cc5b10e5450d090cbb35c3"/>
+    <sys_hub_input_scripts action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <input_name>results_json</input_name>
+        <instance>6d5bac5987cc5b10e5450d090cbb3590</instance>
+        <referenced_table>sys_hub_action_output</referenced_table>
+        <script>{"results_json":{"scriptActive":false}}</script>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:12</sys_created_on>
+        <sys_id>ed5bac5987cc5b10e5450d090cbb35c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:12</sys_updated_on>
+    </sys_hub_input_scripts>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=2599b6d6-9fec-4ad0-934e-7bb9ddf01e12,visible_in_ui=false</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>true</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__dont_treat_as_error__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="">boolean</internal_type>
+        <label>Don't Treat as Error</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Add Actions to AI Upgrade Logs">345b6c5987cc5b10e5450d090cbb358f</model>
+        <model_id>345b6c5987cc5b10e5450d090cbb358f</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_345b6c5987cc5b10e5450d090cbb358f</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:11</sys_created_on>
+        <sys_id>955bac5987cc5b10e5450d090cbb3578</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:11</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=955bac5987cc5b10e5450d090cbb3578"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=955bac5987cc5b10e5450d090cbb3578"/>
+    <sys_hub_action_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>action_error_output=true,co_type_name=FDACTIONSTATUS,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=96e25d89-c993-40a2-8810-f7000609135b</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>__action_status__</element>
+        <element_prototype/>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_link/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Action Status</label>
+        <mandatory>false</mandatory>
+        <max_length>65000</max_length>
+        <model display_value="Add Actions to AI Upgrade Logs">345b6c5987cc5b10e5450d090cbb358f</model>
+        <model_id>345b6c5987cc5b10e5450d090cbb358f</model_id>
+        <model_table>sys_hub_action_type_snapshot</model_table>
+        <name>var__m_sys_hub_action_output_345b6c5987cc5b10e5450d090cbb358f</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_only_option/>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_action_output</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:10</sys_created_on>
+        <sys_id>995bac5987cc5b10e5450d090cbb3562</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:10</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_action_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=995bac5987cc5b10e5450d090cbb3562"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=995bac5987cc5b10e5450d090cbb3562"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=345b6c5987cc5b10e5450d090cbb358f"/>
+    <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=345b6c5987cc5b10e5450d090cbb358f^sys_idNOT INe95bac5987cc5b10e5450d090cbb35d6"/>
+    <sys_hub_action_status_metadata action="INSERT_OR_UPDATE">
+        <action_type_id display_value="Add Actions to AI Upgrade Logs">345b6c5987cc5b10e5450d090cbb358f</action_type_id>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:12</sys_created_on>
+        <sys_id>e95bac5987cc5b10e5450d090cbb35d6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:12</sys_updated_on>
+    </sys_hub_action_status_metadata>
+    <sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=e95bac5987cc5b10e5450d090cbb35d6"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>input_json</element>
+        <help/>
+        <hint/>
+        <label>Input JSON</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_input_345b6c5987cc5b10e5450d090cbb358f</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:09</sys_created_on>
+        <sys_id>785b6c5987cc5b10e5450d090cbb359c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:09</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_345b6c5987cc5b10e5450d090cbb358f"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__dont_treat_as_error__</element>
+        <help/>
+        <hint/>
+        <label>Don't Treat as Error</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_345b6c5987cc5b10e5450d090cbb358f</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:11</sys_created_on>
+        <sys_id>695bac5987cc5b10e5450d090cbb358e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:11</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>__action_status__</element>
+        <help/>
+        <hint/>
+        <label>Action Status</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_345b6c5987cc5b10e5450d090cbb358f</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:10</sys_created_on>
+        <sys_id>915bac5987cc5b10e5450d090cbb3576</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:10</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>results_json</element>
+        <help/>
+        <hint/>
+        <label>Results JSON</label>
+        <language>en</language>
+        <name>var__m_sys_hub_action_output_345b6c5987cc5b10e5450d090cbb358f</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:45:11</sys_created_on>
+        <sys_id>a15bac5987cc5b10e5450d090cbb35bc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:45:11</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_345b6c5987cc5b10e5450d090cbb358f"/>
+    <sys_hub_action_type_definition action="UPDATE">
+        <sys_id>5d9ae8d587cc5b10e5450d090cbb35c6</sys_id>
+        <latest_snapshot>345b6c5987cc5b10e5450d090cbb358f</latest_snapshot>
+        <compiler_build>glide-australia-02-11-2026__patch6w42-10-08-2026_10-13-2026_1247.zip</compiler_build>
+    </sys_hub_action_type_definition>
+</record_update>

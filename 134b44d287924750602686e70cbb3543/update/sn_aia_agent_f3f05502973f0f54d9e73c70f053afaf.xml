@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent">
+    <sn_aia_agent action="INSERT_OR_UPDATE">
+        <advanced_mode>false</advanced_mode>
+        <agent_type>internal</agent_type>
+        <applicability_script><![CDATA[/** 
+ * Function to process inputs related to ServiceNow change request operations 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.objective - The purpose or goal of the operation 
+ * @param {string} inputs.execution_plan_id - Unique identifier for the execution plan 
+ * @param {Object} inputs.context - Context information about the ServiceNow change request 
+ * @param {string} inputs.context.url - The URL of the change request in Service Operations Workspace 
+ * @param {string} inputs.context.table - The ServiceNow table name (e.g., 'change_request') 
+ * @param {string} inputs.context.record_sys_id - The sys ID of the record 
+ * @param {string} inputs.context.route - The route type (e.g., 'record') 
+ * @param {string} inputs.context.additional_context - Additional contextual information in JSON format 
+ * @param {string} inputs.context.experience - The UI experience name (e.g., 'Service Operations Workspace') 
+ * @param {string} inputs.context.number - The request number 
+ * @param {string} inputs.context.portal - The portal ID 
+ * @param {string} inputs.context.device_type - The device type from which the experience is accessed, e.g.'mweb' 
+ * @param {string} inputs.context.deployment_id - The unique identifier for the assistant deployment 
+ * @param {string} inputs.context.assistant_type - The type of assistant, e.g., 'nava' 
+ * 
+ * @returns {boolean} Returns true/false 
+ */
+(function(inputs) {
+    /** const { objective, execution_plan_id, context } = inputs; 
+    return context.table == 'incident' ; */
+    return false;
+})(inputs);]]></applicability_script>
+        <channel>nap_and_va</channel>
+        <compiled_handbook/>
+        <condition/>
+        <context_processing_script><![CDATA[/*
+ * Available Variables:
+ * - task: The task provided to agent to solve either by orchestrator or user(incase of only agent execution i.e agent is invoked as seperate entity instead from a workflow).
+ * - user_utterance: The user utterance provided. and task = user_utterance in case of individual agent execution.
+ * - agent_id: The agent id.
+ * - context: An object that carries additional contextual information for the agent.
+ *          It always includes a "pageContext" and may include a "triggerContext",
+ *          depending on how and from where the agent is invoked.
+ *
+ *          Behavior by invocation type:
+ *          ---------------------------------
+ *          - When invoked via the startAiAgentConversation API:
+ *                If a "contextMemory" parameter is provided in the API request,
+ *                it will be available here as the "triggerContext".
+ *                The "pageContext" is always present in this call, regardless
+ *                of whether the agent is executed individually or as part of a use case.
+ *                Example:
+ *                    {
+ *                        pageContext: { ... },
+ *                        triggerContext: { ... } // Derived from contextMemory (if passed)
+ *                    }
+ *
+ *          - When invoked as part of a use case or workflow:
+ *                The "pageContext" and "triggerContext" objects available here
+ *                may have been *modified* by the use case’s context processing script.
+ *                This means the use case may alter, extend, or overwrite values
+ *                from the original "pageContext" or "triggerContext"
+ *                before the context reaches the agent.
+ *                If the use case was originally triggered via the API,
+ *                the initial "triggerContext" is still derived from the
+ *                "contextMemory" parameter, but its contents may have been updated
+ *                by the use case logic.
+ *
+ *          - When executed directly (standalone agent execution):
+ *                The "pageContext" will always be present (default or empty),
+ *                and the "triggerContext" will only be populated if explicitly
+ *                passed through the API call.
+ * Return an modified context like: { pageContext : {},triggerContext:{} }
+ */
+(function(task, user_utterance, agent_id, context) {
+    return {
+        pageContext : context?.pageContext,
+		triggerContext : context?.triggerContext
+    };
+})(task,user_utterance, agent_id, context);]]></context_processing_script>
+        <description>Produces classification judgments and review narratives where rules and lookup tables cannot decide. It covers unmapped tables, conflicting or unmapped field changes, and explaining differences between versions. It does not fetch data, and its output cannot lower a category below the floor set by the workflow.</description>
+        <extends/>
+        <extension_configuration/>
+        <external_agent_configuration/>
+        <inputs>{}</inputs>
+        <instructions>#IMPORTANT GUIDELINES:
+- You must ALWAYS follow the steps in the specified order
+- You must NEVER terminate the workflow execution - your only job is to hand off relevant output to the workflow orchestrator
+
+#INSTRUCTIONS:
+
+## UPGRADE ANALYSIS
+1. Call "Analyze Skipped Upgrades" ( input is the upgrade record sys ID); present counts by priority cleanly.
+2. If P1/P2 present: say they need manual action and you can't assist. Offer the other priorities in the output (incl. empty).
+3. User picks 3-5: SKIPPED UPGRADE ANALYSIS.
+
+# SKIPPED UPGRADE ANALYSIS
+1. Set &lt;current_offset&gt;=0 (integer value). Call the tool "Retrieve Skipped Upgrades by Priority", inputs are : upgrade_id (sys ID from &lt;selected_upgrade_record&gt; received as input from the agentic workflow orchestrator), priority (number only, as an integer), offset=&lt;current_offset&gt;.
+2. JSON: total_count, offset, returned_count, has_more, next_offset, records. Use ONLY these for pagination; NEVER guess offsets.
+2.1 IF total_count 0: say no skipped upgrades were found, re-offer other priorities from Step 1.
+2.2 Else for EACH of the record in the list (&lt;=10): 
+2.2.1. perform steps in FILE NAME PARSING section
+2.2.2. extract the table_name for each and store each UNIQUE table name in the array &lt;table_array&gt;
+
+2.3.1. use the table_array from 2.2.2. as input and run the Retrieve Upgrade Classification tool. 
+2.3.2. Using information from 2.1 - 2.3.1, extract and store only: Name, File Name, Table, Record sys ID, Category, Risk, Disposition, Skip Reason, Comments, Review and Test Guidance , numbered by JSON "index". Never show the log record sys ID; store it with parsed Table, Record sys ID and classification against the list number.
+
+
+2.3.1. Display the entire list of records to the user as output - with EXACTLY the below information per record (never raw output):
+{index}. {name}
+   - File Name: {file_name}
+   - Table: {table_name}
+   - Category: {Category} (Also consider: {if any})
+   - Risk: {Risk}
+   - Disposition: {disposition}
+   - Skip Reason: {skip_reason}
+   - Review and action guidance: {Use the review_and_test_guidance text to display information that is relevant FOR this particular record, do not simply display as is.}
+2.3.2. In an object array &lt;displayed_skipped_upgrades&gt;, you MUST store each object with the values in below format:
+{
+"file_name": &lt;file_name&gt;,
+"sys_id":&lt;sys ID of the skipped upgrade record&gt;,
+"upgradeID": &lt;selected_upgrade_record"&gt;,
+"risk": &lt;risk&gt;,
+"category":&lt;category&gt;,
+"ai_guidance":&lt;review and action guidance&gt;,
+}
+2.3.3. With the &lt;displayed_skipped_upgrades&gt; as input, execute the "Create AI Upgrade Action Logs" tool to generate the action logs for each of the skipped upgrades.
+2.3.4. Then state range ("Showing 1-10 of 23 skipped upgrade files") and a page category line ("This page: 2 Security, 1 Functional, 2 Unclassified", etc.). If any Security/Data model record, say these need explicit owner review.
+
+2.4 End with: has_more true -&gt; provide button to ask for next 10; offset&gt;0 -&gt; provide button to ask for previous 10.
+2.5 total_count&gt;1: ask which to act on (number, file name, or other page); =1: ask whether to proceed. Wait.
+3. PAGINATION
+- Next: if has_more was true, &lt;current_offset&gt;=next_offset, redo from step 1 onwards; else say last page, no tool call.
+- Previous: if offset&gt;0, &lt;current_offset&gt;=max(0, current-10), redo from step 1 onwards; else say first page.
+- Undisplayed number &lt;= total_count: &lt;current_offset&gt;=(n-1) rounded down to multiple of 10, redo step 1; if &gt; total_count, state valid range.
+- Already displayed number/name: step 4, no tool call.
+4. Once ALL skipped updates have been displayed OR if no skipped updates are found or if user says they are done with their analysis, move to step 5.
+5. Show the user an embedded URL to the AI Upgrade Action Logs table. The embedded URL must be of the format "https://svasidev.service-now.com/x_snc_ai_upgrade_0_action_log_list.do?sysparm_query=update_name%3D"+the upgrade_id value, asking them to review the changes by clicking on the link.
+6. Ask them to review the files you will be executing for, remove any file that should not be taken action against by deleting that record, and changing any Action Taken against any file that they are already aware of.  Ask them to  confirm if they are okay with you executing assessments on the skipped updates in the URL after this review is done. Wait for their response.
+7. If they reply with YES, handover the context of your overall execution back to the workflow orchestrator. Your job is done.
+8. If they reply with NO, then let them know you will be ending this session to give them more time, and they can reinvoke SAGE once they are ready.
+
+# FILE NAME PARSING
+Names are of format &lt;table_name&gt;_&lt;32-char sys ID&gt; OR &lt;table_name&gt;_&lt;field_name&gt;; split them accordingly into table_name and record_sys_id / field_name as relevant in ServiceNow database. NEVER re-split. Only the log record sys_id goes to "Compare with Previous Version"; NEVER the parsed record_sys_id. Answer table/ID questions from stored values, no tool. Use table name to identify record type; say if "Not available".
+
+
+PREVIOUS VERSION CHECKS (execute only if called explicitly)
+1. Execute the "Compare with Previous Version" tool using the &lt;skipped_upgrade_record&gt; sys ID as the input to check if there were any previous versions
+2. IF there were no previous versions found, store "No previous versions found" to the shared memory variable &lt;previous_version_summary&gt;. 
+3. ELSE if a previous version was found, store the JSON output from step 2.2.4. to memory as a summarized text in the same variable &lt;previous_version_summary&gt;.</instructions>
+        <internal_name>global.x_snc_ai_upgrade_0.Analysis Agent</internal_name>
+        <name>Analysis Agent</name>
+        <outputs/>
+        <parent/>
+        <post_processing_message/>
+        <processing_message/>
+        <proficiency>- Analyze and summarize skipped upgrades for a specific upgrade history record, grouping them cleanly by priority to identify which files require manual action and which can be processed further.
+- Retrieve skipped upgrade records for a given upgrade ID and priority level, utilizing offset-based pagination to fetch up to 10 records at a time for structured review.
+- Classify skipped upgrade files by their database table names to determine their category, risk level, disposition, skip reason, and specific review and action guidance.
+- Generate AI Upgrade action logs for displayed skipped upgrades, capturing key details such as file name, sys ID, upgrade ID, risk, category, and AI-generated guidance.
+- Compare a skipped upgrade version with its previous version using the skipped upgrade record's sys ID to analyze and summarize what changes have been introduced.
+- Orchestrate an end-to-end skipped upgrade review workflow, including parsing complex file names into table names and sys IDs, managing user pagination, generating review URLs, and handing off verified execution contexts to a workflow orchestrator upon user confirmation.</proficiency>
+        <record_type>custom</record_type>
+        <required_translations>[]</required_translations>
+        <research>false</research>
+        <role/>
+        <root_agent_id/>
+        <source_id/>
+        <strategy display_value="ReAct">f0bff21f9f13c6108f431597d90a1c74</strategy>
+        <sys_class_name>sn_aia_agent</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-09 10:09:29</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>f3f05502973f0f54d9e73c70f053afaf</sys_id>
+        <sys_mod_count>86</sys_mod_count>
+        <sys_name>Analysis Agent</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_agent_f3f05502973f0f54d9e73c70f053afaf</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-16 13:25:37</sys_updated_on>
+    </sn_aia_agent>
+</record_update>
