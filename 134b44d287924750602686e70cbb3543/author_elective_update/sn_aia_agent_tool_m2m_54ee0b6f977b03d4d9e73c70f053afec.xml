@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_agent_tool_m2m">
+    <sn_aia_agent_tool_m2m action="DELETE">
+        <active>true</active>
+        <agent display_value="Execute Agent">65cce37e87774754e5450d090cbb3530</agent>
+        <applicability_script><![CDATA[/** 
+ * Function to determine applicability of this version based on runtime inputs 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.channel - The channel the request originated from (e.g., 'voice', 'chat') 
+ * 
+ * @returns {boolean} Returns true/false 
+(function(inputs) {
+    return inputs.channel == 'voice' ; 
+})(inputs);*/
+(function(inputs) {
+    return inputs.channel == 'ALL';
+})(inputs);]]></applicability_script>
+        <description>This tool can be used to update the actions taken and action reason for the AI Upgrade Action Logs</description>
+        <display_mode>inline</display_mode>
+        <display_output>false</display_output>
+        <document_status/>
+        <entity>sn_aia_agent</entity>
+        <entity_id>65cce37e87774754e5450d090cbb3530</entity_id>
+        <execution_mode>autopilot</execution_mode>
+        <inputs>[{"name":"input_json","description":"","mandatory":false,"value":"","metadata":{"_MODE_":"slotfill"}}]</inputs>
+        <max_auto_executions>10</max_auto_executions>
+        <name>Add Actions to AI Upgrade Logs</name>
+        <output_transformation_strategy/>
+        <post_message/>
+        <post_processing_script/>
+        <pre_message/>
+        <pre_run>false</pre_run>
+        <requires_text_refined_message>false</requires_text_refined_message>
+        <requires_widget_transformation>true</requires_widget_transformation>
+        <should_display_refined_message>false</should_display_refined_message>
+        <sys_class_name>sn_aia_agent_tool_m2m</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-14 11:10:22</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>54ee0b6f977b03d4d9e73c70f053afec</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Add Actions to AI Upgrade Logs</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_agent_tool_m2m_54ee0b6f977b03d4d9e73c70f053afec</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:46:45</sys_updated_on>
+        <timeout/>
+        <tool display_value="Add Actions to AI Upgrade Logs">d0bb2c9987cc5b10e5450d090cbb351e</tool>
+        <tool_attributes>{}</tool_attributes>
+        <transformation_instructions/>
+        <wait_for_widget_interaction>false</wait_for_widget_interaction>
+        <widgets>db0e858eff62b210f465ffffffffff2c</widgets>
+    </sn_aia_agent_tool_m2m>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</application>
+        <file_path/>
+        <instance_id>8fddf5054757cf1821f3e676706d43f4</instance_id>
+        <instance_name>svasidev</instance_name>
+        <name>sn_aia_agent_tool_m2m_54ee0b6f977b03d4d9e73c70f053afec</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sn_aia_agent_tool_m2m"&gt;&lt;sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;agent display_value="Execute Agent"&gt;65cce37e87774754e5450d090cbb3530&lt;/agent&gt;&lt;applicability_script&gt;&lt;![CDATA[/** 
+ * Function to determine applicability of this version based on runtime inputs 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.channel - The channel the request originated from (e.g., 'voice', 'chat') 
+ * 
+ * @returns {boolean} Returns true/false 
+(function(inputs) {
+    return inputs.channel == 'voice' ; 
+})(inputs);*/
+(function(inputs) {
+    return inputs.channel == 'ALL';
+})(inputs);]]&gt;&lt;/applicability_script&gt;&lt;description&gt;This tool can be used to update the actions taken and action reason for the AI Upgrade Action Logs&lt;/description&gt;&lt;display_mode&gt;inline&lt;/display_mode&gt;&lt;display_output&gt;false&lt;/display_output&gt;&lt;document_status/&gt;&lt;entity&gt;sn_aia_agent&lt;/entity&gt;&lt;entity_id&gt;65cce37e87774754e5450d090cbb3530&lt;/entity_id&gt;&lt;execution_mode&gt;autopilot&lt;/execution_mode&gt;&lt;inputs&gt;[{"name":"input_json","description":"","mandatory":false,"value":"","metadata":{"_MODE_":"slotfill"}}]&lt;/inputs&gt;&lt;max_auto_executions&gt;10&lt;/max_auto_executions&gt;&lt;name&gt;Add Actions to AI Upgrade Logs&lt;/name&gt;&lt;output_transformation_strategy/&gt;&lt;post_message/&gt;&lt;post_processing_script/&gt;&lt;pre_message/&gt;&lt;pre_run&gt;false&lt;/pre_run&gt;&lt;requires_text_refined_message&gt;false&lt;/requires_text_refined_message&gt;&lt;requires_widget_transformation&gt;true&lt;/requires_widget_transformation&gt;&lt;should_display_refined_message&gt;false&lt;/should_display_refined_message&gt;&lt;sys_class_name&gt;sn_aia_agent_tool_m2m&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-14 11:10:22&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_id&gt;54ee0b6f977b03d4d9e73c70f053afec&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_name&gt;Add Actions to AI Upgrade Logs&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0"&gt;134b44d287924750602686e70cbb3543&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="AI Upgrade Monitor"&gt;134b44d287924750602686e70cbb3543&lt;/sys_scope&gt;&lt;sys_update_name&gt;sn_aia_agent_tool_m2m_54ee0b6f977b03d4d9e73c70f053afec&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;sharath.vasishta&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-19 09:46:45&lt;/sys_updated_on&gt;&lt;timeout/&gt;&lt;tool display_value="Add Actions to AI Upgrade Logs"&gt;d0bb2c9987cc5b10e5450d090cbb351e&lt;/tool&gt;&lt;tool_attributes&gt;{}&lt;/tool_attributes&gt;&lt;transformation_instructions/&gt;&lt;wait_for_widget_interaction&gt;false&lt;/wait_for_widget_interaction&gt;&lt;widgets&gt;db0e858eff62b210f465ffffffffff2c&lt;/widgets&gt;&lt;/sn_aia_agent_tool_m2m&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1868904259</payload_hash>
+        <record_name>Add Actions to AI Upgrade Logs</record_name>
+        <reverted_from/>
+        <source>e3e7f8fd87338b14e5450d090cbb353a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:46:47</sys_created_on>
+        <sys_id>8dbbac9987cc5b10e5450d090cbb3551</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a1538e76a50000001</sys_recorded_at>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:46:47</sys_updated_on>
+        <type>Agent Tool</type>
+        <update_guid>c9bbac9910cc5b10044bd4c0ed8aeb50</update_guid>
+        <update_guid_history>c9bbac9910cc5b10044bd4c0ed8aeb50:-1868904259,0b4fcc3702f743d4a0cea4d581087a6b:-1366828444,de7284bb183743d4e1a3872742209e6a:1012227606,3efcbfe77cf343d445c2156d03638501:2119986910,2cee4b6fa37b03d42412781999b03455:-2087036519</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Add Actions to AI Upgrade Logs">aaeba4d987cc5b10e5450d090cbb3555</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-19 09:47:44</sys_created_on>
+        <sys_db_object display_value="" name="sn_aia_agent_tool_m2m">sn_aia_agent_tool_m2m</sys_db_object>
+        <sys_id>3eb9af6ea05e484796b61a94aabb7a89</sys_id>
+        <sys_metadata>54ee0b6f977b03d4d9e73c70f053afec</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Add Actions to AI Upgrade Logs</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_scope_delete display_value="">037dbac799a64a98b8f0c25d940a9691</sys_scope_delete>
+        <sys_update_name>sn_aia_agent_tool_m2m_54ee0b6f977b03d4d9e73c70f053afec</sys_update_name>
+        <sys_update_version display_value="sn_aia_agent_tool_m2m_54ee0b6f977b03d4d9e73c70f053afec">8dbbac9987cc5b10e5450d090cbb3551</sys_update_version>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-19 09:47:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

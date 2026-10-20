@@ -41,6 +41,5 @@
         <trigger_flow_definition_type>daily</trigger_flow_definition_type>
         <trigger_strategy/>
         <usecase display_value="Plugin Upgrade and Monitor">702fe251275a4298b50e6f98ff702628</usecase>
-        <usecase_discovery>false</usecase_discovery>
     </sn_aia_trigger_configuration>
 </record_update>

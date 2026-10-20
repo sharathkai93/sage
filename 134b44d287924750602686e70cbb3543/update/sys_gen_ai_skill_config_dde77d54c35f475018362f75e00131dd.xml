@@ -4,7 +4,7 @@
         <channels/>
         <discoverable>true</discoverable>
         <hint>Post Upgrade Analysis Agent</hint>
-        <skill_id display_value="The primary purpose of this agent is to review logs of a specified instance or application / plug-in upgrade in ServiceNow, classify them by priority, review the skipped upgrades and then suggest best-practice actions against these skipped upgrades based on deep analysis of changes.">ace7f954c35f475018362f75e0013190</skill_id>
+        <skill_id display_value="Post Upgrade Analysis Agent">ace7f954c35f475018362f75e0013190</skill_id>
         <supervision/>
         <sys_class_name>sys_gen_ai_skill_config</sys_class_name>
         <sys_created_by>sharath.vasishta@snc</sys_created_by>

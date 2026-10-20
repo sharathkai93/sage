@@ -245,5 +245,6 @@ VersionPayloadXmlComparator.prototype = {
         <sys_update_name>sys_script_include_49576379c31b0f1040829a4bb00131ab</sys_update_name>
         <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
         <sys_updated_on>2026-09-14 05:58:24</sys_updated_on>
+        <x_snc_devtools_sys_ui_script/>
     </sys_script_include>
 </record_update>

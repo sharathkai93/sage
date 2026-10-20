@@ -2,6 +2,7 @@
     <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
         <active>true</active>
         <agent display_value="Plugin Upgrade Agent">808b4dc386fe4125b9994da650b9fad8</agent>
+        <applicability_script/>
         <description>Generates a comprehensive completion summary with updated versions, pass/fail status per plugin, overall statistics, and recommended follow-up actions.</description>
         <display_mode/>
         <display_output>false</display_output>
@@ -38,6 +39,7 @@
         <tool display_value="Summarize Results">a42385c18c6d4716b3d2c15eede7853c</tool>
         <tool_attributes>{}</tool_attributes>
         <transformation_instructions/>
+        <wait_for_widget_interaction>false</wait_for_widget_interaction>
         <widgets/>
     </sn_aia_agent_tool_m2m>
 </record_update>

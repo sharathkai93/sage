@@ -94,10 +94,10 @@
         <parent/>
         <post_processing_message/>
         <processing_message/>
-        <proficiency>- The agent possesses advanced proficiency in web search operations, specializing in extracting, synthesizing, and presenting information from specified web pages. Their expertise is strictly limited to the content available on the designated URL, ensuring that all responses are grounded in verifiable data and not inferred or assumed. This makes the agent ideal for tasks requiring accurate, source-based information retrieval.
-- The agent can invoke the 'Test web search' tool to search, scrape, and synthesize answers from a specified URL using a provided query. This capability allows the agent to retrieve targeted information, such as details about the latest Password Reset, from the exact page specified, ensuring that the results are both relevant and accurate. The agent can customize their search using the 'query' input, making their information retrieval highly adaptable to different task requirements.
-- The agent is capable of strictly adhering to task instructions by only utilizing information found on the specified web page, without navigating to related pages or making any assumptions. This ensures that all responses are based solely on the content available at the given URL, making the agent highly reliable for tasks that require source fidelity and compliance with strict information boundaries.
-- The agent can leverage optional input parameters like 'aisearch_providers' and 'conversation_history' within the 'Test web search' tool to further refine their search process. This capability allows the agent to select specific search providers or incorporate previous conversation context, enabling more nuanced and context-aware information retrieval when required.</proficiency>
+        <proficiency>- Possesses advanced proficiency in conducting targeted web searches, retrieving information strictly from specified URLs, and synthesizing results without inferring or deducing information beyond what is explicitly available on the designated web page. This capability ensures the agent is highly reliable for tasks requiring factual and source-bound web data extraction.
+- Utilizes the 'Test web search' tool to execute web search queries, scrape content from the specified URL, and synthesize answers based solely on the information found on that page. The agent can input custom search phrases to retrieve relevant results, ensuring precise and contextually appropriate information delivery.
+- Adheres strictly to operational constraints by only utilizing information present on the specified web page, refraining from navigating to related pages or links, and avoiding any form of inference or assumption. This ensures the agent's output is always grounded in verifiable, source-specific data.
+- Capable of leveraging optional input parameters to refine search provider selection and maintain conversation history, thereby supporting more nuanced and context-aware web search operations when necessary.</proficiency>
         <record_type>template</record_type>
         <required_translations>[]</required_translations>
         <research>false</research>
@@ -110,13 +110,13 @@
         <sys_created_on>2026-10-13 13:26:58</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>f324aa9387ff4b54e5450d090cbb35c1</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>Testing Web Search</sys_name>
         <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
         <sys_policy/>
         <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
         <sys_update_name>sn_aia_agent_f324aa9387ff4b54e5450d090cbb35c1</sys_update_name>
-        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
-        <sys_updated_on>2026-10-13 13:45:02</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2026-10-13 13:45:12</sys_updated_on>
     </sn_aia_agent>
 </record_update>

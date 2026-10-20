@@ -3,8 +3,10 @@
         <exclude_attachments_in_now_assist_genius_results>false</exclude_attachments_in_now_assist_genius_results>
         <exclude_in_now_assist_genius_results>false</exclude_in_now_assist_genius_results>
         <exclude_in_regular_search>false</exclude_in_regular_search>
+        <include_in_now_assist_genius_results>false</include_in_now_assist_genius_results>
         <profile display_value="Retrieve Sensitivity Mapping">9a267064c33f8b1040829a4bb001315f</profile>
         <search_source display_value="Retrieve Sensitivity Mapping Article">055670a4c33f8b1040829a4bb00131a1</search_source>
+        <search_source_group/>
         <sys_class_name>ais_search_profile_ais_search_source_m2m</sys_class_name>
         <sys_created_by>sharath.vasishta@snc</sys_created_by>
         <sys_created_on>2026-10-04 16:23:11</sys_created_on>

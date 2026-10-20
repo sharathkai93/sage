@@ -2,6 +2,7 @@
     <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
         <active>true</active>
         <agent display_value="Plugin Discovery Agent">2aa4a468b45f4080a2dee90a2b616969</agent>
+        <applicability_script/>
         <description>Calls the update source API to retrieve target versions and compatibility information for installed plugins. Returns available version data and compatibility notes.</description>
         <display_mode/>
         <display_output>false</display_output>
@@ -38,6 +39,7 @@
         <tool display_value="Check Available Updates">62a456bb8524416b95c847264fcba7d1</tool>
         <tool_attributes>{}</tool_attributes>
         <transformation_instructions/>
+        <wait_for_widget_interaction>false</wait_for_widget_interaction>
         <widgets/>
     </sn_aia_agent_tool_m2m>
 </record_update>

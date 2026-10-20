@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="ais_search_profile_ais_genius_result_configuration_m2m">
     <ais_search_profile_ais_genius_result_configuration_m2m action="INSERT_OR_UPDATE">
-        <genius_result_configuration display_value="Now Assist Multi-Content Response">088c73a5430302104eaff03a5ab8f22f</genius_result_configuration>
+        <genius_result_configuration display_value="ServiceNow Otto Summary">088c73a5430302104eaff03a5ab8f22f</genius_result_configuration>
         <order>1</order>
         <profile display_value="NowMobile Default Search Profile">ed1cc641c7231010d558c943c7c260c5</profile>
         <sys_class_name>ais_search_profile_ais_genius_result_configuration_m2m</sys_class_name>

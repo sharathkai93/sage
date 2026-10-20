@@ -8,10 +8,10 @@
         <derived>true</derived>
         <field/>
         <label>Upgrade History for Agentic AI Default Spell Check Dictionary</label>
-        <last_derived>2026-09-13 08:27:00</last_derived>
+        <last_derived>2026-10-19 08:20:09</last_derived>
         <locale>en</locale>
         <name>x_snc_ai_upgrade_0_upgrade_history_for_agentic_ai_default_spell_check_dictionary</name>
-        <publish_id>50dbf81f-86f6-40b9-b607-1afddce4d137</publish_id>
+        <publish_id>962f6923-c8e8-4513-847f-153e4bbd2371</publish_id>
         <punctuation_sensitive>false</punctuation_sensitive>
         <state>PUBLISHED</state>
         <sys_class_name>ais_dictionary</sys_class_name>

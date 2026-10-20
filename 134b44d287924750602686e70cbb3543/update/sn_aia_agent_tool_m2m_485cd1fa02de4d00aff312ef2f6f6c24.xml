@@ -2,6 +2,7 @@
     <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
         <active>true</active>
         <agent display_value="Plugin Discovery Agent">2aa4a468b45f4080a2dee90a2b616969</agent>
+        <applicability_script/>
         <description>Reads the sys_plugins table to retrieve current plugin versions, activation status, and source information. Use this after synchronization to get an accurate inventory of installed plugins.</description>
         <display_mode/>
         <display_output>false</display_output>
@@ -38,6 +39,7 @@
         <tool display_value="Query Installed Plugins">77b7be7331434d8bbefb67a8b090e53e</tool>
         <tool_attributes>{}</tool_attributes>
         <transformation_instructions/>
+        <wait_for_widget_interaction>false</wait_for_widget_interaction>
         <widgets/>
     </sn_aia_agent_tool_m2m>
 </record_update>

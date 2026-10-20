@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="fca4ff32abc945aab94cc775b5433141" sys_domain="global" table="x_snc_ai_upgrade_0_action_log" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>sharath.vasishta</sys_created_by>
+            <sys_created_on>2026-10-10 19:32:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>aa63de3d46f64e77abecce2c2cb2653a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_snc_ai_upgrade_0_action_log" name="x_snc_ai_upgrade_0_action_log" sys_domain="global" view="Default view">fca4ff32abc945aab94cc775b5433141</sys_ui_form>
+            <sys_ui_section caption="AI Upgrade Action Log" display_value="AI Upgrade Action Log" name="x_snc_ai_upgrade_0_action_log" sys_domain="global" view="Default view">0c11a264ff8e400e935fcbf9d022ed87</sys_ui_section>
+            <sys_updated_by>sharath.vasishta</sys_updated_by>
+            <sys_updated_on>2026-10-10 19:32:25</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_snc_ai_upgrade_0_action_log</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>sharath.vasishta</sys_created_by>
+            <sys_created_on>2026-10-10 19:32:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>fca4ff32abc945aab94cc775b5433141</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_snc_ai_upgrade_0_action_log</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+            <sys_update_name>sys_ui_form_sections_fca4ff32abc945aab94cc775b5433141</sys_update_name>
+            <sys_updated_by>sharath.vasishta</sys_updated_by>
+            <sys_updated_on>2026-10-10 19:32:25</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

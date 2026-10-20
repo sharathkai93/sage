@@ -4,6 +4,7 @@
         <agent display_value="Plugin Discovery Agent">2aa4a468b45f4080a2dee90a2b616969</agent>
         <agent_descriptor>created_by_build_agent</agent_descriptor>
         <agent_learning>false</agent_learning>
+        <current_version/>
         <doc_url/>
         <icon_url/>
         <public>false</public>

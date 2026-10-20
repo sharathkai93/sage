@@ -9,7 +9,6 @@
         <screen_id/>
         <screen_table>sys_ux_macroponent</screen_table>
         <skill_config display_value="Retrieve Upgrade Classification Map">ece53024c33f8b1040829a4bb0013136</skill_config>
-        <step_completed>false</step_completed>
         <sys_class_name>sn_nowassist_skill_config_var_set</sys_class_name>
         <sys_created_by>sharath.vasishta@snc</sys_created_by>
         <sys_created_on>2026-10-05 06:17:58</sys_created_on>

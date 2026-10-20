@@ -110,11 +110,12 @@
         <parent/>
         <post_processing_message/>
         <processing_message/>
-        <proficiency>- The agent is proficient in guiding users through a structured workflow for upgrade history analysis, strictly following the provided ACTION PLAN. The agent initiates by leveraging context from the workflow, presents recent upgrades, clarifies user requests, and hands off relevant upgrade record information to the workflow orchestrator. The agent does not make decisions beyond the workflow steps and does not terminate execution independently, ensuring seamless integration within agentic workflows.
-- The agent is capable of retrieving and presenting the last three upgrade records from the upgrade_history table using the 'Retrieve Latest Upgrades' tool. This capability allows the agent to provide users with a concise, formatted list of recent upgrades, facilitating initial user selection and streamlining the upgrade analysis process.
-- The agent can search for and retrieve a specific upgrade history record based on a user-provided upgrade name using the 'Retrieve Upgrade History Record' tool. By accepting the 'upgradeName' input, the agent ensures precise matching and confirmation of upgrade records, supporting user clarification and validation within the workflow.
-- The agent is proficient in retrieving detailed information about a selected upgrade history record using the 'Retrieve Upgrade History Record Details' tool. By accepting the 'upgradeID' input, the agent can provide comprehensive upgrade record details, enabling accurate hand-off to the workflow orchestrator for subsequent analysis or action.
-- The agent is adept at orchestrating tool usage in a sequential and dependent manner, combining 'Retrieve Latest Upgrades', 'Retrieve Upgrade History Record', and 'Retrieve Upgrade History Record Details' as dictated by the ACTION PLAN. This capability ensures that the agent can navigate user intent, clarify requests, and deliver precise upgrade record information, maintaining workflow integrity and supporting agentic orchestration.</proficiency>
+        <proficiency>- The agent is proficient in guiding users through a structured workflow to identify, clarify, and analyze upgrade history records. It leverages context provided by the workflow orchestrator, ensures user intent is understood, and strictly follows the prescribed steps to hand off relevant upgrade information without terminating the workflow. The agent's domain is limited to upgrade history management and procedural assistance as defined by the ACTION PLAN.
+- The agent can retrieve and present the last three upgrade history records from the upgrade_history table, enabling users to quickly identify recent upgrades and select one for further assistance. This capability is foundational for initializing the workflow and ensuring the user is oriented towards relevant upgrade options.
+- The agent is capable of retrieving a specific upgrade history record by accepting an upgrade name as input. This allows the agent to handle user requests for upgrades not listed in the initial set, ensuring comprehensive coverage of upgrade history queries and facilitating accurate record identification.
+- The agent can obtain detailed information about a selected upgrade history record by using its sys ID as input. This capability supports in-depth analysis of upgrade records and ensures that the workflow orchestrator receives precise and actionable upgrade data for further processing.
+- The agent is adept at orchestrating multiple tools in a procedural workflow, including initialization, clarification, and analysis phases. It can handle ambiguous user input, request clarification, and loop through steps as needed to ensure the correct upgrade record is identified and analyzed, demonstrating proficiency in workflow management and user guidance.
+- The agent is designed to operate exclusively within an agentic workflow, ensuring that all outputs are handed off to the workflow orchestrator without terminating execution. This capability guarantees seamless integration with broader workflow systems and strict adherence to procedural boundaries.</proficiency>
         <record_type>custom</record_type>
         <required_translations>[]</required_translations>
         <research>false</research>
@@ -127,13 +128,13 @@
         <sys_created_on>2026-10-09 09:48:40</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>833c49ce97bb0f54d9e73c70f053affe</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>Intent Agent</sys_name>
         <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
         <sys_policy/>
         <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
         <sys_update_name>sn_aia_agent_833c49ce97bb0f54d9e73c70f053affe</sys_update_name>
-        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
-        <sys_updated_on>2026-10-09 09:59:16</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2026-10-09 09:59:27</sys_updated_on>
     </sn_aia_agent>
 </record_update>

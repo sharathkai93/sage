@@ -4,6 +4,7 @@
         <agent display_value="Skipped Items Review Agent">65eb7bdc262e41b69185bd225c906b85</agent>
         <agent_descriptor>created_by_build_agent</agent_descriptor>
         <agent_learning>false</agent_learning>
+        <current_version/>
         <doc_url/>
         <icon_url/>
         <public>false</public>

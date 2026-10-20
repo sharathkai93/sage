@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
     <sn_aia_version action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <applicability_script/>
+        <base_version/>
+        <change_description/>
         <condition/>
+        <eval_score/>
         <instructions>#STEPS:
 
 ##INITIALISATION
@@ -49,6 +54,11 @@ c. Store the output of this upgrade in the &lt;selected_upgrade_record&gt; varia
 1. IF you were able to successfully retrieve the upgrade history record, review the skipped upgrades and suggest actions to the user, politely thank the user and let them know you were glad to help them. Terminate the execution.
 
 2. ELSE IF you were unable to successfully retrieve the upgrade history record OR review the skipped upgrades OR suggest actions to the user, apologize to the user for not being able to assist further and present them with a link to the skipped upgrade record for manual analysis</instructions>
+        <label/>
+        <layer/>
+        <order/>
+        <short_description/>
+        <snapshot/>
         <state>withdrawn</state>
         <sys_class_name>sn_aia_version</sys_class_name>
         <sys_created_by>sharath.vasishta@snc</sys_created_by>
@@ -64,6 +74,7 @@ c. Store the output of this upgrade in the &lt;selected_upgrade_record&gt; varia
         <sys_update_name>sn_aia_version_26e2c141c35f8f1040829a4bb0013110</sys_update_name>
         <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
         <sys_updated_on>2026-10-04 10:22:14</sys_updated_on>
+        <tags/>
         <target_id>a2a916c5876ecb10a4bded360cbb350e</target_id>
         <target_table>sn_aia_agent</target_table>
         <version_name>V2</version_name>

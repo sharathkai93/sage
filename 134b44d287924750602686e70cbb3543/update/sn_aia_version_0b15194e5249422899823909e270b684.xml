@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
     <sn_aia_version action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <applicability_script/>
+        <base_version/>
+        <change_description/>
         <condition/>
+        <eval_score/>
         <instructions>Step 1: Synchronize Plugin Metadata.
 - Use the Sync Plugins tool to trigger a refresh of the local plugin metadata from the ServiceNow Store/Update Source.
 - If synchronization fails, inform the user: "Plugin synchronization failed. Please check connectivity to the update source." and stop.
@@ -34,6 +39,11 @@ Step 7: Present Upgrade Recommendations.
 - Use readable labels. Do NOT display sys_ids or raw field names.
 - Group results by priority tier: Critical (score &gt;= 80), High (60-79), Medium (40-59), Low (&lt; 40).
 - Conclude with a summary: total plugins needing upgrades, breakdown by priority tier.</instructions>
+        <label/>
+        <layer/>
+        <order/>
+        <short_description/>
+        <snapshot/>
         <state>published</state>
         <sys_class_name>sn_aia_version</sys_class_name>
         <sys_created_by>sharath.vasishta</sys_created_by>
@@ -49,6 +59,7 @@ Step 7: Present Upgrade Recommendations.
         <sys_update_name>sn_aia_version_0b15194e5249422899823909e270b684</sys_update_name>
         <sys_updated_by>sharath.vasishta</sys_updated_by>
         <sys_updated_on>2026-07-27 11:39:05</sys_updated_on>
+        <tags/>
         <target_id>2aa4a468b45f4080a2dee90a2b616969</target_id>
         <target_table>sn_aia_agent</target_table>
         <version_name>V1</version_name>

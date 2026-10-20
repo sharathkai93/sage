@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_context_profile_skill">
+    <sys_cs_context_profile_skill action="DELETE">
+        <context_profile display_value="ServiceNow Otto panel - Platform (default)">e93cab98c7c03110b65579a988c260c4</context_profile>
+        <skill_id display_value="Post Upgrade Analysis Agent">ace7f954c35f475018362f75e0013190</skill_id>
+        <sys_class_name>sys_cs_context_profile_skill</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-08 13:11:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>fd01bc7987ff4b14e5450d090cbb3566</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sys_cs_context_profile_skill_fd01bc7987ff4b14e5450d090cbb3566</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-08 13:11:19</sys_updated_on>
+    </sys_cs_context_profile_skill>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</application>
+        <file_path/>
+        <instance_id>8fddf5054757cf1821f3e676706d43f4</instance_id>
+        <instance_name>svasidev</instance_name>
+        <name>sys_cs_context_profile_skill_fd01bc7987ff4b14e5450d090cbb3566</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_context_profile_skill"><sys_cs_context_profile_skill action="INSERT_OR_UPDATE"><context_profile display_value="ServiceNow Otto panel - Platform (default)">e93cab98c7c03110b65579a988c260c4</context_profile><skill_id display_value="Post Upgrade Analysis Agent">ace7f954c35f475018362f75e0013190</skill_id><sys_class_name>sys_cs_context_profile_skill</sys_class_name><sys_created_by>sharath.vasishta@snc</sys_created_by><sys_created_on>2026-10-08 13:11:19</sys_created_on><sys_domain>global</sys_domain><sys_id>fd01bc7987ff4b14e5450d090cbb3566</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_overrides/><sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package><sys_policy/><sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope><sys_update_name>sys_cs_context_profile_skill_fd01bc7987ff4b14e5450d090cbb3566</sys_update_name><sys_updated_by>sharath.vasishta@snc</sys_updated_by><sys_updated_on>2026-10-08 13:11:19</sys_updated_on></sys_cs_context_profile_skill></record_update>]]></payload>
+        <payload_hash>-1109659320</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>c74fd83d873f4b14e5450d090cbb3519</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-08 13:11:20</sys_created_on>
+        <sys_id>bd01fc7987ff4b14e5450d090cbb350e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a11ba3c62e0000001</sys_recorded_at>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-08 13:11:20</sys_updated_on>
+        <type>Profile and Skill Mapping</type>
+        <update_guid>3d01fc79a0ff4b14b1a64a4b6bba490d</update_guid>
+        <update_guid_history>3d01fc79a0ff4b14b1a64a4b6bba490d:-1109659320</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-08 13:35:11</sys_created_on>
+        <sys_db_object display_value="" name="sys_cs_context_profile_skill">sys_cs_context_profile_skill</sys_db_object>
+        <sys_id>0a804418139c4740a21c75f78b801240</sys_id>
+        <sys_metadata>fd01bc7987ff4b14e5450d090cbb3566</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_scope_delete display_value="">037dbac799a64a98b8f0c25d940a9691</sys_scope_delete>
+        <sys_update_name>sys_cs_context_profile_skill_fd01bc7987ff4b14e5450d090cbb3566</sys_update_name>
+        <sys_update_version display_value="sys_cs_context_profile_skill_fd01bc7987ff4b14e5450d090cbb3566">bd01fc7987ff4b14e5450d090cbb350e</sys_update_version>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-08 13:35:11</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

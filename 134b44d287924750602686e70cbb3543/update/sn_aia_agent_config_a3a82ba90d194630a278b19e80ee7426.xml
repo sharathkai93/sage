@@ -4,6 +4,7 @@
         <agent display_value="Plugin Upgrade Agent">808b4dc386fe4125b9994da650b9fad8</agent>
         <agent_descriptor>created_by_build_agent</agent_descriptor>
         <agent_learning>false</agent_learning>
+        <current_version/>
         <doc_url/>
         <icon_url/>
         <public>false</public>

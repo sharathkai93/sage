@@ -2,6 +2,7 @@
     <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
         <active>true</active>
         <agent display_value="Skipped Items Review Agent">65eb7bdc262e41b69185bd225c906b85</agent>
+        <applicability_script/>
         <description>Reads skipped upgrade records from the last run and re-checks if they are still relevant or out-of-date. Compares current plugin state against available updates to determine if the skip reason still applies.</description>
         <display_mode/>
         <display_output>false</display_output>
@@ -38,6 +39,7 @@
         <tool display_value="Scan Skipped Items">58b5cd81b1a340d7aa99c3f9c0aa96c1</tool>
         <tool_attributes>{}</tool_attributes>
         <transformation_instructions/>
+        <wait_for_widget_interaction>false</wait_for_widget_interaction>
         <widgets/>
     </sn_aia_agent_tool_m2m>
 </record_update>

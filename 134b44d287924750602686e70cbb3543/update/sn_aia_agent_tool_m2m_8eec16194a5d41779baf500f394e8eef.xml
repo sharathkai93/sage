@@ -2,6 +2,7 @@
     <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
         <active>true</active>
         <agent display_value="Plugin Discovery Agent">2aa4a468b45f4080a2dee90a2b616969</agent>
+        <applicability_script/>
         <description>Calculates a priority score (0-100) for each outdated plugin based on security risk, dependency chain depth, version age, and service mapping impact. Higher scores indicate more urgent upgrades.</description>
         <display_mode/>
         <display_output>false</display_output>
@@ -38,6 +39,7 @@
         <tool display_value="Compute Priority Score">efa9cf6e5c06494bbdc5ddfa3a507c23</tool>
         <tool_attributes>{}</tool_attributes>
         <transformation_instructions/>
+        <wait_for_widget_interaction>false</wait_for_widget_interaction>
         <widgets/>
     </sn_aia_agent_tool_m2m>
 </record_update>

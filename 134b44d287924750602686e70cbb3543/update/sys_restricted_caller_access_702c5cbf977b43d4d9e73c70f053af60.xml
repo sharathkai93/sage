@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_restricted_caller_access">
+    <sys_restricted_caller_access action="INSERT_OR_UPDATE">
+        <description/>
+        <operation>read</operation>
+        <rca_type>real_rca</rca_type>
+        <source>d502e18f87fb8754e5450d090cbb353f</source>
+        <source_scope display_value="Global">global</source_scope>
+        <source_table>sys_hub_action_type_definition</source_table>
+        <source_type>16</source_type>
+        <status>2</status>
+        <sys_class_name>sys_restricted_caller_access</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2026-10-14 16:47:54</sys_created_on>
+        <sys_id>702c5cbf977b43d4d9e73c70f053af60</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>global</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sys_restricted_caller_access_702c5cbf977b43d4d9e73c70f053af60</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-15 07:13:53</sys_updated_on>
+        <target name="x_snc_ai_upgrade_0_action_log" target_table="sys_db_object">7f0f3fb0f32c4cf988a53f483f0831e7</target>
+        <target_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</target_scope>
+        <target_table>sys_db_object</target_table>
+        <target_type>1</target_type>
+    </sys_restricted_caller_access>
+</record_update>

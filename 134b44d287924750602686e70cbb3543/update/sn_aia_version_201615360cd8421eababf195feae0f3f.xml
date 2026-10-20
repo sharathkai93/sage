@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
     <sn_aia_version action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <applicability_script/>
+        <base_version/>
+        <change_description/>
         <condition/>
+        <eval_score/>
         <instructions>Step 1: Plugin Discovery and Prioritization.
 - Use the Plugin Discovery Agent to synchronize plugin metadata, query installed plugins, identify outdated components, and compute priority scores.
 - The Plugin Discovery Agent will produce a prioritized upgrade list sorted by risk score.
@@ -43,6 +48,11 @@ Output Format Rules:
 - Replace numeric codes with labels where applicable.
 - Use bullet points and tables for structured data.
 - Summarize with totals and percentages where helpful.</instructions>
+        <label/>
+        <layer/>
+        <order/>
+        <short_description/>
+        <snapshot/>
         <state>published</state>
         <sys_class_name>sn_aia_version</sys_class_name>
         <sys_created_by>sharath.vasishta</sys_created_by>
@@ -58,6 +68,7 @@ Output Format Rules:
         <sys_update_name>sn_aia_version_201615360cd8421eababf195feae0f3f</sys_update_name>
         <sys_updated_by>sharath.vasishta</sys_updated_by>
         <sys_updated_on>2026-07-27 11:39:05</sys_updated_on>
+        <tags/>
         <target_id>702fe251275a4298b50e6f98ff702628</target_id>
         <target_table>sn_aia_usecase</target_table>
         <version_name>V1</version_name>

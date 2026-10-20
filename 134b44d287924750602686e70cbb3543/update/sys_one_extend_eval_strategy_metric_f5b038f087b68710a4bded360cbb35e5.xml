@@ -9,6 +9,7 @@
         <sys_created_by>system</sys_created_by>
         <sys_created_on>2026-08-16 17:33:14</sys_created_on>
         <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
         <sys_id>f5b038f087b68710a4bded360cbb35e5</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Correctness Metric with Golden Response</sys_name>

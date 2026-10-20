@@ -2,6 +2,7 @@
     <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
         <active>true</active>
         <agent display_value="Plugin Upgrade Agent">808b4dc386fe4125b9994da650b9fad8</agent>
+        <applicability_script/>
         <description>Logs failures, skipped upgrades, and detailed error information for audit and troubleshooting purposes. Creates records with failure context for future reference.</description>
         <display_mode/>
         <display_output>false</display_output>
@@ -38,6 +39,7 @@
         <tool display_value="Capture Failures">8cb0ddb3b64c4e1db43f49d01aaf224f</tool>
         <tool_attributes>{}</tool_attributes>
         <transformation_instructions/>
+        <wait_for_widget_interaction>false</wait_for_widget_interaction>
         <widgets/>
     </sn_aia_agent_tool_m2m>
 </record_update>

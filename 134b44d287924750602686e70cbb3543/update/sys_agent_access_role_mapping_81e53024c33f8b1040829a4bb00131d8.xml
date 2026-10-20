@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_agent_access_role_mapping">
     <sys_agent_access_role_mapping action="INSERT_OR_UPDATE">
         <agent_access_config display_value="Retrieve Upgrade Classification Map">30e53024c33f8b1040829a4bb00131c2</agent_access_config>
-        <role display_value="snc_internal" name="snc_internal">7fcaa702933002009c8579b4f47ffbde</role>
+        <role display_value="">7fcaa702933002009c8579b4f47ffbde</role>
         <sys_class_name>sys_agent_access_role_mapping</sys_class_name>
         <sys_created_by>sharath.vasishta@snc</sys_created_by>
         <sys_created_on>2026-10-04 16:20:10</sys_created_on>

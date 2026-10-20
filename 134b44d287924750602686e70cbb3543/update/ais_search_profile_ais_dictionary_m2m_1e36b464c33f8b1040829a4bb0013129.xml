@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="ais_search_profile_ais_dictionary_m2m">
     <ais_search_profile_ais_dictionary_m2m action="INSERT_OR_UPDATE">
-        <dictionary display_value="spanish_default_stop_word_dictionary">eb4c039eb763421036ae827b5e11a986</dictionary>
+        <dictionary display_value="">eb4c039eb763421036ae827b5e11a986</dictionary>
         <dictionary_reference_qualifier/>
         <marked_for_deletion>false</marked_for_deletion>
         <profile display_value="Retrieve Sensitivity Mapping">9a267064c33f8b1040829a4bb001315f</profile>

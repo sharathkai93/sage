@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="one_api_service_plan_feature">
+    <one_api_service_plan_feature action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applicability_condition/>
+        <applicability_condition_expression/>
+        <applicability_condition_table/>
+        <applicability_script><![CDATA[(function(featureInput, previousFeatureOutputs) {
+	/* customize condition logic here, return true or false */
+  var data = JSON.parse(featureInput);
+
+  if (gs.nil(data) || gs.nil(data.documents) || data.documents.length == 0)
+      return false;
+
+  // Skip RAG Reranker child capability when server-side reranker is enabled
+  // Server-side reranker is handled by RAG Retriever via rerankerRequest to AIS backend
+  var serverSideRerankerEnabledForRAGRetriever = sn_ais.AisUtil.isServerSideRerankerEnabledForRAGRetriever();
+  if (serverSideRerankerEnabledForRAGRetriever) {
+      return false;
+  }
+
+  if (data != undefined && data.ischunkingenabled != undefined)
+      return data.ischunkingenabled;
+
+  return true;
+  })(featureInput, previousFeatureOutputs);]]></applicability_script>
+        <applicability_type>script</applicability_type>
+        <delay_output_processing>false</delay_output_processing>
+        <depends_on/>
+        <depends_on_list>8620450e973b0f54d9e73c70f053af9e</depends_on_list>
+        <error_policy>continue_service_plan_execution</error_policy>
+        <feature display_value="eacdd76f77801210e9c41345ba5a99a2">8220450e973b0f54d9e73c70f053af7e</feature>
+        <return_request>false</return_request>
+        <service_plan display_value="___$y$t3m_bu1163r___-838469a5ffe96210a81effffffffff62, 03dd699943141210fd2f0a952cb8f2d0, eacdd76f77801210e9c41345ba5a99a2, 542203de7fe81210a01c7d8b7d86658c-default">0620450e973b0f54d9e73c70f053af9c</service_plan>
+        <sys_class_name>one_api_service_plan_feature</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-09 08:55:54</sys_created_on>
+        <sys_id>c620450e973b0f54d9e73c70f053af9f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>___$y$t3m_bu1163r___-838469a5ffe96210a81effffffffff62, 03dd699943141210fd2f0a952cb8f2d0, eacdd76f77801210e9c41345ba5a99a2, 542203de7fe81210a01c7d8b7d86658c-default: eacdd76f77801210e9c41345ba5a99a2</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>one_api_service_plan_feature_c620450e973b0f54d9e73c70f053af9f</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-09 08:55:54</sys_updated_on>
+        <timeout_policy>continue_service_plan_execution</timeout_policy>
+        <timeout_sec>60</timeout_sec>
+    </one_api_service_plan_feature>
+</record_update>

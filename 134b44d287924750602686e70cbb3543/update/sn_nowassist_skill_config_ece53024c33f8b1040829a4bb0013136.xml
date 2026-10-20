@@ -8,7 +8,7 @@
         <internal_name>retrieve_upgrade_classification_map.ece53024c33f8b1040829a4bb0013136</internal_name>
         <is_template>false</is_template>
         <name>Retrieve Upgrade Classification Map</name>
-        <nap_skill_applicability display_value="">66a5bfe4c3f74f1040829a4bb00131d9</nap_skill_applicability>
+        <nap_skill_applicability display_value="Retrieve Upgrade Classification Map">66a5bfe4c3f74f1040829a4bb00131d9</nap_skill_applicability>
         <order>100</order>
         <parent/>
         <skill_family display_value="Knowledge">510cfd60f7f3021086c7d3e543bfd620</skill_family>

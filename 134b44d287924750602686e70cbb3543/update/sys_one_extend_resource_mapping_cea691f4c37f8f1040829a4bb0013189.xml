@@ -28,6 +28,7 @@
         <sys_created_by>sharath.vasishta@snc</sys_created_by>
         <sys_created_on>2026-10-05 13:21:49</sys_created_on>
         <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
         <sys_id>cea691f4c37f8f1040829a4bb0013189</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Perform Web Search</sys_name>

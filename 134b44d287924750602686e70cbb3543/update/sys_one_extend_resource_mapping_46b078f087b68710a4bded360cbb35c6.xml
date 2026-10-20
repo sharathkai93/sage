@@ -31,6 +31,7 @@
         <sys_created_by>system</sys_created_by>
         <sys_created_on>2026-08-16 17:33:16</sys_created_on>
         <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
         <sys_id>46b078f087b68710a4bded360cbb35c6</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Correctness Metric</sys_name>

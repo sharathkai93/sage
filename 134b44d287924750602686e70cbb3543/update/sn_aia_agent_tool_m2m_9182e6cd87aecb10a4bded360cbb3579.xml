@@ -2,6 +2,7 @@
     <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
         <active>true</active>
         <agent display_value="Post Upgrade Analysis Agent">a2a916c5876ecb10a4bded360cbb350e</agent>
+        <applicability_script/>
         <description>The purpose of this tool is to retrieve the last 3 upgrades from the upgrade_history table and present to the user to ask which upgrade they need assistance with.</description>
         <display_mode>inline</display_mode>
         <display_output>false</display_output>
@@ -38,6 +39,7 @@
         <tool display_value="Retrieve Latest Upgrades">c982aa4d87aecb10a4bded360cbb352d</tool>
         <tool_attributes>{}</tool_attributes>
         <transformation_instructions>undefined</transformation_instructions>
+        <wait_for_widget_interaction>false</wait_for_widget_interaction>
         <widgets>db0e858eff62b210f465ffffffffff2c</widgets>
     </sn_aia_agent_tool_m2m>
 </record_update>

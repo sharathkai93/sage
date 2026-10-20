@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_team_member">
+    <sn_aia_team_member action="DELETE">
+        <agent display_value="">new-1791539993651</agent>
+        <memory_scope>global</memory_scope>
+        <sys_class_name>sn_aia_team_member</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-09 10:03:04</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>398f050e97fb0f54d9e73c70f053af39</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sn_aia_team_member_398f050e97fb0f54d9e73c70f053af39</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-09 10:03:04</sys_updated_on>
+        <team display_value="Upgrade Analysis Expert">a98fc10e97fb0f54d9e73c70f053afdc</team>
+    </sn_aia_team_member>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</application>
+        <file_path/>
+        <instance_id>8fddf5054757cf1821f3e676706d43f4</instance_id>
+        <instance_name>svasidev</instance_name>
+        <name>sn_aia_team_member_398f050e97fb0f54d9e73c70f053af39</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_team_member"><sn_aia_team_member action="INSERT_OR_UPDATE"><agent display_value="">new-1791539993651</agent><memory_scope>global</memory_scope><sys_class_name>sn_aia_team_member</sys_class_name><sys_created_by>sharath.vasishta@snc</sys_created_by><sys_created_on>2026-10-09 10:03:04</sys_created_on><sys_domain>global</sys_domain><sys_id>398f050e97fb0f54d9e73c70f053af39</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package><sys_policy/><sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope><sys_update_name>sn_aia_team_member_398f050e97fb0f54d9e73c70f053af39</sys_update_name><sys_updated_by>sharath.vasishta@snc</sys_updated_by><sys_updated_on>2026-10-09 10:03:04</sys_updated_on><team display_value="Upgrade Analysis Expert">a98fc10e97fb0f54d9e73c70f053afdc</team></sn_aia_team_member></record_update>]]></payload>
+        <payload_hash>-306679911</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>e3e7f8fd87338b14e5450d090cbb353a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-09 10:03:04</sys_created_on>
+        <sys_id>718f050e97fb0f54d9e73c70f053af3f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a1201dc4c10000001</sys_recorded_at>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-09 10:03:04</sys_updated_on>
+        <type>Team Member</type>
+        <update_guid>fd8f050eabfb0f542fc9f38a6ff1133d</update_guid>
+        <update_guid_history>fd8f050eabfb0f542fc9f38a6ff1133d:-306679911</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">6f1799c6977f0f54d9e73c70f053af47</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-09 10:36:13</sys_created_on>
+        <sys_db_object display_value="" name="sn_aia_team_member">sn_aia_team_member</sys_db_object>
+        <sys_id>9fcbfed10b9f4b189ae7e6f17db52610</sys_id>
+        <sys_metadata>398f050e97fb0f54d9e73c70f053af39</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_scope_delete display_value="">037dbac799a64a98b8f0c25d940a9691</sys_scope_delete>
+        <sys_update_name>sn_aia_team_member_398f050e97fb0f54d9e73c70f053af39</sys_update_name>
+        <sys_update_version display_value="sn_aia_team_member_398f050e97fb0f54d9e73c70f053af39">718f050e97fb0f54d9e73c70f053af3f</sys_update_version>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-09 10:36:13</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
     <sn_aia_version action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <applicability_script/>
+        <base_version/>
+        <change_description/>
         <condition/>
+        <eval_score/>
         <instructions>Step 1: Scan Skipped Items.
 - Use the Scan Skipped Items tool to read the skipped upgrade records from the last run.
 - Re-check if these plugins are still out-of-date or if they have been upgraded through other means.
@@ -15,6 +20,11 @@ Step 2: Suggest Actions.
 - Use readable labels. Do NOT display sys_ids or raw field names.
 - Group by recommended action type for clarity.
 - Ask the user: "Would you like to proceed with any of these recommendations, or schedule them for the next upgrade window?"</instructions>
+        <label/>
+        <layer/>
+        <order/>
+        <short_description/>
+        <snapshot/>
         <state>published</state>
         <sys_class_name>sn_aia_version</sys_class_name>
         <sys_created_by>sharath.vasishta</sys_created_by>
@@ -30,6 +40,7 @@ Step 2: Suggest Actions.
         <sys_update_name>sn_aia_version_c83db8be8f2444d1abec39d01cd2341d</sys_update_name>
         <sys_updated_by>sharath.vasishta</sys_updated_by>
         <sys_updated_on>2026-07-27 11:39:06</sys_updated_on>
+        <tags/>
         <target_id>65eb7bdc262e41b69185bd225c906b85</target_id>
         <target_table>sn_aia_agent</target_table>
         <version_name>V1</version_name>

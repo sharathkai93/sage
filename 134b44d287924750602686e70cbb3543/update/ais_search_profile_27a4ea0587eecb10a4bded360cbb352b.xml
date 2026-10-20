@@ -7,7 +7,7 @@
         <genius_result_assembly/>
         <label>Upgrade History for Agentic AI</label>
         <name>x_snc_ai_upgrade_0_upgrade_history_for_agentic_ai</name>
-        <publish_id>58678b5e-64d0-4f95-9798-d6e1b487c5a6</publish_id>
+        <publish_id>54dbad6a-1d85-4ee6-bb29-22b66a584710</publish_id>
         <qna_model_id>bert-qa-model-1.1.6</qna_model_id>
         <state>PUBLISHED</state>
         <sys_class_name>ais_search_profile</sys_class_name>

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_aia_version">
     <sn_aia_version action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <applicability_script/>
+        <base_version/>
+        <change_description/>
         <condition/>
+        <eval_score/>
         <instructions>Step 1: Run Pre-Upgrade Checks.
 - Use the Run Pre-Upgrade Checks tool to validate dependencies, prerequisites, and detect customization conflicts for the selected plugins.
 - Pass the prioritized plugin list from the Plugin Discovery Agent.
@@ -41,6 +46,11 @@ Step 7: Summarize Results.
 - Use readable labels. Do NOT display sys_ids or raw field names.
 - If any failures occurred, include the failure reason and recommended next steps.
 - NEVER mark an upgrade as successful unless the post-upgrade health check passed.</instructions>
+        <label/>
+        <layer/>
+        <order/>
+        <short_description/>
+        <snapshot/>
         <state>published</state>
         <sys_class_name>sn_aia_version</sys_class_name>
         <sys_created_by>sharath.vasishta</sys_created_by>
@@ -56,6 +66,7 @@ Step 7: Summarize Results.
         <sys_update_name>sn_aia_version_5f81d959456b47e69c63d5ea97a66763</sys_update_name>
         <sys_updated_by>sharath.vasishta</sys_updated_by>
         <sys_updated_on>2026-07-27 11:39:05</sys_updated_on>
+        <tags/>
         <target_id>808b4dc386fe4125b9994da650b9fad8</target_id>
         <target_table>sn_aia_agent</target_table>
         <version_name>V1</version_name>

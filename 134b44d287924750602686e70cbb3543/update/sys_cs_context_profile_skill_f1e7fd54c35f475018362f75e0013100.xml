@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_context_profile_skill">
     <sys_cs_context_profile_skill action="INSERT_OR_UPDATE">
-        <context_profile display_value="Now Assist in Virtual Agent (default)">e13840cf77d53110569156391e5a99ba</context_profile>
-        <skill_id display_value="The primary purpose of this agent is to review logs of a specified instance or application / plug-in upgrade in ServiceNow, classify them by priority, review the skipped upgrades and then suggest best-practice actions against these skipped upgrades based on deep analysis of changes.">ace7f954c35f475018362f75e0013190</skill_id>
+        <context_profile display_value="ServiceNow Otto for Virtual Agent (default)">e13840cf77d53110569156391e5a99ba</context_profile>
+        <skill_id display_value="Post Upgrade Analysis Agent">ace7f954c35f475018362f75e0013190</skill_id>
         <sys_class_name>sys_cs_context_profile_skill</sys_class_name>
         <sys_created_by>sharath.vasishta@snc</sys_created_by>
         <sys_created_on>2026-09-09 05:58:42</sys_created_on>

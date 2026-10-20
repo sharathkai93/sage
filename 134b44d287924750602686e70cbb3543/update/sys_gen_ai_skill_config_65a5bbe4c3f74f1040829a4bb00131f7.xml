@@ -4,7 +4,7 @@
         <channels/>
         <discoverable>true</discoverable>
         <hint>Retrieve Upgrade Classification Map</hint>
-        <skill_id display_value="">e9a5bbe4c3f74f1040829a4bb00131f1</skill_id>
+        <skill_id display_value="Retrieve Upgrade Classification Map">e9a5bbe4c3f74f1040829a4bb00131f1</skill_id>
         <supervision/>
         <sys_class_name>sys_gen_ai_skill_config</sys_class_name>
         <sys_created_by>sharath.vasishta@snc</sys_created_by>

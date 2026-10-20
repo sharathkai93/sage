@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_gen_ai_skill">
     <sys_gen_ai_skill action="INSERT_OR_UPDATE">
-        <skill_description/>
+        <skill_description>The purpose of this agentic workflow is to analyze or review any plugin, application, suite or instance upgrades for any skipped updates and recommend actions for the low priority items as relevant.</skill_description>
         <skill_document>c09de7fe87774754e5450d090cbb352c</skill_document>
-        <skill_name/>
+        <skill_name>Skipped update Analysis and Guidance Engine (SAGE)</skill_name>
         <skill_table>sn_aia_skill_metadata</skill_table>
         <sys_class_name>sys_gen_ai_skill</sys_class_name>
         <sys_created_by>sharath.vasishta@snc</sys_created_by>

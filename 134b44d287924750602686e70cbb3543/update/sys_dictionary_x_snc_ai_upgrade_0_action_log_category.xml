@@ -48,7 +48,6 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>sharath.vasishta@snc</sys_created_by>
         <sys_created_on>2026-10-11 11:34:24</sys_created_on>
-        <sys_id>d7977f6297734794d9e73c70f053af00</sys_id>
         <sys_name>Category</sys_name>
         <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
         <sys_policy/>

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_gen_ai_skill">
     <sys_gen_ai_skill action="INSERT_OR_UPDATE">
-        <enable_followup>false</enable_followup>
         <skill_description/>
         <skill_document>08e5fce0c33f8b1040829a4bb0013176</skill_document>
-        <skill_name/>
+        <skill_name>Retrieve Upgrade Classification Map</skill_name>
         <skill_table>sys_one_extend_capability</skill_table>
         <sys_class_name>sys_gen_ai_skill</sys_class_name>
         <sys_created_by>sharath.vasishta@snc</sys_created_by>
@@ -21,4 +20,5 @@
         <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
         <sys_updated_on>2026-10-05 06:17:58</sys_updated_on>
     </sys_gen_ai_skill>
+    <sys_translated_text action="delete_multiple" query="documentkey=e9a5bbe4c3f74f1040829a4bb00131f1"/>
 </record_update>

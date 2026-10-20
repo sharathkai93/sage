@@ -2,6 +2,7 @@
     <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
         <active>true</active>
         <agent display_value="Skipped Items Review Agent">65eb7bdc262e41b69185bd225c906b85</agent>
+        <applicability_script/>
         <description>Generates action recommendations for skipped items including resolving prerequisites, clearing conflicts, scheduling maintenance windows, and testing requirements. Provides estimated effort and priority for each recommendation.</description>
         <display_mode/>
         <display_output>false</display_output>
@@ -38,6 +39,7 @@
         <tool display_value="Suggest Actions">0670230cbb1c4771b4b3efec36b24e95</tool>
         <tool_attributes>{}</tool_attributes>
         <transformation_instructions/>
+        <wait_for_widget_interaction>false</wait_for_widget_interaction>
         <widgets/>
     </sn_aia_agent_tool_m2m>
 </record_update>

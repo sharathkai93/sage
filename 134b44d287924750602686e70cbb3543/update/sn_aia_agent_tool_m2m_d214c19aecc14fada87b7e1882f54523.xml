@@ -2,6 +2,7 @@
     <sn_aia_agent_tool_m2m action="INSERT_OR_UPDATE">
         <active>true</active>
         <agent display_value="Plugin Upgrade Agent">808b4dc386fe4125b9994da650b9fad8</agent>
+        <applicability_script/>
         <description>Validates dependencies, prerequisites, and detects customization conflicts for selected plugins before upgrade. Returns a pass/fail status per plugin with details on any blockers found.</description>
         <display_mode/>
         <display_output>false</display_output>
@@ -38,6 +39,7 @@
         <tool display_value="Run Pre-Upgrade Checks">1deb21f231784f1e94699c8ba0fc2faa</tool>
         <tool_attributes>{}</tool_attributes>
         <transformation_instructions/>
+        <wait_for_widget_interaction>false</wait_for_widget_interaction>
         <widgets/>
     </sn_aia_agent_tool_m2m>
 </record_update>

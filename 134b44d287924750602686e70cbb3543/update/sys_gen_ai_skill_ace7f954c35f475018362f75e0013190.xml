@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_gen_ai_skill">
     <sys_gen_ai_skill action="INSERT_OR_UPDATE">
-        <enable_followup>false</enable_followup>
         <skill_description>The primary purpose of this agent is to review logs of a specified instance or application / plug-in upgrade in ServiceNow, classify them by priority, review the skipped upgrades and then suggest best-practice actions against these skipped upgrades based on deep analysis of changes.</skill_description>
         <skill_document>64e7f954c35f475018362f75e0013189</skill_document>
         <skill_name>Post Upgrade Analysis Agent</skill_name>
@@ -12,7 +11,7 @@
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ace7f954c35f475018362f75e0013190</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name/>
+        <sys_name>Post Upgrade Analysis Agent</sys_name>
         <sys_overrides/>
         <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
         <sys_policy/>
@@ -21,4 +20,5 @@
         <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
         <sys_updated_on>2026-09-09 05:58:40</sys_updated_on>
     </sys_gen_ai_skill>
+    <sys_translated_text action="delete_multiple" query="documentkey=ace7f954c35f475018362f75e0013190"/>
 </record_update>

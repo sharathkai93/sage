@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="one_api_feature_provider">
+    <one_api_feature_provider action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <feature display_value="1180a63c7f5e2210f465c3b76d866516">199e711097c85310d9e73c70f053afe6</feature>
+        <feature_service display_value="OneExtendGenericProvider">5233278353111110c271ddeeff7b129b</feature_service>
+        <feature_service_factory><![CDATA[(function() { return new global.OneExtendGenericProvider(); })()]]></feature_service_factory>
+        <name>AIA Identify Episodic Memories provider</name>
+        <short_description>Auto Generated </short_description>
+        <sys_class_name>one_api_feature_provider</sys_class_name>
+        <sys_created_by>sharath.vasishta</sys_created_by>
+        <sys_created_on>2026-10-16 13:14:58</sys_created_on>
+        <sys_id>559e711097c85310d9e73c70f053afe9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AIA Identify Episodic Memories provider</sys_name>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>one_api_feature_provider_559e711097c85310d9e73c70f053afe9</sys_update_name>
+        <sys_updated_by>sharath.vasishta</sys_updated_by>
+        <sys_updated_on>2026-10-16 13:14:58</sys_updated_on>
+        <type>FDIH Subflow</type>
+        <type_document display_value="Google Cloud Chat Completions - Vertex AI">9666f54b2dca7110f877b951e3e5bf53</type_document>
+    </one_api_feature_provider>
+</record_update>

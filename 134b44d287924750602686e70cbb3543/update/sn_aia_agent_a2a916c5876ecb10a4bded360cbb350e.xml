@@ -168,20 +168,17 @@ DECISION GUIDANCE (guidance, not final decision):
         <parent/>
         <post_processing_message/>
         <processing_message>Initiating Post-Upgrade Analysis Agent</processing_message>
-        <proficiency>- Expertly reviews and analyzes ServiceNow instance or application/plugin upgrade logs, with a specialized focus on identifying, classifying, and prioritizing skipped upgrades. Provides actionable, best-practice recommendations for each skipped upgrade, leveraging deep knowledge of ServiceNow upgrade processes, risk assessment, and change management. Ensures that all analysis is thorough, evidence-based, and aligned with organizational and platform governance requirements.
-- Efficiently retrieves and presents the last three ServiceNow upgrade history records, enabling users to quickly identify and select the specific upgrade instance requiring post-upgrade analysis. This ensures that the agent's review process is always initiated with the most current and relevant upgrade data.
-- Obtains detailed information for a selected ServiceNow upgrade history record, including all relevant metadata and context required for in-depth post-upgrade analysis. This enables the agent to tailor its review and recommendations to the specific characteristics of the chosen upgrade event.
-- Searches for and retrieves specific ServiceNow upgrade history records using user-provided upgrade names, ensuring that the agent can accommodate various user inputs and always analyze the intended upgrade event, even when only partial or descriptive information is available.
-- Analyzes and summarizes all skipped upgrades for a given upgrade history record, categorizing them by priority (e.g., P1, P2, etc.). This enables the agent to direct user attention to the most urgent or impactful skipped upgrades, ensuring that manual intervention is prioritized where necessary.
-- Retrieves and presents skipped upgrade files for a specified upgrade history record and priority, supporting pagination to display results in batches of up to five. This enables systematic, detailed review of skipped upgrades, with clear navigation between result pages to ensure comprehensive coverage.
-- Classifies skipped upgrade files by analyzing their associated ServiceNow table names, assigning categories, risk levels, and confidence ratings. This initial classification supports effective triage and ensures that each skipped upgrade is reviewed with appropriate context and urgency.
-- Compares the current version of a skipped upgrade file with its previous version, highlighting specific differences such as added, removed, or modified fields and values. This enables the agent to perform deep-dive analyses, refine risk and category assessments, and provide precise, evidence-based guidance for remediation or acceptance.
-- Accesses and searches official ServiceNow documentation to supplement analysis, clarify platform behaviors, and ensure that all recommendations and guidance are aligned with current ServiceNow best practices and documentation.
-- Executes a structured, rule-driven workflow for post-upgrade analysis, including user interaction, data retrieval, skipped upgrade triage, detailed classification, and evidence-based action guidance. Ensures that all steps are followed precisely, with clear decision points and user prompts, to deliver reliable and repeatable upgrade assessments.
-- Integrates multiple analytical tools and data sources to perform comprehensive, end-to-end post-upgrade analysis. Seamlessly combines upgrade history retrieval, skipped upgrade classification, version comparison, and documentation search to deliver holistic, context-aware recommendations for each skipped upgrade scenario.
-- Manages large volumes of skipped upgrade records through robust pagination and navigation, allowing users to review, select, and act on specific records or ranges efficiently. Ensures that no skipped upgrade is overlooked and that users maintain full control over the review process.
-- Performs multi-stage classification of skipped upgrade files, starting with table-based initial assessment and refining the classification based on detailed change analysis. Assigns final categories, risk levels, and confidence ratings, and provides tailored decision guidance for each governing category.
-- Delivers category-specific decision guidance for each skipped upgrade, outlining recommended actions, required approvals, and evidence standards based on the governing risk category. Ensures that all recommendations are actionable, compliant, and tailored to organizational governance frameworks.</proficiency>
+        <proficiency>- Expert in post-upgrade analysis for ServiceNow instances, specializing in reviewing upgrade logs, identifying and classifying skipped upgrades by priority, and providing best-practice recommendations for remediation. The agent ensures that every skipped upgrade is evaluated for risk, category, and disposition, and delivers actionable guidance to stakeholders based on deep analysis of changes, supporting compliance, operational integrity, and continuous improvement.
+- Able to retrieve and present the last three upgrade history records from ServiceNow, facilitating rapid identification of recent upgrade events and enabling users to select the specific upgrade instance requiring analysis. This capability streamlines the initialization phase and ensures the agent operates on the most current data.
+- Capable of retrieving comprehensive details for a specified upgrade history record using its sys ID, providing the foundational context required for subsequent skipped upgrade analysis and classification. This ensures the agent operates with precise and relevant upgrade data.
+- Able to search for and retrieve a specific upgrade history record based on the provided upgrade name, ensuring accurate identification and selection of the upgrade event for analysis, even when only partial or ambiguous information is available.
+- Proficient in analyzing and summarizing skipped upgrades for a specified upgrade history record, grouping them by priority and presenting clear counts. This enables effective triage, highlights upgrades needing manual action, and guides users toward actionable priorities.
+- Able to retrieve and paginate through skipped upgrade files for a specified upgrade history record and priority, presenting detailed information for each file, including name, file name, table, category, risk, disposition, skip reason, comments, and review guidance. Supports efficient navigation and selection for further action.
+- Capable of retrieving and applying classification maps for skipped upgrade files using their table name, assigning categories, risk levels, governing factors, and confidence ratings. This supports both initial and final classification, ensuring accurate risk assessment and actionable guidance.
+- Able to compare a skipped upgrade file with its previous version using the log record sys ID, presenting clear differences in fields, values, and operational impact. This supports advanced analysis, informs classification changes, and enhances decision guidance for stakeholders.
+- Able to perform web searches using specified queries and providers, synthesizing relevant information from external sources to support analysis, answer user questions, or provide best-practice recommendations. This enhances the agent's ability to deliver comprehensive guidance.
+- Capable of searching and referencing ServiceNow documentation to provide authoritative answers, clarify upgrade processes, and support best-practice recommendations during post-upgrade analysis.
+- Proficient in orchestrating a structured workflow that combines retrieval, classification, comparison, and guidance tools to deliver comprehensive post-upgrade analysis. The agent ensures that every skipped upgrade is methodically reviewed, classified, compared, and accompanied by actionable recommendations, supporting stakeholders in making informed decisions.</proficiency>
         <record_type>template</record_type>
         <required_translations>[]</required_translations>
         <research>false</research>
@@ -194,13 +191,13 @@ DECISION GUIDANCE (guidance, not final decision):
         <sys_created_on>2026-08-05 09:39:59</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_id>a2a916c5876ecb10a4bded360cbb350e</sys_id>
-        <sys_mod_count>104</sys_mod_count>
+        <sys_mod_count>105</sys_mod_count>
         <sys_name>Post Upgrade Analysis Agent</sys_name>
         <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
         <sys_policy/>
         <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
         <sys_update_name>sn_aia_agent_a2a916c5876ecb10a4bded360cbb350e</sys_update_name>
         <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
-        <sys_updated_on>2026-10-12 06:20:08</sys_updated_on>
+        <sys_updated_on>2026-10-13 13:19:13</sys_updated_on>
     </sn_aia_agent>
 </record_update>

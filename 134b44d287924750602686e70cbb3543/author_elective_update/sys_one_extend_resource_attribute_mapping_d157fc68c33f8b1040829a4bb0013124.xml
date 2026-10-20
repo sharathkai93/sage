@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_one_extend_resource_attribute_mapping">
+    <sys_one_extend_resource_attribute_mapping action="DELETE">
+        <attribute_value_script><![CDATA[(function execute(currentInputs, context) {
+    /* @param {Object} currentInputs - Inputs provided for the current step.*/
+    /* @param {Object} context - Execution context, which may include:*/
+    /*						   - Previous tool outputs/inputs (e.g., context['ToolName.attributeName'] or context.getValue('ToolName.attributeName')).*/
+    /*						   - Additional context information (e.g., context.getAllValues()).*/
+    /* @returns {Object} - The computed value for the attribute.*/
+    return '';
+})(currentInputs, context);]]></attribute_value_script>
+        <attribute_value_template>8d57fc68c33f8b1040829a4bb0013115</attribute_value_template>
+        <attribute_value_type>template</attribute_value_type>
+        <from_resource_mapping/>
+        <resource_attribute_name display_value="semantic_search_configuration">bad642b0ffef22103fefffffffffff3b</resource_attribute_name>
+        <resource_mapping display_value="retrieveSensitivityKB">0557bc68c33f8b1040829a4bb0013122</resource_mapping>
+        <sys_class_name>sys_one_extend_resource_attribute_mapping</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-04 16:26:28</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>d157fc68c33f8b1040829a4bb0013124</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_update_name>sys_one_extend_resource_attribute_mapping_d157fc68c33f8b1040829a4bb0013124</sys_update_name>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-04 16:26:28</sys_updated_on>
+        <truncate>false</truncate>
+        <type>input</type>
+    </sys_one_extend_resource_attribute_mapping>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</application>
+        <file_path/>
+        <instance_id>8fddf5054757cf1821f3e676706d43f4</instance_id>
+        <instance_name>svasidev</instance_name>
+        <name>sys_one_extend_resource_attribute_mapping_d157fc68c33f8b1040829a4bb0013124</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_one_extend_resource_attribute_mapping"&gt;&lt;sys_one_extend_resource_attribute_mapping action="INSERT_OR_UPDATE"&gt;&lt;attribute_value_script&gt;&lt;![CDATA[(function execute(currentInputs, context) {
+    /* @param {Object} currentInputs - Inputs provided for the current step.*/
+    /* @param {Object} context - Execution context, which may include:*/
+    /*						   - Previous tool outputs/inputs (e.g., context['ToolName.attributeName'] or context.getValue('ToolName.attributeName')).*/
+    /*						   - Additional context information (e.g., context.getAllValues()).*/
+    /* @returns {Object} - The computed value for the attribute.*/
+    return '';
+})(currentInputs, context);]]&gt;&lt;/attribute_value_script&gt;&lt;attribute_value_template&gt;8d57fc68c33f8b1040829a4bb0013115&lt;/attribute_value_template&gt;&lt;attribute_value_type&gt;template&lt;/attribute_value_type&gt;&lt;from_resource_mapping/&gt;&lt;resource_attribute_name display_value="semantic_search_configuration"&gt;bad642b0ffef22103fefffffffffff3b&lt;/resource_attribute_name&gt;&lt;resource_mapping display_value="retrieveSensitivityKB"&gt;0557bc68c33f8b1040829a4bb0013122&lt;/resource_mapping&gt;&lt;sys_class_name&gt;sys_one_extend_resource_attribute_mapping&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-04 16:26:28&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_id&gt;d157fc68c33f8b1040829a4bb0013124&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0"&gt;134b44d287924750602686e70cbb3543&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="AI Upgrade Monitor"&gt;134b44d287924750602686e70cbb3543&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_one_extend_resource_attribute_mapping_d157fc68c33f8b1040829a4bb0013124&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-04 16:26:28&lt;/sys_updated_on&gt;&lt;truncate&gt;false&lt;/truncate&gt;&lt;type&gt;input&lt;/type&gt;&lt;/sys_one_extend_resource_attribute_mapping&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-2144811914</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>08fc1035873f4b14e5450d090cbb3504</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-08 11:43:44</sys_created_on>
+        <sys_id>76fc1435873f4b14e5450d090cbb353d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1a11b53934b0000001</sys_recorded_at>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-08 11:43:44</sys_updated_on>
+        <type>OneExtend Resource Attribute Mapping</type>
+        <update_guid>d557fc68de3f8b1087656c01f2739c26</update_guid>
+        <update_guid_history>d557fc68de3f8b1087656c01f2739c26:-2144811914</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>sharath.vasishta@snc</sys_created_by>
+        <sys_created_on>2026-10-14 13:33:30</sys_created_on>
+        <sys_db_object display_value="" name="sys_one_extend_resource_attribute_mapping">sys_one_extend_resource_attribute_mapping</sys_db_object>
+        <sys_id>01b409ef2bf64d5893a519d9c7feed90</sys_id>
+        <sys_metadata>d157fc68c33f8b1040829a4bb0013124</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0">134b44d287924750602686e70cbb3543</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</sys_scope>
+        <sys_scope_delete display_value="">037dbac799a64a98b8f0c25d940a9691</sys_scope_delete>
+        <sys_update_name>sys_one_extend_resource_attribute_mapping_d157fc68c33f8b1040829a4bb0013124</sys_update_name>
+        <sys_update_version display_value="sys_one_extend_resource_attribute_mapping_d157fc68c33f8b1040829a4bb0013124">76fc1435873f4b14e5450d090cbb353d</sys_update_version>
+        <sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+        <sys_updated_on>2026-10-14 13:33:30</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
