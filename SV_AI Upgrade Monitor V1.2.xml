@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2026-10-20 06:10:31">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description/>
+<inserted/>
+<name>SV_AI Upgrade Monitor V1.2</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>8806f0df87bb0b54e5450d090cbb35c3</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>sharath.vasishta@snc</sys_created_by>
+<sys_created_on>2026-10-20 06:10:30</sys_created_on>
+<sys_id>5ac3c1e597881350d9e73c70f053afc8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+<sys_updated_on>2026-10-20 06:10:30</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</application>
+<category>customer</category>
+<comments/>
+<name>sn_aia_agent_tool_m2m_7e4fcc3797f743d4d9e73c70f053af3d</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sn_aia_agent_tool_m2m"&gt;&lt;sn_aia_agent_tool_m2m action="DELETE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;agent display_value="Execute Agent"&gt;65cce37e87774754e5450d090cbb3530&lt;/agent&gt;&lt;applicability_script&gt;&lt;![CDATA[/** 
+ * Function to determine applicability of this version based on runtime inputs 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.channel - The channel the request originated from (e.g., 'voice', 'chat') 
+ * 
+ * @returns {boolean} Returns true/false 
+(function(inputs) {
+    return inputs.channel == 'voice' ; 
+})(inputs);*/
+(function(inputs) {
+    return inputs.channel == 'ALL';
+})(inputs);]]&gt;&lt;/applicability_script&gt;&lt;description&gt;This tool can be used to retrieve information from a set of AI Upgrade Action Logs in a JSON format.&lt;/description&gt;&lt;display_mode&gt;inline&lt;/display_mode&gt;&lt;display_output&gt;false&lt;/display_output&gt;&lt;document_status/&gt;&lt;entity&gt;sn_aia_agent&lt;/entity&gt;&lt;entity_id&gt;65cce37e87774754e5450d090cbb3530&lt;/entity_id&gt;&lt;execution_mode&gt;copilot&lt;/execution_mode&gt;&lt;inputs&gt;[{"name":"upgrade_id","description":"","mandatory":false,"value":"","metadata":{"_MODE_":"slotfill"}}]&lt;/inputs&gt;&lt;max_auto_executions&gt;10&lt;/max_auto_executions&gt;&lt;name&gt;Retrieve Upgrade Action Logs&lt;/name&gt;&lt;output_transformation_strategy&gt;none&lt;/output_transformation_strategy&gt;&lt;post_message/&gt;&lt;post_processing_script/&gt;&lt;pre_message/&gt;&lt;pre_run&gt;false&lt;/pre_run&gt;&lt;requires_text_refined_message&gt;false&lt;/requires_text_refined_message&gt;&lt;requires_widget_transformation&gt;true&lt;/requires_widget_transformation&gt;&lt;should_display_refined_message&gt;false&lt;/should_display_refined_message&gt;&lt;sys_class_name&gt;sn_aia_agent_tool_m2m&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-14 15:51:47&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_id&gt;7e4fcc3797f743d4d9e73c70f053af3d&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;Retrieve Upgrade Action Logs&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0"&gt;134b44d287924750602686e70cbb3543&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="AI Upgrade Monitor"&gt;134b44d287924750602686e70cbb3543&lt;/sys_scope&gt;&lt;sys_update_name&gt;sn_aia_agent_tool_m2m_7e4fcc3797f743d4d9e73c70f053af3d&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-14 15:53:48&lt;/sys_updated_on&gt;&lt;timeout/&gt;&lt;tool display_value=""&gt;f7e5e94b873f8754e5450d090cbb35f7&lt;/tool&gt;&lt;tool_attributes&gt;{}&lt;/tool_attributes&gt;&lt;transformation_instructions/&gt;&lt;wait_for_widget_interaction&gt;false&lt;/wait_for_widget_interaction&gt;&lt;widgets&gt;db0e858eff62b210f465ffffffffff2c&lt;/widgets&gt;&lt;/sn_aia_agent_tool_m2m&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-108718216</payload_hash>
+<remote_update_set display_value="SV_AI Upgrade Monitor V1.2">5ac3c1e597881350d9e73c70f053afc8</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>sharath.vasishta@snc</sys_created_by>
+<sys_created_on>2026-10-20 06:10:30</sys_created_on>
+<sys_id>16c3c1e597881350d9e73c70f053afca</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1a13b21eded0000001</sys_recorded_at>
+<sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+<sys_updated_on>2026-10-20 06:10:30</sys_updated_on>
+<table/>
+<target_name>Retrieve Upgrade Action Logs</target_name>
+<type>Agent Tool</type>
+<update_domain>global</update_domain>
+<update_guid>58901cbb72f743d411ed324840cdc873</update_guid>
+<update_guid_history>58901cbb72f743d411ed324840cdc873:-108718216,a8cf00f7def743d4b28305957bfaf513:2134787835,c74fcc376ff743d4b9b00ad2312eff4a:-1347638120</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sys_hub_action_type_definition_e65c7f2297b34794d9e73c70f053afed</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_hub_action_type_definition"&gt;&lt;sys_hub_action_type_definition action="INSERT_OR_UPDATE"&gt;&lt;access&gt;public&lt;/access&gt;&lt;acls/&gt;&lt;action_status/&gt;&lt;action_template/&gt;&lt;active&gt;true&lt;/active&gt;&lt;annotation/&gt;&lt;attributes&gt;{labelCacheCleanUpExecuted=true}&lt;/attributes&gt;&lt;authored_on_release_version&gt;29000&lt;/authored_on_release_version&gt;&lt;callable_by_client_api&gt;false&lt;/callable_by_client_api&gt;&lt;category/&gt;&lt;copied_from/&gt;&lt;copied_from_name/&gt;&lt;description/&gt;&lt;flow_priority/&gt;&lt;ih_action&gt;false&lt;/ih_action&gt;&lt;internal_name&gt;create_ai_upgrade_action_logs&lt;/internal_name&gt;&lt;label_cache&gt;[{"name":"{{action.skipped_logs}}","label":"action➛Skipped Logs","type":"action","ref":"","reference_display":"","base_type":"array.object","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.skipped_logs.File_Name}}","label":"action➛Skipped Logs➛File Name","type":"action","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.skipped_logs.file_name}}","label":"action➛Skipped Logs➛File Name","type":"action","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.skipped_upgrades}}","label":"action➛Skipped Upgrades","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[b51824f6-e189-4f54-8aeb-7d2ae6fbc36b].result}}","label":"step➛Script step➛Result","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"ec473236-4550-484e-8170-e2c12d64a007"}}]&lt;/label_cache&gt;&lt;master_snapshot&gt;158e3be697b34794d9e73c70f053afba&lt;/master_snapshot&gt;&lt;master_snapshot_digest/&gt;&lt;name&gt;Create AI Upgrade Action Logs&lt;/name&gt;&lt;natlang/&gt;&lt;outputs/&gt;&lt;outputs/&gt;&lt;pre_compiled&gt;false&lt;/pre_compiled&gt;&lt;state&gt;published&lt;/state&gt;&lt;sys_class_name&gt;sys_hub_action_type_definition&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 11:55:06&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;e65c7f2297b34794d9e73c70f053afed&lt;/sys_id&gt;&lt;sys_mod_count&gt;23&lt;/sys_mod_count&gt;&lt;sys_name&gt;Create AI Upgrade Action Logs&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_hub_action_type_definition_e65c7f2297b34794d9e73c70f053afed&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-14 15:22:57&lt;/sys_updated_on&gt;&lt;system_level&gt;false&lt;/system_level&gt;&lt;type/&gt;&lt;/sys_hub_action_type_definition&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=e65c7f2297b34794d9e73c70f053afed"/&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=e65c7f2297b34794d9e73c70f053afed"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_action_type_definition&lt;/document&gt;&lt;document_key&gt;e65c7f2297b34794d9e73c70f053afed&lt;/document_key&gt;&lt;order&gt;2&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 11:56:57&lt;/sys_created_on&gt;&lt;sys_id&gt;61cc77a297b34794d9e73c70f053af0d&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 11:56:57&lt;/sys_updated_on&gt;&lt;value&gt;0&lt;/value&gt;&lt;variable display_value="Don't Treat as Error"&gt;91cc37a297b34794d9e73c70f053afae&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_action_type_definition&lt;/document&gt;&lt;document_key&gt;e65c7f2297b34794d9e73c70f053afed&lt;/document_key&gt;&lt;order&gt;1&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 11:56:57&lt;/sys_created_on&gt;&lt;sys_id&gt;65cc77a297b34794d9e73c70f053af0e&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-14 15:21:59&lt;/sys_updated_on&gt;&lt;value&gt;{"version":"1.0","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"794bc342-9c9d-444b-a3f2-dd4b6a5a0173\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}}}&lt;/value&gt;&lt;variable display_value="Action Status"&gt;1dcc37a297b34794d9e73c70f053afa3&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_element_mapping action="delete_multiple" query="id=e65c7f2297b34794d9e73c70f053afed"/&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;result&lt;/field&gt;&lt;id&gt;e65c7f2297b34794d9e73c70f053afed&lt;/id&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:28&lt;/sys_created_on&gt;&lt;sys_id&gt;3b7ef7e697b34794d9e73c70f053af4a&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:28&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_output_e65c7f2297b34794d9e73c70f053afed&lt;/table&gt;&lt;value&gt;{{step[b51824f6-e189-4f54-8aeb-7d2ae6fbc36b].result}}&lt;/value&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;__action_status__&lt;/field&gt;&lt;id&gt;e65c7f2297b34794d9e73c70f053afed&lt;/id&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 11:56:57&lt;/sys_created_on&gt;&lt;sys_id&gt;2dcc77a297b34794d9e73c70f053af0c&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 11:56:57&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_output_e65c7f2297b34794d9e73c70f053afed&lt;/table&gt;&lt;value/&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;__dont_treat_as_error__&lt;/field&gt;&lt;id&gt;e65c7f2297b34794d9e73c70f053afed&lt;/id&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 11:56:57&lt;/sys_created_on&gt;&lt;sys_id&gt;e9cc77a297b34794d9e73c70f053af0b&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 11:56:57&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_output_e65c7f2297b34794d9e73c70f053afed&lt;/table&gt;&lt;value/&gt;&lt;/sys_element_mapping&gt;&lt;sys_hub_step_instance action="delete_multiple" query="action=e65c7f2297b34794d9e73c70f053afed^sys_idNOT IN766ef3e697b34794d9e73c70f053af15"/&gt;&lt;sys_hub_step_instance action="INSERT_OR_UPDATE"&gt;&lt;action display_value="Create AI Upgrade Action Logs"&gt;e65c7f2297b34794d9e73c70f053afed&lt;/action&gt;&lt;cid&gt;b51824f6-e189-4f54-8aeb-7d2ae6fbc36b&lt;/cid&gt;&lt;error_handling_type&gt;1&lt;/error_handling_type&gt;&lt;extended_inputs/&gt;&lt;extended_inputs/&gt;&lt;extended_outputs/&gt;&lt;icon/&gt;&lt;inputs/&gt;&lt;label&gt;Script step&lt;/label&gt;&lt;order&gt;1&lt;/order&gt;&lt;outputs/&gt;&lt;section/&gt;&lt;step_type display_value="Script"&gt;106afb6647032200b4fad7527c9a71e7&lt;/step_type&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:08&lt;/sys_created_on&gt;&lt;sys_id&gt;766ef3e697b34794d9e73c70f053af15&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-14 15:21:58&lt;/sys_updated_on&gt;&lt;/sys_hub_step_instance&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=766ef3e697b34794d9e73c70f053af15"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_step_instance&lt;/document&gt;&lt;document_key&gt;766ef3e697b34794d9e73c70f053af15&lt;/document_key&gt;&lt;order&gt;400&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:09&lt;/sys_created_on&gt;&lt;sys_id&gt;076ef3e697b34794d9e73c70f053af62&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:09&lt;/sys_updated_on&gt;&lt;value&gt;35aa573fd7802200bdbaee5b5e610375&lt;/value&gt;&lt;variable display_value="MID Application"&gt;f5e56d79b3101300176b051a16a8dce4&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_step_instance&lt;/document&gt;&lt;document_key&gt;766ef3e697b34794d9e73c70f053af15&lt;/document_key&gt;&lt;order&gt;600&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:09&lt;/sys_created_on&gt;&lt;sys_id&gt;8f6ef3e697b34794d9e73c70f053af62&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-14 15:21:58&lt;/sys_updated_on&gt;&lt;value&gt;(function execute(inputs, outputs) {&amp;#13;
+&amp;#13;
+    var items = JSON.parse(inputs.skipped_updates);&amp;#13;
+var result = {&amp;#13;
+            inserted: 0,&amp;#13;
+            failed: 0,&amp;#13;
+            records: []&amp;#13;
+        };&amp;#13;
+&amp;#13;
+        var requiredFields = [&amp;#13;
+            'file_name',&amp;#13;
+            'sys_id',&amp;#13;
+            'upgradeID',&amp;#13;
+            'risk',&amp;#13;
+            'category',&amp;#13;
+            'ai_guidance'&amp;#13;
+        ];&amp;#13;
+&amp;#13;
+        for (var i = 0; i &amp;lt; items.length; i++) {&amp;#13;
+            var item = items[i];&amp;#13;
+            var entry = {&amp;#13;
+                index: i,&amp;#13;
+                status: 'failed'&amp;#13;
+            };&amp;#13;
+&amp;#13;
+            try {&amp;#13;
+                if (!item || typeof item !== 'object' ||&amp;#13;
+                    Array.isArray(item)) {&amp;#13;
+                    throw new Error('Each array item must be an object.');&amp;#13;
+                }&amp;#13;
+&amp;#13;
+                for (var j = 0; j &amp;lt; requiredFields.length; j++) {&amp;#13;
+                    var key = requiredFields[j];&amp;#13;
+&amp;#13;
+                    if (typeof item[key] !== 'string' ||&amp;#13;
+                        !item[key].trim()) {&amp;#13;
+                        throw new Error(&amp;#13;
+                            key + ' must be a nonempty string.'&amp;#13;
+                        );&amp;#13;
+                    }&amp;#13;
+                }&amp;#13;
+&amp;#13;
+                var checkLogs = new GlideRecord('x_snc_ai_upgrade_0_action_log');&amp;#13;
+                checkLogs.addQuery('update_name', item.upgradeID);&amp;#13;
+                checkLogs.addQuery('file_name', item.file_name);&amp;#13;
+                checkLogs.query();&amp;#13;
+                if(!checkLogs.next())&amp;#13;
+                {&amp;#13;
+                    var log = new GlideRecord(&amp;#13;
+                    'x_snc_ai_upgrade_0_action_log'&amp;#13;
+                    );&amp;#13;
+                    log.initialize();&amp;#13;
+&amp;#13;
+                    log.setValue('file_name', item.file_name);&amp;#13;
+                    log.setValue('skipped_file',item.sys_id);&amp;#13;
+                    log.setValue('update_name', item.upgradeID);&amp;#13;
+                    log.setValue('risk', this._normalize(item.risk));&amp;#13;
+                    log.setValue('category', this._normalize(item.category));&amp;#13;
+                    log.setValue('ai_guidance', item.ai_guidance);&amp;#13;
+&amp;#13;
+                    var insertedSysId = log.insert();&amp;#13;
+&amp;#13;
+                    if (!insertedSysId) {&amp;#13;
+                        throw new Error('Action-log insertion failed.');&amp;#13;
+                    }&amp;#13;
+&amp;#13;
+                    entry.status = 'inserted';&amp;#13;
+                    entry.sys_id = String(insertedSysId);&amp;#13;
+                    entry.upgradeID = item.upgradeID;&amp;#13;
+                    result.inserted++;&amp;#13;
+                }&amp;#13;
+                &amp;#13;
+&amp;#13;
+            } catch (error) {&amp;#13;
+                entry.error = error.message ?&amp;#13;
+                    String(error.message) : String(error);&amp;#13;
+                result.failed++;&amp;#13;
+            }&amp;#13;
+&amp;#13;
+            result.records.push(entry);&amp;#13;
+        }&amp;#13;
+&amp;#13;
+        outputs.result = result;&amp;#13;
+})(inputs, outputs);&amp;#13;
+&amp;#13;
+function _normalize(value)&amp;#13;
+{&amp;#13;
+    return value.trim().toLowerCase().replace(/\s+/g, '_');&amp;#13;
+}&lt;/value&gt;&lt;variable display_value="Script"&gt;71aa7f6647032200b4fad7527c9a719b&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_element_mapping action="delete_multiple" query="id=766ef3e697b34794d9e73c70f053af15"/&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;application&lt;/field&gt;&lt;id&gt;766ef3e697b34794d9e73c70f053af15&lt;/id&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:09&lt;/sys_created_on&gt;&lt;sys_id&gt;0b6ef3e697b34794d9e73c70f053af61&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:09&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7&lt;/table&gt;&lt;value/&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;script&lt;/field&gt;&lt;id&gt;766ef3e697b34794d9e73c70f053af15&lt;/id&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:09&lt;/sys_created_on&gt;&lt;sys_id&gt;cf6ef3e697b34794d9e73c70f053af61&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:09&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7&lt;/table&gt;&lt;value/&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;skipped_updates&lt;/field&gt;&lt;id&gt;766ef3e697b34794d9e73c70f053af15&lt;/id&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:09&lt;/sys_created_on&gt;&lt;sys_id&gt;0f6ef3e697b34794d9e73c70f053af64&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:09&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_step_ext_input_766ef3e697b34794d9e73c70f053af15&lt;/table&gt;&lt;value&gt;{{action.skipped_upgrades}}&lt;/value&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_766ef3e697b34794d9e73c70f053af15^id=766ef3e697b34794d9e73c70f053af15"/&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=766ef3e697b34794d9e73c70f053af15"/&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=766ef3e697b34794d9e73c70f053af15"/&gt;&lt;sys_hub_step_ext_input action="delete_multiple" query="model=766ef3e697b34794d9e73c70f053af15^sys_idNOT INfa6ef3e697b34794d9e73c70f053af1f"/&gt;&lt;sys_hub_step_ext_input action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;skipped_updates&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label/&gt;&lt;mandatory&gt;true&lt;/mandatory&gt;&lt;max_length&gt;8000&lt;/max_length&gt;&lt;model display_value="Script step"&gt;766ef3e697b34794d9e73c70f053af15&lt;/model&gt;&lt;model_id&gt;766ef3e697b34794d9e73c70f053af15&lt;/model_id&gt;&lt;model_table&gt;sys_hub_step_instance&lt;/model_table&gt;&lt;name&gt;var__m_sys_hub_step_ext_input_766ef3e697b34794d9e73c70f053af15&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;0&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_only_option/&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_hub_step_ext_input&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:08&lt;/sys_created_on&gt;&lt;sys_id&gt;fa6ef3e697b34794d9e73c70f053af1f&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package/&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:08&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_hub_step_ext_input&gt;&lt;sys_hub_step_ext_output action="delete_multiple" query="model=766ef3e697b34794d9e73c70f053af15^sys_idNOT IN7a6ef3e697b34794d9e73c70f053af40"/&gt;&lt;sys_hub_step_ext_output action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=ec473236-4550-484e-8170-e2c12d64a007&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;result&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label&gt;Result&lt;/label&gt;&lt;mandatory&gt;true&lt;/mandatory&gt;&lt;max_length&gt;8000&lt;/max_length&gt;&lt;model display_value="Script step"&gt;766ef3e697b34794d9e73c70f053af15&lt;/model&gt;&lt;model_id&gt;766ef3e697b34794d9e73c70f053af15&lt;/model_id&gt;&lt;model_table&gt;sys_hub_step_instance&lt;/model_table&gt;&lt;name&gt;var__m_sys_hub_step_ext_output_766ef3e697b34794d9e73c70f053af15&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;1&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_only_option/&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_hub_step_ext_output&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:08&lt;/sys_created_on&gt;&lt;sys_id&gt;7a6ef3e697b34794d9e73c70f053af40&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package/&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:08&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_hub_step_ext_output&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=766ef3e697b34794d9e73c70f053af15"/&gt;&lt;sys_documentation action="INSERT_OR_UPDATE"&gt;&lt;element&gt;result&lt;/element&gt;&lt;help/&gt;&lt;hint/&gt;&lt;label&gt;Result&lt;/label&gt;&lt;language&gt;en&lt;/language&gt;&lt;name&gt;var__m_sys_hub_step_ext_output_766ef3e697b34794d9e73c70f053af15&lt;/name&gt;&lt;plural/&gt;&lt;sys_class_name&gt;sys_documentation&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:09&lt;/sys_created_on&gt;&lt;sys_id&gt;0f6ef3e697b34794d9e73c70f053af47&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:09&lt;/sys_updated_on&gt;&lt;url/&gt;&lt;url_target/&gt;&lt;/sys_documentation&gt;&lt;sys_hub_action_input action="delete_multiple" query="model=e65c7f2297b34794d9e73c70f053afed^sys_idNOT IN49ccb36297b34794d9e73c70f053af37"/&gt;&lt;sys_hub_action_input action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=3c046485-cbb0-4477-b15d-dde5f9dcc58f&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;skipped_upgrades&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label&gt;Skipped Upgrades&lt;/label&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;8000&lt;/max_length&gt;&lt;model display_value="Create AI Upgrade Action Logs"&gt;e65c7f2297b34794d9e73c70f053afed&lt;/model&gt;&lt;model_id&gt;e65c7f2297b34794d9e73c70f053afed&lt;/model_id&gt;&lt;model_table&gt;sys_hub_action_type_definition&lt;/model_table&gt;&lt;name&gt;var__m_sys_hub_action_input_e65c7f2297b34794d9e73c70f053afed&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;1&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_only_option/&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_hub_action_input&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 11:56:55&lt;/sys_created_on&gt;&lt;sys_id&gt;49ccb36297b34794d9e73c70f053af37&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package/&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 11:56:55&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_hub_action_input&gt;&lt;sys_hub_action_input_action_instance action="delete_multiple" query="action_input=49ccb36297b34794d9e73c70f053af37"/&gt;&lt;sys_hub_action_output action="delete_multiple" query="model=e65c7f2297b34794d9e73c70f053afed^sys_idNOT IN1dcc37a297b34794d9e73c70f053afa3,2f7ef7e697b34794d9e73c70f053af1e,91cc37a297b34794d9e73c70f053afae"/&gt;&lt;sys_hub_action_output action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;action_error_output=true,co_type_name=FDACTIONSTATUS,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=edc74a26-c0a8-4267-8abb-aea81cea800e&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;__action_status__&lt;/element&gt;&lt;element_prototype/&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_link/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label&gt;Action Status&lt;/label&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;65000&lt;/max_length&gt;&lt;model display_value="Create AI Upgrade Action Logs"&gt;e65c7f2297b34794d9e73c70f053afed&lt;/model&gt;&lt;model_id&gt;e65c7f2297b34794d9e73c70f053afed&lt;/model_id&gt;&lt;model_table&gt;sys_hub_action_type_definition&lt;/model_table&gt;&lt;name&gt;var__m_sys_hub_action_output_e65c7f2297b34794d9e73c70f053afed&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;2&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_only_option/&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_hub_action_output&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 11:56:56&lt;/sys_created_on&gt;&lt;sys_id&gt;1dcc37a297b34794d9e73c70f053afa3&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package/&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:28&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_hub_action_output&gt;&lt;sys_hub_action_input_action_instance action="delete_multiple" query="action_input=1dcc37a297b34794d9e73c70f053afa3"/&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=1dcc37a297b34794d9e73c70f053afa3"/&gt;&lt;sys_hub_action_output action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=39e2b370-e5ee-4bc1-a586-6722e525d4d0&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;result&lt;/element&gt;&lt;element_prototype/&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_link/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label&gt;Result&lt;/label&gt;&lt;mandatory&gt;true&lt;/mandatory&gt;&lt;max_length&gt;8000&lt;/max_length&gt;&lt;model display_value="Create AI Upgrade Action Logs"&gt;e65c7f2297b34794d9e73c70f053afed&lt;/model&gt;&lt;model_id&gt;e65c7f2297b34794d9e73c70f053afed&lt;/model_id&gt;&lt;model_table&gt;sys_hub_action_type_definition&lt;/model_table&gt;&lt;name&gt;var__m_sys_hub_action_output_e65c7f2297b34794d9e73c70f053afed&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;1&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_only_option/&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_hub_action_output&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:28&lt;/sys_created_on&gt;&lt;sys_id&gt;2f7ef7e697b34794d9e73c70f053af1e&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package/&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:28&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_hub_action_output&gt;&lt;sys_hub_action_input_action_instance action="delete_multiple" query="action_input=2f7ef7e697b34794d9e73c70f053af1e"/&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=2f7ef7e697b34794d9e73c70f053af1e"/&gt;&lt;sys_hub_action_output action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;action_error_output=true,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=28f9f90a-2c63-4666-895b-b21cd358de38,visible_in_ui=false&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value&gt;true&lt;/default_value&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;__dont_treat_as_error__&lt;/element&gt;&lt;element_prototype/&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_link/&gt;&lt;internal_type display_value=""&gt;boolean&lt;/internal_type&gt;&lt;label&gt;Don't Treat as Error&lt;/label&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;40&lt;/max_length&gt;&lt;model display_value="Create AI Upgrade Action Logs"&gt;e65c7f2297b34794d9e73c70f053afed&lt;/model&gt;&lt;model_id&gt;e65c7f2297b34794d9e73c70f053afed&lt;/model_id&gt;&lt;model_table&gt;sys_hub_action_type_definition&lt;/model_table&gt;&lt;name&gt;var__m_sys_hub_action_output_e65c7f2297b34794d9e73c70f053afed&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;3&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_only_option/&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_hub_action_output&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 11:56:56&lt;/sys_created_on&gt;&lt;sys_id&gt;91cc37a297b34794d9e73c70f053afae&lt;/sys_id&gt;&lt;sys_mod_count&gt;19&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package/&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-14 15:22:53&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_hub_action_output&gt;&lt;sys_hub_action_input_action_instance action="delete_multiple" query="action_input=91cc37a297b34794d9e73c70f053afae"/&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=91cc37a297b34794d9e73c70f053afae"/&gt;&lt;sys_hub_pill_compound action="delete_multiple" query="attached_to=e65c7f2297b34794d9e73c70f053afed"/&gt;&lt;sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=e65c7f2297b34794d9e73c70f053afed^sys_idNOT INedcc77a297b34794d9e73c70f053af10"/&gt;&lt;sys_hub_action_status_metadata action="INSERT_OR_UPDATE"&gt;&lt;action_type_id display_value="Create AI Upgrade Action Logs"&gt;e65c7f2297b34794d9e73c70f053afed&lt;/action_type_id&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 11:56:57&lt;/sys_created_on&gt;&lt;sys_id&gt;edcc77a297b34794d9e73c70f053af10&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 11:56:57&lt;/sys_updated_on&gt;&lt;/sys_hub_action_status_metadata&gt;&lt;sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=edcc77a297b34794d9e73c70f053af10"/&gt;&lt;sys_documentation action="INSERT_OR_UPDATE"&gt;&lt;element&gt;skipped_upgrades&lt;/element&gt;&lt;help/&gt;&lt;hint/&gt;&lt;label&gt;Skipped Upgrades&lt;/label&gt;&lt;language&gt;en&lt;/language&gt;&lt;name&gt;var__m_sys_hub_action_input_e65c7f2297b34794d9e73c70f053afed&lt;/name&gt;&lt;plural/&gt;&lt;sys_class_name&gt;sys_documentation&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 11:56:56&lt;/sys_created_on&gt;&lt;sys_id&gt;59cc37a297b34794d9e73c70f053af49&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 11:56:56&lt;/sys_updated_on&gt;&lt;url/&gt;&lt;url_target/&gt;&lt;/sys_documentation&gt;&lt;sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_e65c7f2297b34794d9e73c70f053afed"/&gt;&lt;sys_documentation action="INSERT_OR_UPDATE"&gt;&lt;element&gt;__action_status__&lt;/element&gt;&lt;help/&gt;&lt;hint/&gt;&lt;label&gt;Action Status&lt;/label&gt;&lt;language&gt;en&lt;/language&gt;&lt;name&gt;var__m_sys_hub_action_output_e65c7f2297b34794d9e73c70f053afed&lt;/name&gt;&lt;plural/&gt;&lt;sys_class_name&gt;sys_documentation&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 11:56:56&lt;/sys_created_on&gt;&lt;sys_id&gt;1dcc37a297b34794d9e73c70f053afab&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 11:56:56&lt;/sys_updated_on&gt;&lt;url/&gt;&lt;url_target/&gt;&lt;/sys_documentation&gt;&lt;sys_documentation action="INSERT_OR_UPDATE"&gt;&lt;element&gt;result&lt;/element&gt;&lt;help/&gt;&lt;hint/&gt;&lt;label&gt;Result&lt;/label&gt;&lt;language&gt;en&lt;/language&gt;&lt;name&gt;var__m_sys_hub_action_output_e65c7f2297b34794d9e73c70f053afed&lt;/name&gt;&lt;plural/&gt;&lt;sys_class_name&gt;sys_documentation&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:28&lt;/sys_created_on&gt;&lt;sys_id&gt;3f7ef7e697b34794d9e73c70f053af25&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:28&lt;/sys_updated_on&gt;&lt;url/&gt;&lt;url_target/&gt;&lt;/sys_documentation&gt;&lt;sys_documentation action="INSERT_OR_UPDATE"&gt;&lt;element&gt;__dont_treat_as_error__&lt;/element&gt;&lt;help/&gt;&lt;hint/&gt;&lt;label&gt;Don't Treat as Error&lt;/label&gt;&lt;language&gt;en&lt;/language&gt;&lt;name&gt;var__m_sys_hub_action_output_e65c7f2297b34794d9e73c70f053afed&lt;/name&gt;&lt;plural/&gt;&lt;sys_class_name&gt;sys_documentation&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 11:56:56&lt;/sys_created_on&gt;&lt;sys_id&gt;a5cc37a297b34794d9e73c70f053afde&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 11:56:56&lt;/sys_updated_on&gt;&lt;url/&gt;&lt;url_target/&gt;&lt;/sys_documentation&gt;&lt;sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_e65c7f2297b34794d9e73c70f053afed"/&gt;&lt;sys_hub_action_plan action="delete_multiple" query="action_id=e65c7f2297b34794d9e73c70f053afed^sys_idNOT IN398e7be697b34794d9e73c70f053af8e"/&gt;&lt;sys_hub_action_plan action="INSERT_OR_UPDATE"&gt;&lt;action_id display_value="Create AI Upgrade Action Logs"&gt;e65c7f2297b34794d9e73c70f053afed&lt;/action_id&gt;&lt;plan&gt;{"@class":"com.snc.process_flow.engine.serialization.plan_data.ChunkingPlanData","chunk_data":{"table":"sys_hub_action_plan","id":"398e7be697b34794d9e73c70f053af8e","name":"plan","plan_signature":null},"plan_data":"CHUNKING_PLAN"}&lt;/plan&gt;&lt;snapshot&gt;1cb880bf977743d4d9e73c70f053af43&lt;/snapshot&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:36&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;398e7be697b34794d9e73c70f053af8e&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_overrides/&gt;&lt;sys_scope/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-14 15:22:57&lt;/sys_updated_on&gt;&lt;/sys_hub_action_plan&gt;&lt;sys_hub_action_type_snapshot action="INSERT_OR_UPDATE"&gt;&lt;access&gt;public&lt;/access&gt;&lt;acls/&gt;&lt;action_status/&gt;&lt;action_template/&gt;&lt;annotation/&gt;&lt;attributes&gt;{labelCacheCleanUpExecuted=true}&lt;/attributes&gt;&lt;authored_on_release_version&gt;29000&lt;/authored_on_release_version&gt;&lt;callable_by_client_api&gt;false&lt;/callable_by_client_api&gt;&lt;category/&gt;&lt;copied_from/&gt;&lt;copied_from_name/&gt;&lt;description/&gt;&lt;flow_priority/&gt;&lt;internal_name&gt;create_ai_upgrade_action_logs&lt;/internal_name&gt;&lt;label_cache&gt;[{"name":"{{action.skipped_logs}}","label":"action➛Skipped Logs","type":"action","ref":"","reference_display":"","base_type":"array.object","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.skipped_logs.File_Name}}","label":"action➛Skipped Logs➛File Name","type":"action","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.skipped_logs.file_name}}","label":"action➛Skipped Logs➛File Name","type":"action","ref":"","reference_display":"","base_type":"object","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{action.skipped_upgrades}}","label":"action➛Skipped Upgrades","type":"action","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{}},{"name":"{{step[b51824f6-e189-4f54-8aeb-7d2ae6fbc36b].result}}","label":"step➛Script step➛Result","type":"step","ref":"","reference_display":"","base_type":"string","parent_table_name":"","column_name":"","choices":null,"attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"string","uiUniqueId":"ec473236-4550-484e-8170-e2c12d64a007"}}]&lt;/label_cache&gt;&lt;master&gt;true&lt;/master&gt;&lt;name&gt;Create AI Upgrade Action Logs&lt;/name&gt;&lt;natlang/&gt;&lt;outputs/&gt;&lt;outputs/&gt;&lt;parent_action display_value="Create AI Upgrade Action Logs"&gt;e65c7f2297b34794d9e73c70f053afed&lt;/parent_action&gt;&lt;sys_class_name&gt;sys_hub_action_type_snapshot&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:34&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;158e3be697b34794d9e73c70f053afba&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_overrides/&gt;&lt;sys_package/&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:34&lt;/sys_updated_on&gt;&lt;system_level&gt;false&lt;/system_level&gt;&lt;type/&gt;&lt;/sys_hub_action_type_snapshot&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=158e3be697b34794d9e73c70f053afba"/&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=158e3be697b34794d9e73c70f053afba"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_action_type_snapshot&lt;/document&gt;&lt;document_key&gt;158e3be697b34794d9e73c70f053afba&lt;/document_key&gt;&lt;order&gt;2&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:36&lt;/sys_created_on&gt;&lt;sys_id&gt;318e7be697b34794d9e73c70f053af84&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-14 15:22:56&lt;/sys_updated_on&gt;&lt;value&gt;{"version":"1.0","complexObjectSchema":{"FlowDesigner:FDACTIONSTATUS":{"code":"Integer","code.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Code\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"1\",\"max_length\":\"40\"}"},"message":"String","message.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Message\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"order\":\"2\",\"max_length\":\"4000\"}"}},"FlowDesigner:FDACTIONSTATUS.$type_facets":{"SimpleMapFacet":"{\"default_value\":\"\",\"label\":\"Action Status\",\"action_error_output\":\"true\",\"mandatory\":\"false\",\"uiUniqueId\":\"794bc342-9c9d-444b-a3f2-dd4b6a5a0173\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}},"serializationFormat":"JSON","complexObject":{"code":{"$cv":{"$c":"java.lang.String","$v":""}},"message":{"$cv":{"$c":"java.lang.String","$v":""}}}}&lt;/value&gt;&lt;variable display_value="Action Status"&gt;a18e7be697b34794d9e73c70f053af28&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_action_type_snapshot&lt;/document&gt;&lt;document_key&gt;158e3be697b34794d9e73c70f053afba&lt;/document_key&gt;&lt;order&gt;3&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:36&lt;/sys_created_on&gt;&lt;sys_id&gt;b58e7be697b34794d9e73c70f053af83&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:36&lt;/sys_updated_on&gt;&lt;value&gt;0&lt;/value&gt;&lt;variable display_value="Don't Treat as Error"&gt;e98e7be697b34794d9e73c70f053af49&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_element_mapping action="delete_multiple" query="id=158e3be697b34794d9e73c70f053afba"/&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;result&lt;/field&gt;&lt;id&gt;158e3be697b34794d9e73c70f053afba&lt;/id&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:36&lt;/sys_created_on&gt;&lt;sys_id&gt;ed8e7be697b34794d9e73c70f053af81&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:36&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_output_158e3be697b34794d9e73c70f053afba&lt;/table&gt;&lt;value&gt;{{step[b51824f6-e189-4f54-8aeb-7d2ae6fbc36b].result}}&lt;/value&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;__action_status__&lt;/field&gt;&lt;id&gt;158e3be697b34794d9e73c70f053afba&lt;/id&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:36&lt;/sys_created_on&gt;&lt;sys_id&gt;618e7be697b34794d9e73c70f053af83&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:36&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_output_158e3be697b34794d9e73c70f053afba&lt;/table&gt;&lt;value/&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;__dont_treat_as_error__&lt;/field&gt;&lt;id&gt;158e3be697b34794d9e73c70f053afba&lt;/id&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:36&lt;/sys_created_on&gt;&lt;sys_id&gt;298e7be697b34794d9e73c70f053af82&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:36&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_action_output_158e3be697b34794d9e73c70f053afba&lt;/table&gt;&lt;value/&gt;&lt;/sys_element_mapping&gt;&lt;sys_hub_step_instance action="delete_multiple" query="action=158e3be697b34794d9e73c70f053afba^sys_idNOT INd98e3be697b34794d9e73c70f053afe8"/&gt;&lt;sys_hub_step_instance action="INSERT_OR_UPDATE"&gt;&lt;action display_value="Create AI Upgrade Action Logs"&gt;158e3be697b34794d9e73c70f053afba&lt;/action&gt;&lt;cid&gt;b51824f6-e189-4f54-8aeb-7d2ae6fbc36b&lt;/cid&gt;&lt;error_handling_type&gt;1&lt;/error_handling_type&gt;&lt;extended_inputs/&gt;&lt;extended_inputs/&gt;&lt;extended_outputs/&gt;&lt;icon/&gt;&lt;inputs/&gt;&lt;label&gt;Script step&lt;/label&gt;&lt;order&gt;1&lt;/order&gt;&lt;outputs/&gt;&lt;section/&gt;&lt;step_type display_value="Script"&gt;106afb6647032200b4fad7527c9a71e7&lt;/step_type&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:34&lt;/sys_created_on&gt;&lt;sys_id&gt;d98e3be697b34794d9e73c70f053afe8&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-14 15:22:56&lt;/sys_updated_on&gt;&lt;/sys_hub_step_instance&gt;&lt;sys_variable_value action="delete_multiple" query="document_key=d98e3be697b34794d9e73c70f053afe8"/&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_step_instance&lt;/document&gt;&lt;document_key&gt;d98e3be697b34794d9e73c70f053afe8&lt;/document_key&gt;&lt;order&gt;600&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:35&lt;/sys_created_on&gt;&lt;sys_id&gt;218e7be697b34794d9e73c70f053af18&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-14 15:22:56&lt;/sys_updated_on&gt;&lt;value&gt;(function execute(inputs, outputs) {&amp;#13;
+&amp;#13;
+    var items = JSON.parse(inputs.skipped_updates);&amp;#13;
+var result = {&amp;#13;
+            inserted: 0,&amp;#13;
+            failed: 0,&amp;#13;
+            records: []&amp;#13;
+        };&amp;#13;
+&amp;#13;
+        var requiredFields = [&amp;#13;
+            'file_name',&amp;#13;
+            'sys_id',&amp;#13;
+            'upgradeID',&amp;#13;
+            'risk',&amp;#13;
+            'category',&amp;#13;
+            'ai_guidance'&amp;#13;
+        ];&amp;#13;
+&amp;#13;
+        for (var i = 0; i &amp;lt; items.length; i++) {&amp;#13;
+            var item = items[i];&amp;#13;
+            var entry = {&amp;#13;
+                index: i,&amp;#13;
+                status: 'failed'&amp;#13;
+            };&amp;#13;
+&amp;#13;
+            try {&amp;#13;
+                if (!item || typeof item !== 'object' ||&amp;#13;
+                    Array.isArray(item)) {&amp;#13;
+                    throw new Error('Each array item must be an object.');&amp;#13;
+                }&amp;#13;
+&amp;#13;
+                for (var j = 0; j &amp;lt; requiredFields.length; j++) {&amp;#13;
+                    var key = requiredFields[j];&amp;#13;
+&amp;#13;
+                    if (typeof item[key] !== 'string' ||&amp;#13;
+                        !item[key].trim()) {&amp;#13;
+                        throw new Error(&amp;#13;
+                            key + ' must be a nonempty string.'&amp;#13;
+                        );&amp;#13;
+                    }&amp;#13;
+                }&amp;#13;
+&amp;#13;
+                var checkLogs = new GlideRecord('x_snc_ai_upgrade_0_action_log');&amp;#13;
+                checkLogs.addQuery('update_name', item.upgradeID);&amp;#13;
+                checkLogs.addQuery('file_name', item.file_name);&amp;#13;
+                checkLogs.query();&amp;#13;
+                if(!checkLogs.next())&amp;#13;
+                {&amp;#13;
+                    var log = new GlideRecord(&amp;#13;
+                    'x_snc_ai_upgrade_0_action_log'&amp;#13;
+                    );&amp;#13;
+                    log.initialize();&amp;#13;
+&amp;#13;
+                    log.setValue('file_name', item.file_name);&amp;#13;
+                    log.setValue('skipped_file',item.sys_id);&amp;#13;
+                    log.setValue('update_name', item.upgradeID);&amp;#13;
+                    log.setValue('risk', this._normalize(item.risk));&amp;#13;
+                    log.setValue('category', this._normalize(item.category));&amp;#13;
+                    log.setValue('ai_guidance', item.ai_guidance);&amp;#13;
+&amp;#13;
+                    var insertedSysId = log.insert();&amp;#13;
+&amp;#13;
+                    if (!insertedSysId) {&amp;#13;
+                        throw new Error('Action-log insertion failed.');&amp;#13;
+                    }&amp;#13;
+&amp;#13;
+                    entry.status = 'inserted';&amp;#13;
+                    entry.sys_id = String(insertedSysId);&amp;#13;
+                    entry.upgradeID = item.upgradeID;&amp;#13;
+                    result.inserted++;&amp;#13;
+                }&amp;#13;
+                &amp;#13;
+&amp;#13;
+            } catch (error) {&amp;#13;
+                entry.error = error.message ?&amp;#13;
+                    String(error.message) : String(error);&amp;#13;
+                result.failed++;&amp;#13;
+            }&amp;#13;
+&amp;#13;
+            result.records.push(entry);&amp;#13;
+        }&amp;#13;
+&amp;#13;
+        outputs.result = result;&amp;#13;
+})(inputs, outputs);&amp;#13;
+&amp;#13;
+function _normalize(value)&amp;#13;
+{&amp;#13;
+    return value.trim().toLowerCase().replace(/\s+/g, '_');&amp;#13;
+}&lt;/value&gt;&lt;variable display_value="Script"&gt;71aa7f6647032200b4fad7527c9a719b&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_variable_value action="INSERT_OR_UPDATE"&gt;&lt;document&gt;sys_hub_step_instance&lt;/document&gt;&lt;document_key&gt;d98e3be697b34794d9e73c70f053afe8&lt;/document_key&gt;&lt;order&gt;400&lt;/order&gt;&lt;sys_class_name&gt;sys_variable_value&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:35&lt;/sys_created_on&gt;&lt;sys_id&gt;a58e7be697b34794d9e73c70f053af17&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:35&lt;/sys_updated_on&gt;&lt;value&gt;35aa573fd7802200bdbaee5b5e610375&lt;/value&gt;&lt;variable display_value="MID Application"&gt;f5e56d79b3101300176b051a16a8dce4&lt;/variable&gt;&lt;/sys_variable_value&gt;&lt;sys_element_mapping action="delete_multiple" query="id=d98e3be697b34794d9e73c70f053afe8"/&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;application&lt;/field&gt;&lt;id&gt;d98e3be697b34794d9e73c70f053afe8&lt;/id&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:35&lt;/sys_created_on&gt;&lt;sys_id&gt;a98e7be697b34794d9e73c70f053af16&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:35&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7&lt;/table&gt;&lt;value/&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;script&lt;/field&gt;&lt;id&gt;d98e3be697b34794d9e73c70f053afe8&lt;/id&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:35&lt;/sys_created_on&gt;&lt;sys_id&gt;618e7be697b34794d9e73c70f053af17&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:35&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7&lt;/table&gt;&lt;value/&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="INSERT_OR_UPDATE"&gt;&lt;field&gt;skipped_updates&lt;/field&gt;&lt;id&gt;d98e3be697b34794d9e73c70f053afe8&lt;/id&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:35&lt;/sys_created_on&gt;&lt;sys_id&gt;a98e7be697b34794d9e73c70f053af19&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:35&lt;/sys_updated_on&gt;&lt;table&gt;var__m_sys_hub_step_ext_input_d98e3be697b34794d9e73c70f053afe8&lt;/table&gt;&lt;value&gt;{{action.skipped_upgrades}}&lt;/value&gt;&lt;/sys_element_mapping&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_step_ext_output_d98e3be697b34794d9e73c70f053afe8^id=d98e3be697b34794d9e73c70f053afe8"/&gt;&lt;sys_element_mapping action="delete_multiple" query="table=var__m_sys_flow_step_definition_input_106afb6647032200b4fad7527c9a71e7^id=d98e3be697b34794d9e73c70f053afe8"/&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=d98e3be697b34794d9e73c70f053afe8"/&gt;&lt;sys_hub_step_ext_input action="delete_multiple" query="model=d98e3be697b34794d9e73c70f053afe8^sys_idNOT IN198e3be697b34794d9e73c70f053afef"/&gt;&lt;sys_hub_step_ext_input action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;skipped_updates&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label&gt;skipped_updates&lt;/label&gt;&lt;mandatory&gt;true&lt;/mandatory&gt;&lt;max_length&gt;8000&lt;/max_length&gt;&lt;model display_value="Script step"&gt;d98e3be697b34794d9e73c70f053afe8&lt;/model&gt;&lt;model_id&gt;d98e3be697b34794d9e73c70f053afe8&lt;/model_id&gt;&lt;model_table&gt;sys_hub_step_instance&lt;/model_table&gt;&lt;name&gt;var__m_sys_hub_step_ext_input_d98e3be697b34794d9e73c70f053afe8&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;0&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_only_option/&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_hub_step_ext_input&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:35&lt;/sys_created_on&gt;&lt;sys_id&gt;198e3be697b34794d9e73c70f053afef&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package/&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:35&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_hub_step_ext_input&gt;&lt;sys_hub_step_ext_output action="delete_multiple" query="model=d98e3be697b34794d9e73c70f053afe8^sys_idNOT IN1d8e3be697b34794d9e73c70f053aff8"/&gt;&lt;sys_hub_step_ext_output action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=ec473236-4550-484e-8170-e2c12d64a007&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;result&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label&gt;Result&lt;/label&gt;&lt;mandatory&gt;true&lt;/mandatory&gt;&lt;max_length&gt;8000&lt;/max_length&gt;&lt;model display_value="Script step"&gt;d98e3be697b34794d9e73c70f053afe8&lt;/model&gt;&lt;model_id&gt;d98e3be697b34794d9e73c70f053afe8&lt;/model_id&gt;&lt;model_table&gt;sys_hub_step_instance&lt;/model_table&gt;&lt;name&gt;var__m_sys_hub_step_ext_output_d98e3be697b34794d9e73c70f053afe8&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;1&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_only_option/&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_hub_step_ext_output&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:35&lt;/sys_created_on&gt;&lt;sys_id&gt;1d8e3be697b34794d9e73c70f053aff8&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package/&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:35&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_hub_step_ext_output&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=d98e3be697b34794d9e73c70f053afe8"/&gt;&lt;sys_documentation action="INSERT_OR_UPDATE"&gt;&lt;element&gt;result&lt;/element&gt;&lt;help/&gt;&lt;hint/&gt;&lt;label&gt;Result&lt;/label&gt;&lt;language&gt;en&lt;/language&gt;&lt;name&gt;var__m_sys_hub_step_ext_output_d98e3be697b34794d9e73c70f053afe8&lt;/name&gt;&lt;plural/&gt;&lt;sys_class_name&gt;sys_documentation&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:35&lt;/sys_created_on&gt;&lt;sys_id&gt;5d8e3be697b34794d9e73c70f053affe&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:35&lt;/sys_updated_on&gt;&lt;url/&gt;&lt;url_target/&gt;&lt;/sys_documentation&gt;&lt;sys_hub_action_input action="delete_multiple" query="model=158e3be697b34794d9e73c70f053afba^sys_idNOT IN958e3be697b34794d9e73c70f053afc0"/&gt;&lt;sys_hub_action_input action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=3c046485-cbb0-4477-b15d-dde5f9dcc58f&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;skipped_upgrades&lt;/element&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label&gt;Skipped Upgrades&lt;/label&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;8000&lt;/max_length&gt;&lt;model display_value="Create AI Upgrade Action Logs"&gt;158e3be697b34794d9e73c70f053afba&lt;/model&gt;&lt;model_id&gt;158e3be697b34794d9e73c70f053afba&lt;/model_id&gt;&lt;model_table&gt;sys_hub_action_type_snapshot&lt;/model_table&gt;&lt;name&gt;var__m_sys_hub_action_input_158e3be697b34794d9e73c70f053afba&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;1&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_only_option/&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_hub_action_input&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:34&lt;/sys_created_on&gt;&lt;sys_id&gt;958e3be697b34794d9e73c70f053afc0&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package/&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:34&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_hub_action_input&gt;&lt;sys_hub_action_input_action_instance action="delete_multiple" query="action_input=958e3be697b34794d9e73c70f053afc0"/&gt;&lt;sys_hub_action_output action="delete_multiple" query="model=158e3be697b34794d9e73c70f053afba^sys_idNOT INa18e7be697b34794d9e73c70f053af28,a98e7be697b34794d9e73c70f053af1e,e98e7be697b34794d9e73c70f053af49"/&gt;&lt;sys_hub_action_output action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;action_error_output=true,co_type_name=FDACTIONSTATUS,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=object,uiTypeLabel=Object,uiUniqueId=edc74a26-c0a8-4267-8abb-aea81cea800e&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;__action_status__&lt;/element&gt;&lt;element_prototype/&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_link/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label&gt;Action Status&lt;/label&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;65000&lt;/max_length&gt;&lt;model display_value="Create AI Upgrade Action Logs"&gt;158e3be697b34794d9e73c70f053afba&lt;/model&gt;&lt;model_id&gt;158e3be697b34794d9e73c70f053afba&lt;/model_id&gt;&lt;model_table&gt;sys_hub_action_type_snapshot&lt;/model_table&gt;&lt;name&gt;var__m_sys_hub_action_output_158e3be697b34794d9e73c70f053afba&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;2&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_only_option/&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_hub_action_output&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:35&lt;/sys_created_on&gt;&lt;sys_id&gt;a18e7be697b34794d9e73c70f053af28&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package/&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:35&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_hub_action_output&gt;&lt;sys_hub_action_input_action_instance action="delete_multiple" query="action_input=a18e7be697b34794d9e73c70f053af28"/&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=a18e7be697b34794d9e73c70f053af28"/&gt;&lt;sys_hub_action_output action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=string,uiTypeLabel=String,uiUniqueId=39e2b370-e5ee-4bc1-a586-6722e525d4d0&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value/&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;result&lt;/element&gt;&lt;element_prototype/&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_link/&gt;&lt;internal_type display_value="String"&gt;string&lt;/internal_type&gt;&lt;label&gt;Result&lt;/label&gt;&lt;mandatory&gt;true&lt;/mandatory&gt;&lt;max_length&gt;8000&lt;/max_length&gt;&lt;model display_value="Create AI Upgrade Action Logs"&gt;158e3be697b34794d9e73c70f053afba&lt;/model&gt;&lt;model_id&gt;158e3be697b34794d9e73c70f053afba&lt;/model_id&gt;&lt;model_table&gt;sys_hub_action_type_snapshot&lt;/model_table&gt;&lt;name&gt;var__m_sys_hub_action_output_158e3be697b34794d9e73c70f053afba&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;1&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_only_option/&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_hub_action_output&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:35&lt;/sys_created_on&gt;&lt;sys_id&gt;a98e7be697b34794d9e73c70f053af1e&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package/&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:35&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_hub_action_output&gt;&lt;sys_hub_action_input_action_instance action="delete_multiple" query="action_input=a98e7be697b34794d9e73c70f053af1e"/&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=a98e7be697b34794d9e73c70f053af1e"/&gt;&lt;sys_hub_action_output action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;array&gt;false&lt;/array&gt;&lt;array_denormalized&gt;false&lt;/array_denormalized&gt;&lt;attributes&gt;action_error_output=true,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=boolean,uiTypeLabel=True/False,uiUniqueId=28f9f90a-2c63-4666-895b-b21cd358de38,visible_in_ui=false&lt;/attributes&gt;&lt;audit&gt;false&lt;/audit&gt;&lt;calculation&gt;&lt;![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]&gt;&lt;/calculation&gt;&lt;choice/&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;column_label/&gt;&lt;comments/&gt;&lt;create_roles/&gt;&lt;default_value&gt;true&lt;/default_value&gt;&lt;defaultsort/&gt;&lt;delete_roles/&gt;&lt;dependent/&gt;&lt;dependent_on_field/&gt;&lt;display&gt;false&lt;/display&gt;&lt;dynamic_creation&gt;false&lt;/dynamic_creation&gt;&lt;dynamic_creation_script/&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;element&gt;__dont_treat_as_error__&lt;/element&gt;&lt;element_prototype/&gt;&lt;element_reference&gt;false&lt;/element_reference&gt;&lt;foreign_database/&gt;&lt;formula/&gt;&lt;function_definition/&gt;&lt;function_field&gt;false&lt;/function_field&gt;&lt;help/&gt;&lt;hint/&gt;&lt;internal_link/&gt;&lt;internal_type display_value=""&gt;boolean&lt;/internal_type&gt;&lt;label&gt;Don't Treat as Error&lt;/label&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;max_length&gt;40&lt;/max_length&gt;&lt;model display_value="Create AI Upgrade Action Logs"&gt;158e3be697b34794d9e73c70f053afba&lt;/model&gt;&lt;model_id&gt;158e3be697b34794d9e73c70f053afba&lt;/model_id&gt;&lt;model_table&gt;sys_hub_action_type_snapshot&lt;/model_table&gt;&lt;name&gt;var__m_sys_hub_action_output_158e3be697b34794d9e73c70f053afba&lt;/name&gt;&lt;next_element/&gt;&lt;order&gt;3&lt;/order&gt;&lt;primary&gt;false&lt;/primary&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_only_option/&gt;&lt;read_roles/&gt;&lt;reference/&gt;&lt;reference_cascade_rule/&gt;&lt;reference_floats&gt;false&lt;/reference_floats&gt;&lt;reference_key/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;reference_type/&gt;&lt;sizeclass/&gt;&lt;spell_check&gt;false&lt;/spell_check&gt;&lt;staged&gt;false&lt;/staged&gt;&lt;sys_class_name&gt;sys_hub_action_output&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:36&lt;/sys_created_on&gt;&lt;sys_id&gt;e98e7be697b34794d9e73c70f053af49&lt;/sys_id&gt;&lt;sys_mod_count&gt;7&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package/&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-14 15:22:56&lt;/sys_updated_on&gt;&lt;table_reference&gt;false&lt;/table_reference&gt;&lt;text_index&gt;false&lt;/text_index&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dependent_field&gt;false&lt;/use_dependent_field&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;virtual&gt;false&lt;/virtual&gt;&lt;virtual_type&gt;script&lt;/virtual_type&gt;&lt;widget/&gt;&lt;write_roles/&gt;&lt;xml_view&gt;false&lt;/xml_view&gt;&lt;/sys_hub_action_output&gt;&lt;sys_hub_action_input_action_instance action="delete_multiple" query="action_input=e98e7be697b34794d9e73c70f053af49"/&gt;&lt;sys_hub_input_scripts action="delete_multiple" query="instance=e98e7be697b34794d9e73c70f053af49"/&gt;&lt;sys_hub_pill_compound action="delete_multiple" query="attached_to=158e3be697b34794d9e73c70f053afba"/&gt;&lt;sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=158e3be697b34794d9e73c70f053afba^sys_idNOT INfd8e7be697b34794d9e73c70f053af86"/&gt;&lt;sys_hub_action_status_metadata action="INSERT_OR_UPDATE"&gt;&lt;action_type_id display_value="Create AI Upgrade Action Logs"&gt;158e3be697b34794d9e73c70f053afba&lt;/action_type_id&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:36&lt;/sys_created_on&gt;&lt;sys_id&gt;fd8e7be697b34794d9e73c70f053af86&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:36&lt;/sys_updated_on&gt;&lt;/sys_hub_action_status_metadata&gt;&lt;sys_hub_status_condition action="delete_multiple" query="action_status_metadata_id=fd8e7be697b34794d9e73c70f053af86"/&gt;&lt;sys_documentation action="INSERT_OR_UPDATE"&gt;&lt;element&gt;skipped_upgrades&lt;/element&gt;&lt;help/&gt;&lt;hint/&gt;&lt;label&gt;Skipped Upgrades&lt;/label&gt;&lt;language&gt;en&lt;/language&gt;&lt;name&gt;var__m_sys_hub_action_input_158e3be697b34794d9e73c70f053afba&lt;/name&gt;&lt;plural/&gt;&lt;sys_class_name&gt;sys_documentation&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:34&lt;/sys_created_on&gt;&lt;sys_id&gt;d98e3be697b34794d9e73c70f053afc7&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:34&lt;/sys_updated_on&gt;&lt;url/&gt;&lt;url_target/&gt;&lt;/sys_documentation&gt;&lt;sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_158e3be697b34794d9e73c70f053afba"/&gt;&lt;sys_documentation action="INSERT_OR_UPDATE"&gt;&lt;element&gt;result&lt;/element&gt;&lt;help/&gt;&lt;hint/&gt;&lt;label&gt;Result&lt;/label&gt;&lt;language&gt;en&lt;/language&gt;&lt;name&gt;var__m_sys_hub_action_output_158e3be697b34794d9e73c70f053afba&lt;/name&gt;&lt;plural/&gt;&lt;sys_class_name&gt;sys_documentation&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:35&lt;/sys_created_on&gt;&lt;sys_id&gt;2d8e7be697b34794d9e73c70f053af25&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:35&lt;/sys_updated_on&gt;&lt;url/&gt;&lt;url_target/&gt;&lt;/sys_documentation&gt;&lt;sys_documentation action="INSERT_OR_UPDATE"&gt;&lt;element&gt;__action_status__&lt;/element&gt;&lt;help/&gt;&lt;hint/&gt;&lt;label&gt;Action Status&lt;/label&gt;&lt;language&gt;en&lt;/language&gt;&lt;name&gt;var__m_sys_hub_action_output_158e3be697b34794d9e73c70f053afba&lt;/name&gt;&lt;plural/&gt;&lt;sys_class_name&gt;sys_documentation&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:36&lt;/sys_created_on&gt;&lt;sys_id&gt;658e7be697b34794d9e73c70f053af47&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:36&lt;/sys_updated_on&gt;&lt;url/&gt;&lt;url_target/&gt;&lt;/sys_documentation&gt;&lt;sys_documentation action="INSERT_OR_UPDATE"&gt;&lt;element&gt;__dont_treat_as_error__&lt;/element&gt;&lt;help/&gt;&lt;hint/&gt;&lt;label&gt;Don't Treat as Error&lt;/label&gt;&lt;language&gt;en&lt;/language&gt;&lt;name&gt;var__m_sys_hub_action_output_158e3be697b34794d9e73c70f053afba&lt;/name&gt;&lt;plural/&gt;&lt;sys_class_name&gt;sys_documentation&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-11 12:04:36&lt;/sys_created_on&gt;&lt;sys_id&gt;a18e7be697b34794d9e73c70f053af79&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name/&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-11 12:04:36&lt;/sys_updated_on&gt;&lt;url/&gt;&lt;url_target/&gt;&lt;/sys_documentation&gt;&lt;sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_158e3be697b34794d9e73c70f053afba"/&gt;&lt;sys_hub_action_type_definition action="UPDATE"&gt;&lt;sys_id&gt;e65c7f2297b34794d9e73c70f053afed&lt;/sys_id&gt;&lt;latest_snapshot&gt;158e3be697b34794d9e73c70f053afba&lt;/latest_snapshot&gt;&lt;compiler_build&gt;glide-australia-02-11-2026__patch6-08-21-2026_09-04-2026_1352.zip&lt;/compiler_build&gt;&lt;/sys_hub_action_type_definition&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1080879383</payload_hash>
+<remote_update_set display_value="SV_AI Upgrade Monitor V1.2">5ac3c1e597881350d9e73c70f053afc8</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>sharath.vasishta@snc</sys_created_by>
+<sys_created_on>2026-10-20 06:10:30</sys_created_on>
+<sys_id>5ac3c1e597881350d9e73c70f053afcb</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1a13b0272170000001</sys_recorded_at>
+<sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+<sys_updated_on>2026-10-20 06:10:30</sys_updated_on>
+<table/>
+<target_name>Create AI Upgrade Action Logs</target_name>
+<type>Action Type</type>
+<update_domain>global</update_domain>
+<update_guid>ecb880bfae7743d445cac5b0241e1fd7</update_guid>
+<update_guid_history>ecb880bfae7743d445cac5b0241e1fd7:-1080879383,ee78447f147743d4b4c637c2ec3a6843:-2128037904,5b2fb80711b78754abea765101e22b56:-307513734,842ff40761b78754138f88ad05892231:-783312231,d6aa77f6ae730b94346e3a4bcb9716d5:1625503250,9a6ab7b600730b94de6b44d9d457281f:-414139296,068ebbe65fb34794cc5e276d9f691702:632353329,008ef7e633b347943b1cad350b0f8193:-960792925,db6ef3e69ab347941964ff7188680fa8:1183754016,7dcc77a2a8b34794e926fe600c07254b:1877782816,225c7362fcb34794da96adb033aff7e4:-940842729</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</application>
+<category>customer</category>
+<comments/>
+<name>sn_aia_agent_65cce37e87774754e5450d090cbb3530</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sn_aia_agent"&gt;&lt;sn_aia_agent action="INSERT_OR_UPDATE"&gt;&lt;advanced_mode&gt;false&lt;/advanced_mode&gt;&lt;agent_type&gt;internal&lt;/agent_type&gt;&lt;applicability_script&gt;&lt;![CDATA[/** 
+ * Function to process inputs related to ServiceNow change request operations 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.objective - The purpose or goal of the operation 
+ * @param {string} inputs.execution_plan_id - Unique identifier for the execution plan 
+ * @param {Object} inputs.context - Context information about the ServiceNow change request 
+ * @param {string} inputs.context.url - The URL of the change request in Service Operations Workspace 
+ * @param {string} inputs.context.table - The ServiceNow table name (e.g., 'change_request') 
+ * @param {string} inputs.context.record_sys_id - The sys ID of the record 
+ * @param {string} inputs.context.route - The route type (e.g., 'record') 
+ * @param {string} inputs.context.additional_context - Additional contextual information in JSON format 
+ * @param {string} inputs.context.experience - The UI experience name (e.g., 'Service Operations Workspace') 
+ * @param {string} inputs.context.number - The request number 
+ * @param {string} inputs.context.portal - The portal ID 
+ * @param {string} inputs.context.device_type - The device type from which the experience is accessed, e.g.'mweb' 
+ * @param {string} inputs.context.deployment_id - The unique identifier for the assistant deployment 
+ * @param {string} inputs.context.assistant_type - The type of assistant, e.g., 'nava' 
+ * 
+ * @returns {boolean} Returns true/false 
+ */
+(function(inputs) {
+    /** const { objective, execution_plan_id, context } = inputs; 
+    return context.table == 'incident' ; */
+    return false;
+})(inputs);]]&gt;&lt;/applicability_script&gt;&lt;channel&gt;nap_and_va&lt;/channel&gt;&lt;compiled_handbook/&gt;&lt;condition/&gt;&lt;context_processing_script&gt;&lt;![CDATA[/*
+ * Available Variables:
+ * - task: The task provided to agent to solve either by orchestrator or user(incase of only agent execution i.e agent is invoked as seperate entity instead from a workflow).
+ * - user_utterance: The user utterance provided. and task = user_utterance in case of individual agent execution.
+ * - agent_id: The agent id.
+ * - context: An object that carries additional contextual information for the agent.
+ *          It always includes a "pageContext" and may include a "triggerContext",
+ *          depending on how and from where the agent is invoked.
+ *
+ *          Behavior by invocation type:
+ *          ---------------------------------
+ *          - When invoked via the startAiAgentConversation API:
+ *                If a "contextMemory" parameter is provided in the API request,
+ *                it will be available here as the "triggerContext".
+ *                The "pageContext" is always present in this call, regardless
+ *                of whether the agent is executed individually or as part of a use case.
+ *                Example:
+ *                    {
+ *                        pageContext: { ... },
+ *                        triggerContext: { ... } // Derived from contextMemory (if passed)
+ *                    }
+ *
+ *          - When invoked as part of a use case or workflow:
+ *                The "pageContext" and "triggerContext" objects available here
+ *                may have been *modified* by the use case’s context processing script.
+ *                This means the use case may alter, extend, or overwrite values
+ *                from the original "pageContext" or "triggerContext"
+ *                before the context reaches the agent.
+ *                If the use case was originally triggered via the API,
+ *                the initial "triggerContext" is still derived from the
+ *                "contextMemory" parameter, but its contents may have been updated
+ *                by the use case logic.
+ *
+ *          - When executed directly (standalone agent execution):
+ *                The "pageContext" will always be present (default or empty),
+ *                and the "triggerContext" will only be populated if explicitly
+ *                passed through the API call.
+ * Return an modified context like: { pageContext : {},triggerContext:{} }
+ */
+(function(task, user_utterance, agent_id, context) {
+    return {
+        pageContext : context?.pageContext,
+		triggerContext : context?.triggerContext
+    };
+})(task,user_utterance, agent_id, context);]]&gt;&lt;/context_processing_script&gt;&lt;description&gt;The purpose of this agent is to perform actions on the skipped upgrade action logs that were generated by the Analysis Agent. &lt;/description&gt;&lt;extends/&gt;&lt;extension_configuration/&gt;&lt;external_agent_configuration/&gt;&lt;inputs&gt;{}&lt;/inputs&gt;&lt;instructions&gt;# IMPORTANT GUIDELINES
+1. Only recommend from these actions: `merge`, `revert`, `ignore`.
+2. Never recommend `merge` for a Security or Data model record. Recommend `ignore` and state that owner review is required.
+3. Never lower a category. Use the category returned by the Action Log Retrieval Tool as-is.
+4. Base each recommendation only on the record's AI guidance, risk, and category. If a record has no guidance, recommend `ignore`.
+5. Do not display sys IDs to the user. Refer to records by index and name.
+6. Do not call the Script Tool until every record in the array has a recommended action.
+
+#INSTRUCTIONS:
+
+## Step 1: Present the action log
+1. Call the "Retrieve Upgrade Action Logs" Tool with the sys ID of the selected upgrade  &amp;lt;upgrade_id&amp;gt; as the input string. Wait for the output.
+2. Once the tool successfully retrieves the actions, store it to memory in the variable &amp;lt;retrieved_action_logs&amp;gt; inform the user that you will now be building an action plan for the skipped updates that have been identified. Ask the user whether they want you to proceed with execution.
+3. If the user declines, confirm no changes were made and end. Else if user accepts, move to Step 2.
+
+## Step 2: Recommend an action for each record
+1. Review each record object's file name, AI guidance, risk, and category in the &amp;lt;retrieved_action_logs&amp;gt;.
+2. Assign one recommended action using these defaults:
+   - Cosmetic: `merge`, unless the guidance requires a business justification.
+   - Reporting/Analytics: `merge` only if the guidance says output validation has been completed. Otherwise `ignore`.
+   - Functional, Integration/Platform operation: `ignore`, pending the testing the guidance requires.
+   - Security, Data model: `ignore`, with owner review required.
+   - Unclassified: `ignore`.
+   - `revert` only when the guidance explicitly recommends reverting the change.
+3. Add recommended action as 'action_taken' and a one-sentence `action_reason` to each object in the &amp;lt;retrieved_action_logs&amp;gt; array.
+4. Confirm that every object has exactly one `action_taken` from the allowed list.
+
+## Step 3: Apply the actions
+1. Pass the complete JSON object array &amp;lt;retrieved_action_logs&amp;gt; with `action_taken` and `action_reason` on every object, as an input to the 'Update AI Action Logs' tool as is.
+2. Do not pass a partial array
+
+## Step 4: Report the result
+1. Read the 'Update AI Action Logs'  Tool's response.
+2. Show the user:
+   - The count of records updated, by action (merge, revert, ignore).
+   - Any record the 'Update AI Action Logs'  Tool failed to update, identified by index and name, with the failure reason.
+   - Any Security or Data model records held for owner review.
+3. If any updates failed, offer to retry only those records.
+
+## Output format
+Use this format for the JSON array passed to the 'Update AI Action Logs'  Tool. Include ONLY the object array, do NOT Include any prefix or suffixes.
+
+[
+  {
+    "index": 1,
+    "file_name": "...",
+    "table": "...",
+"upgrade_id":"..",
+    "category": "...",
+    "risk": "...",
+    "action_taken": "merge | revert | ignore",
+    "action_reason": "..."
+  }
+]&lt;/instructions&gt;&lt;internal_name&gt;global.x_snc_ai_upgrade_0.Execute Agent&lt;/internal_name&gt;&lt;name&gt;Execute Agent&lt;/name&gt;&lt;outputs/&gt;&lt;parent/&gt;&lt;post_processing_message/&gt;&lt;processing_message/&gt;&lt;proficiency&gt;- Expert in post-upgrade action log analysis and execution, capable of reviewing upgrade action logs, recommending precise actions for each record, and applying those actions in accordance with defined guidelines. The agent ensures compliance with risk, category, and AI guidance, and acts as the final authority before records are updated.
+- Proficient in utilizing the 'Update AI Action Logs' tool to apply recommended actions to upgrade records. The agent can construct and pass a complete JSON object array containing all necessary fields, including action_taken and action_reason, ensuring that updates are performed accurately and efficiently.
+- Skilled in executing a structured, multi-step workflow for post-upgrade analysis, including retrieving action logs, building and confirming action plans, applying actions, and reporting outcomes. The agent follows strict procedural guidelines to ensure that every record is reviewed and updated according to best practices.
+- Highly capable of interpreting AI guidance, risk, and category for each record to recommend appropriate actions ('merge', 'revert', 'ignore'), with special handling for Security and Data model records. The agent ensures that recommendations are justified, compliant, and documented, and that owner review is triggered when necessary.
+- Ensures data integrity and workflow consistency by constructing and passing only complete JSON object arrays to the 'Update AI Action Logs' tool, with all required fields populated for every record. The agent prevents partial updates and guarantees that all actions are applied in a single, auditable transaction.
+- Capable of detailed post-update reporting, including counts of records updated by action, identification of failed updates (by index and name), and notification of Security or Data model records held for owner review. The agent provides actionable feedback and offers to retry failed updates, ensuring user awareness and control.&lt;/proficiency&gt;&lt;record_type&gt;custom&lt;/record_type&gt;&lt;required_translations&gt;[]&lt;/required_translations&gt;&lt;research&gt;false&lt;/research&gt;&lt;role&gt;You are the Execute Agent for the Post Upgrade Analysis workflow. You take the action log for the selected upgrade, recommend an action for each record, and apply those actions. You are the last step before any records are changed. Follow these steps in order.&lt;/role&gt;&lt;root_agent_id/&gt;&lt;source_id/&gt;&lt;strategy display_value="ReAct"&gt;f0bff21f9f13c6108f431597d90a1c74&lt;/strategy&gt;&lt;sys_class_name&gt;sn_aia_agent&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-12 05:25:32&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_id&gt;65cce37e87774754e5450d090cbb3530&lt;/sys_id&gt;&lt;sys_mod_count&gt;48&lt;/sys_mod_count&gt;&lt;sys_name&gt;Execute Agent&lt;/sys_name&gt;&lt;sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0"&gt;134b44d287924750602686e70cbb3543&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="AI Upgrade Monitor"&gt;134b44d287924750602686e70cbb3543&lt;/sys_scope&gt;&lt;sys_update_name&gt;sn_aia_agent_65cce37e87774754e5450d090cbb3530&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-14 15:57:33&lt;/sys_updated_on&gt;&lt;/sn_aia_agent&gt;&lt;/record_update&gt;</payload>
+<payload_hash>517372567</payload_hash>
+<remote_update_set display_value="SV_AI Upgrade Monitor V1.2">5ac3c1e597881350d9e73c70f053afc8</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>sharath.vasishta@snc</sys_created_by>
+<sys_created_on>2026-10-20 06:10:30</sys_created_on>
+<sys_id>5ec3c1e597881350d9e73c70f053afc9</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1a13b221bde0000001</sys_recorded_at>
+<sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+<sys_updated_on>2026-10-20 06:10:30</sys_updated_on>
+<table/>
+<target_name>Execute Agent</target_name>
+<type>AI Agent</type>
+<update_domain>global</update_domain>
+<update_guid>d39010fb51f743d4b8d8afe09916bfec</update_guid>
+<update_guid_history>d39010fb51f743d4b8d8afe09916bfec:517372567,8e6fc477b2f743d4ad4191c5f6b9120e:1221882804,d65f407753f743d42b785ea26675faf9:-1424830527,ca5fc833ff774f54da09fdd6969de242:-1814909632,3a4fcc379cf743d43730863ab9151311:-275277749,c63fc837a0f743d44c347e49106aa733:23022032,c8154cf7eff34f54fa643fecf43b76ad:-1414942430,350584b3e67743d4a9fb34e161ee66f6:-1484939073,300584b34c7743d491cf644e4565da64:757716172,cee2c8b30ff34f54e79d28163b2693d0:-1329444200,1ce288fb7d3743d45708d973362719d4:1453420093,03d248fbc43743d415904cdf4e038eae:-1401384374,83a14cf76d3743d411384f660b5f146c:608546460,95a1c8f7e03743d4ea51e18dab5ec294:206971329,5ca188f7503743d4bb01619284ad6f8a:193684942,65b04c37893743d436c7bbaebfdb81ff:-1155705761,44b0c837803743d436c0b29e7fdc40ec:1055083049,03a0c8378b3743d495c37a9a5a8fce43:-7352778,9b30043f0ab34f548da4fc449da908c5:-1795621182,4e3080f36f3743d460ea8fc61f0aacb1:-1989473987,bf2040f3ca3743d4f803191bcfa75d07:2040147274,fe1fb7ef59f343d4b47e45d24c73d3d0:588912359,010fb76baab34f548b433ae27e502cf0:-343176460,26feb3ef28f343d41fbcc1cdb0e76df6:1644179067,7f6eb32b94b34f54659bea07eb014e35:-316803121,926e376f9ef343d4629e7d8347155fd1:1071995676,e46ef36f49f343d484779b5a064728eb:-518850775,205d3b67cdb34f544214572bfbe1a93d:-583291047,9f4d7f2b8ef343d46ce31f79330d5446:1994768459,1d4dfb2b5df343d44eb56ed4052607c1:-883665832,bd3d7b2b88f343d4103b11b1be3b7f53:-1918474713,160d332bf1f343d40aed9a5ab5519279:-1359526181,f097f3e7aeb343d4c16618c589de2a8d:-824448044,9f8733e740b343d42b49fcdb3457fc02:2028685281,7087ffa7e8b343d493352fdb89cb2886:361037797,b34793ab263f0f54206c88b254ce24c9:2066809147,cf47936b2cfb03d45f0da2da70bb23c5:1951729895,3447136b4ffb03d476c57280ad234bfa:-1923711756,4eb393af1cbb03d434e4df6666943c2f:1715883261,bfee0f6f097b03d49b1d4be3b71bbf39:846426378,c97e0f67e8fb0f54f96ffbc5e679bf48:-1697911358,256e432fd17b03d45cae09283119cc13:-350642299,4284fc1372fbcb946a52f1ea9e4f1942:1156937802,e3743c5b63bb0b54f4abffdb2b2369fe:-959356783,17403413cebb0b54ab1c7fc972351f4c:187759437,16dce77e637747543770665940985fc9:1782461091,08dca77ecb77475412f024c935991642:-251231750,efcc677eab774754c897510e4beb1eb1:944274159,f1cce37eb1774754926eb13316fe5fc1:267973214</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="AI Upgrade Monitor">134b44d287924750602686e70cbb3543</application>
+<category>customer</category>
+<comments/>
+<name>sn_aia_version_71cce37e87774754e5450d090cbb3535</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sn_aia_version"&gt;&lt;sn_aia_version action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applicability_script&gt;&lt;![CDATA[/** 
+ * Function to determine applicability of this version based on runtime inputs 
+ * 
+ * @param {Object} inputs - The input parameters object 
+ * @param {string} inputs.channel - The channel the request originated from (e.g., 'voice', 'chat') 
+ * 
+ * @returns {boolean} Returns true/false 
+(function(inputs) {
+    return inputs.channel == 'voice' ; 
+})(inputs);*/
+(function(inputs) {
+    return inputs.channel == 'ALL';
+})(inputs);]]&gt;&lt;/applicability_script&gt;&lt;base_version/&gt;&lt;change_description&gt;Initial version&lt;/change_description&gt;&lt;condition/&gt;&lt;eval_score/&gt;&lt;instructions&gt;# IMPORTANT GUIDELINES
+1. Only recommend from these actions: `merge`, `revert`, `ignore`.
+2. Never recommend `merge` for a Security or Data model record. Recommend `ignore` and state that owner review is required.
+3. Never lower a category. Use the category returned by the Action Log Retrieval Tool as-is.
+4. Base each recommendation only on the record's AI guidance, risk, and category. If a record has no guidance, recommend `ignore`.
+5. Do not display sys IDs to the user. Refer to records by index and name.
+6. Do not call the Script Tool until every record in the array has a recommended action.
+
+#INSTRUCTIONS:
+
+## Step 1: Present the action log
+1. Call the "Retrieve Upgrade Action Logs" Tool with the sys ID of the selected upgrade  &amp;lt;upgrade_id&amp;gt; as the input string. Wait for the output.
+2. Once the tool successfully retrieves the actions, store it to memory in the variable &amp;lt;retrieved_action_logs&amp;gt; inform the user that you will now be building an action plan for the skipped updates that have been identified. Ask the user whether they want you to proceed with execution.
+3. If the user declines, confirm no changes were made and end. Else if user accepts, move to Step 2.
+
+## Step 2: Recommend an action for each record
+1. Review each record object's file name, AI guidance, risk, and category in the &amp;lt;retrieved_action_logs&amp;gt;.
+2. Assign one recommended action using these defaults:
+   - Cosmetic: `merge`, unless the guidance requires a business justification.
+   - Reporting/Analytics: `merge` only if the guidance says output validation has been completed. Otherwise `ignore`.
+   - Functional, Integration/Platform operation: `ignore`, pending the testing the guidance requires.
+   - Security, Data model: `ignore`, with owner review required.
+   - Unclassified: `ignore`.
+   - `revert` only when the guidance explicitly recommends reverting the change.
+3. Add recommended action as 'action_taken' and a one-sentence `action_reason` to each object in the &amp;lt;retrieved_action_logs&amp;gt; array.
+4. Confirm that every object has exactly one `action_taken` from the allowed list.
+
+## Step 3: Apply the actions
+1. Pass the complete JSON object array &amp;lt;retrieved_action_logs&amp;gt; with `action_taken` and `action_reason` on every object, as an input to the 'Update AI Action Logs' tool as is.
+2. Do not pass a partial array
+
+## Step 4: Report the result
+1. Read the 'Update AI Action Logs'  Tool's response.
+2. Show the user:
+   - The count of records updated, by action (merge, revert, ignore).
+   - Any record the 'Update AI Action Logs'  Tool failed to update, identified by index and name, with the failure reason.
+   - Any Security or Data model records held for owner review.
+3. If any updates failed, offer to retry only those records.
+
+## Output format
+Use this format for the JSON array passed to the 'Update AI Action Logs'  Tool. Include ONLY the object array, do NOT Include any prefix or suffixes.
+
+[
+  {
+    "index": 1,
+    "file_name": "...",
+    "table": "...",
+"upgrade_id":"..",
+    "category": "...",
+    "risk": "...",
+    "action_taken": "merge | revert | ignore",
+    "action_reason": "..."
+  }
+]&lt;/instructions&gt;&lt;label/&gt;&lt;layer&gt;overlay&lt;/layer&gt;&lt;order/&gt;&lt;short_description/&gt;&lt;snapshot&gt;{"schemaVersion":2,"definition":{"name":"Execute Agent","description":"The purpose of this agent is to perform actions on the skipped upgrade action logs that were generated by the Analysis Agent. ","role":"You are the Execute Agent for the Post Upgrade Analysis workflow. You take the action log for the selected upgrade, recommend an action for each record, and apply those actions. You are the last step before any records are changed. Follow these steps in order."},"overlay":{"tools":[{"m2mId":"54ee0b6f977b03d4d9e73c70f053afec","toolId":"10ee0b6f977b03d4d9e73c70f053afd5","executionMode":"copilot","inputs":"[]","active":true}],"children":[],"security":{"externalDiscoverable":"0","specialistEnabled":"0","runAsUser":"","userAccessRoles":[{"name":"admin","id":"2831a114c611228501d4ea6c309d626d"}],"dataAccessRoles":["2831a114c611228501d4ea6c309d626d"]}}}&lt;/snapshot&gt;&lt;state&gt;committed&lt;/state&gt;&lt;sys_class_name&gt;sn_aia_version&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-12 05:25:32&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_id&gt;71cce37e87774754e5450d090cbb3535&lt;/sys_id&gt;&lt;sys_mod_count&gt;26&lt;/sys_mod_count&gt;&lt;sys_name&gt;Version 1&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="AI Upgrade Monitor" source="x_snc_ai_upgrade_0"&gt;134b44d287924750602686e70cbb3543&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="AI Upgrade Monitor"&gt;134b44d287924750602686e70cbb3543&lt;/sys_scope&gt;&lt;sys_update_name&gt;sn_aia_version_71cce37e87774754e5450d090cbb3535&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-14 15:57:21&lt;/sys_updated_on&gt;&lt;tags/&gt;&lt;target_id&gt;65cce37e87774754e5450d090cbb3530&lt;/target_id&gt;&lt;target_table&gt;sn_aia_agent&lt;/target_table&gt;&lt;version_name&gt;Version 1&lt;/version_name&gt;&lt;version_number&gt;1&lt;/version_number&gt;&lt;/sn_aia_version&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-145582807</payload_hash>
+<remote_update_set display_value="SV_AI Upgrade Monitor V1.2">5ac3c1e597881350d9e73c70f053afc8</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>sharath.vasishta@snc</sys_created_by>
+<sys_created_on>2026-10-20 06:10:30</sys_created_on>
+<sys_id>92c3c1e597881350d9e73c70f053afcb</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1a13b21eda40000001</sys_recorded_at>
+<sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+<sys_updated_on>2026-10-20 06:10:30</sys_updated_on>
+<table/>
+<target_name>Version 1</target_name>
+<type>AIA Version</type>
+<update_domain>global</update_domain>
+<update_guid>98901cbb2df743d40910961203e8326e</update_guid>
+<update_guid_history>98901cbb2df743d40910961203e8326e:-145582807,68cf00f7ccf743d43012c312de79f310:765449663,c74fcc3761f743d4d0a5db4669ce4568:74666716,7e4fcc373ff743d4e0f44968e01b4c44:541207128,764fcc375ef743d40981e348d85b8b0c:390111789,d72f08374df743d4cfe7f5899d324d7f:-564792241,f00584b3427743d4544988d12a78325d:1955181538,4fd248fbda3743d486f45ea3a3feeba8:1492135279,0ca188f79b3743d4446e7e2bc54aab6c:-1737155716,4fa0c837d83743d489d62b4efb0ddc3d:1158472850,372040f3853743d48b75fd2b9d7db002:-264590171,d6feb3ef82f343d4e185662cdc22bba6:-1761726673,e46ef36f4df343d4187dfc1a97ab49b2:-36206354,dd4dfb2b39f343d460c19bdfa5a4f271:287886583,6e2db72b76f343d41f2d44c06052a3cb:1352738259,47fcbfe753f343d4dd83a0eea9c6504c:-983417026,3c87ffa70cb343d42f54318ca09f2480:-1506273749,b447136bd8fb03d42104c2c7f3b725f4:1286722574,2cee4b6fcd7b03d4237f21db26faa04e:-10564968,a56e032f767b03d40e430bac65bf30f4:-326695387,5b743c5b35bb0b54784849ba5a11b8ec:1660766878,d840b0133abb0b54191848fc992d9055:481111861,c7cc277e3e7747542d7e2b33cfdd37a7:-1268324848,f6cc277ed2774754c4e0b6954768e68f:-1819564796,facc277e12774754ba36aba522e1f182:-709376489,79cce37e3e774754fd03239a418f7ea2:-1324170673,31cce37ef8774754dd7a56bc917c609c:-2123803488</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>ecc_queue_authorization_policy_61b4e21787ff4b54e5450d090cbb3571</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="ecc_queue_authorization_policy"><ecc_queue_authorization_policy action="INSERT_OR_UPDATE"><active>true</active><current_executor>9beb31b883301000dada83ec37d929af</current_executor><current_executor_table>sys_script</current_executor_table><initiator>db4419f1fffbea101dbaffffffffff42</initiator><initiator_package>sn_aia</initiator_package><initiator_table>sys_ux_data_broker_transform</initiator_table><registered_application/><result>track</result><scope>sn_aia</scope><script_type>Scripted</script_type><sys_class_name>ecc_queue_authorization_policy</sys_class_name><sys_created_by>sharath.vasishta@snc</sys_created_by><sys_created_on>2026-10-13 13:27:38</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>61b4e21787ff4b54e5450d090cbb3571</sys_id><sys_mod_count>0</sys_mod_count><sys_name>9beb31b883301000dada83ec37d929af</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>ecc_queue_authorization_policy_61b4e21787ff4b54e5450d090cbb3571</sys_update_name><sys_updated_by>sharath.vasishta@snc</sys_updated_by><sys_updated_on>2026-10-13 13:27:38</sys_updated_on><transaction_type>REST</transaction_type></ecc_queue_authorization_policy></record_update>]]></payload>
+<payload_hash>-598244096</payload_hash>
+<remote_update_set display_value="SV_AI Upgrade Monitor V1.2">5ac3c1e597881350d9e73c70f053afc8</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>sharath.vasishta@snc</sys_created_by>
+<sys_created_on>2026-10-20 06:10:30</sys_created_on>
+<sys_id>96c3c1e597881350d9e73c70f053afc9</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1a1357281e20000001</sys_recorded_at>
+<sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+<sys_updated_on>2026-10-20 06:10:30</sys_updated_on>
+<table/>
+<target_name>9beb31b883301000dada83ec37d929af</target_name>
+<type>ECC Queue Authorization Policy</type>
+<update_domain>global</update_domain>
+<update_guid>a5b4e21715ff4b5495d47e93c85b6d74</update_guid>
+<update_guid_history>a5b4e21715ff4b5495d47e93c85b6d74:-598244096</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>DELETE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sn_aia_tool_f7e5e94b873f8754e5450d090cbb35f7</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sn_aia_tool"&gt;&lt;sn_aia_tool action="DELETE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;description&gt;This flow action can be used to retrieve information from a set of AI Upgrade Action Logs in a JSON format.&lt;/description&gt;&lt;input_schema&gt;[{"name":"upgrade_id","description":"","mandatory":false}]&lt;/input_schema&gt;&lt;name&gt;Retrieve AI Upgrade Action Logs&lt;/name&gt;&lt;record_type&gt;custom&lt;/record_type&gt;&lt;script&gt;&lt;![CDATA[undefined]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sn_aia_tool&lt;/sys_class_name&gt;&lt;sys_created_by&gt;sharath.vasishta@snc&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-10-12 14:14:53&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_id&gt;f7e5e94b873f8754e5450d090cbb35f7&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;Retrieve AI Upgrade Action Logs&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sn_aia_tool_f7e5e94b873f8754e5450d090cbb35f7&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;sharath.vasishta@snc&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-10-12 14:14:53&lt;/sys_updated_on&gt;&lt;target_document&gt;d102e18f87fb8754e5450d090cbb351a&lt;/target_document&gt;&lt;target_document_table&gt;sys_hub_action_type_definition&lt;/target_document_table&gt;&lt;type&gt;action&lt;/type&gt;&lt;/sn_aia_tool&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1199533657</payload_hash>
+<remote_update_set display_value="SV_AI Upgrade Monitor V1.2">5ac3c1e597881350d9e73c70f053afc8</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>sharath.vasishta@snc</sys_created_by>
+<sys_created_on>2026-10-20 06:10:30</sys_created_on>
+<sys_id>dac3c1e597881350d9e73c70f053afca</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1a13b21ee2d0000001</sys_recorded_at>
+<sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+<sys_updated_on>2026-10-20 06:10:30</sys_updated_on>
+<table/>
+<target_name>Retrieve AI Upgrade Action Logs</target_name>
+<type>Tool</type>
+<update_domain>global</update_domain>
+<update_guid>d0901cbb58f743d421e700464233f87b</update_guid>
+<update_guid_history>d0901cbb58f743d421e700464233f87b:-1199533657,7fe5e94bf83f875479f3301f5b29cdfd:-1762381669</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>ecc_queue_authorization_policy_5db4b76f977343d4d9e73c70f053af0c</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="ecc_queue_authorization_policy"><ecc_queue_authorization_policy action="INSERT_OR_UPDATE"><active>true</active><current_executor>9beb31b883301000dada83ec37d929af</current_executor><current_executor_table>sys_script</current_executor_table><initiator>87211aa2ff56ae101dbaffffffffffc0</initiator><initiator_package>sn_aia</initiator_package><initiator_table>sys_script</initiator_table><registered_application/><result>track</result><scope>sn_aia</scope><script_type>Scripted</script_type><sys_class_name>ecc_queue_authorization_policy</sys_class_name><sys_created_by>sharath.vasishta@snc</sys_created_by><sys_created_on>2026-10-14 13:55:38</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>5db4b76f977343d4d9e73c70f053af0c</sys_id><sys_mod_count>0</sys_mod_count><sys_name>9beb31b883301000dada83ec37d929af</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>ecc_queue_authorization_policy_5db4b76f977343d4d9e73c70f053af0c</sys_update_name><sys_updated_by>sharath.vasishta@snc</sys_updated_by><sys_updated_on>2026-10-14 13:55:38</sys_updated_on><transaction_type>REST</transaction_type></ecc_queue_authorization_policy></record_update>]]></payload>
+<payload_hash>1463121770</payload_hash>
+<remote_update_set display_value="SV_AI Upgrade Monitor V1.2">5ac3c1e597881350d9e73c70f053afc8</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>sharath.vasishta@snc</sys_created_by>
+<sys_created_on>2026-10-20 06:10:30</sys_created_on>
+<sys_id>dec3c1e597881350d9e73c70f053afc8</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>1a13ab27ea40000001</sys_recorded_at>
+<sys_updated_by>sharath.vasishta@snc</sys_updated_by>
+<sys_updated_on>2026-10-20 06:10:30</sys_updated_on>
+<table/>
+<target_name>9beb31b883301000dada83ec37d929af</target_name>
+<type>ECC Queue Authorization Policy</type>
+<update_domain>global</update_domain>
+<update_guid>e9b4b76f087343d4b42daec0537c0b11</update_guid>
+<update_guid_history>e9b4b76f087343d4b42daec0537c0b11:1463121770</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
